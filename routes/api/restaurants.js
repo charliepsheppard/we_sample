@@ -5,6 +5,8 @@ const Restaurant = require('../../models/Restaurant');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
+const validateRegisterInput = require('../../validation/registerRestaurant');
+const validateLoginInput = require('../../validation/login');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the restaurants route" }));
 

@@ -5,6 +5,7 @@ const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 const users = require("./routes/api/users");
 const orders = require("./routes/api/orders");
+const reviews = require("./routes/api/reviews");
 const User = require("./models/User");
 const restaurants = require("./routes/api/restaurants");
 const samples = require("./routes/api/samples");
@@ -25,6 +26,7 @@ app.use("/api/users", users);
 app.use("/api/orders", orders);
 app.use("/api/restaurants", restaurants);
 app.use("/api/samples", samples);
+app.use("/api/reviews", reviews);
 
 
 const port = process.env.PORT || 5000;
