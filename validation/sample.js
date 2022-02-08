@@ -10,7 +10,7 @@ module.exports = function validateSample(data) {
   data.price = validText(data.price) ? data.price : "";
 
   if (Validator.isEmpty(data.sampleItem)) {
-    errors.sampleItem = "Sample item field required"
+    errors.sampleItem = "Sample Item field required"
   };
 
   if (Validator.isEmpty(data.description)) {
