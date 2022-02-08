@@ -18,6 +18,10 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 })
 
 router.post('/register', (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body)
+  if(!isValid) {
+    return res.status(400).json(errors)
+  }
   // Check to make sure nobody has already registered with a duplicate email
   User.findOne({ email: req.body.email })
     .then(user => {
@@ -30,7 +34,8 @@ router.post('/register', (req, res) => {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           email: req.body.email,
-          password: req.body.password
+          password: req.body.password,
+          // profileType: req.body.profileType,
         })
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -46,6 +51,12 @@ router.post('/register', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
+  const { errors, isValid } = validateLoginInput(req.body)
+  if(!isValid) {
+    return res.status(400).json(errors)
+  }
+
+
   const email = req.body.email;
   const password = req.body.password;
 
