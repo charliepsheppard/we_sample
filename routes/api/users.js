@@ -18,6 +18,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 })
 
 router.post('/register', (req, res) => {
+  console.log(req.body);
   // Check to make sure nobody has already registered with a duplicate email
   User.findOne({ email: req.body.email })
     .then(user => {
