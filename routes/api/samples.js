@@ -60,7 +60,7 @@ router.patch(
   "/:sampleId",
   // passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Sample.findByIdAndUpdate(req.params.sampleId, req.body, { new: true })
+    Sample.findByIdAndUpdate((req.params.sampleId), req.body, { new: true })
       .then(sample => res.json(sample))
       .catch(err => res.status(404).json({ nosamplefound: "No sample found by that Id" }))
   }
