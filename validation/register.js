@@ -8,7 +8,7 @@ module.exports = function validateRegisterInput(data) {
   data.lastName = validText(data.lastName) ? data.lastName : '';
   data.email = validText(data.email) ? data.email : '';
   data.password = validText(data.password) ? data.password : '';
-  // data.password2 = validText(data.password2) ? data.password2 : '';
+  data.password2 = validText(data.password2) ? data.password2 : '';
 
   // if (!Validator.isLength(data.handle, { min: 2, max: 30 })) {
   //   errors.handle = "Handle must be between 2 and 30 chars"
@@ -38,9 +38,13 @@ module.exports = function validateRegisterInput(data) {
     errors.password = "Password must be between 2 and 30 chars";
   }
 
-  // if (!Validator.equals(data.password, data.password2)) {
-  //   errors.password2 = "Passwords must match";
-  // }
+  if (Validator.isEmpty(data.password2)) {
+    errors.password2 = 'Confirm Password field is required';
+  }
+
+  if (!Validator.equals(data.password, data.password2)) {
+    errors.password2 = "Passwords must match";
+  }
 
   return {
     errors,
