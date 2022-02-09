@@ -9,7 +9,8 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: {},
+      business: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +20,7 @@ class LoginForm extends React.Component {
   // Once the user has been authenticated, redirect to the Tweets page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/tweets');
+      this.props.history.push('/offers');
     }
 
     // Set or clear errors
@@ -31,6 +32,15 @@ class LoginForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+   toggleClient() {
+    if(this.state.stylist) {
+      this.setState({'business': false})
+    }
+    else {
+      this.setState({'business': true})
+    }
   }
 
   // Handle form submission
@@ -72,8 +82,20 @@ class LoginForm extends React.Component {
             <h3 className='session-form-title'>
             <br />
             <br />
-            login
+            Login
             </h3>
+             <div className = "client-business-slider">
+          
+              {this.state.business ? <div className = "toggle-not-selected">Client</div> : <div>Client</div>}
+              <label className="switch">
+              <input type="checkbox" 
+              checked = {this.state.business} 
+              onChange = {this.toggleClient}
+              />
+              <div className="slider round"></div>
+              </label>
+              {!this.state.business ? <div className = "toggle-not-selected">Business</div> : <div>Business</div>}
+            </div>
             <div >
                 <input type="text"
                   value={this.state.email}
@@ -87,7 +109,9 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
               <br/>
-              <input type="submit" value="login" className='login-bnt'/>
+              <div className='submit-btn'>
+              <input type="submit" value="login" id='btn' />
+              </div>
               {this.renderErrors()}
             </div>
           </form>
