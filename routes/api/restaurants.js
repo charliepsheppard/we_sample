@@ -39,8 +39,8 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  Restaurant.findOne({ email: req.body.email }).then(stylist => {
-    if (stylist) {
+  Restaurant.findOne({ email: req.body.email }).then(restaurant => {
+    if (restaurant) {
       errors.email = "Email has already been registered";
       return res.status(400).json(errors);
     } else {
@@ -63,7 +63,7 @@ router.post("/register", (req, res) => {
       });
 
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newStylist.password, salt, (err, hash) => {
+        bcrypt.hash(newRestaurant.password, salt, (err, hash) => {
           if (err) throw err;
           newRestaurant.password = hash;
           newRestaurant

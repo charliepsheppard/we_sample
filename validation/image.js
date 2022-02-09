@@ -1,5 +1,5 @@
 const Validator = require('validator');
-const validText = require('./valid-text');
+const validText = require('./valid_text');
 const fs = require("fs");
 
 module.exports = function validateImage(data) {
