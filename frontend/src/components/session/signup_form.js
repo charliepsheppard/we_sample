@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import samplePic from './sample_login.png'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -56,6 +57,13 @@ class SignupForm extends React.Component {
 
   render() {
     return (
+
+      <div className='login-page'>
+        <div className='half-left'>
+        <img src={samplePic} className='pic-half-page'/>
+        <h5>Share Great Experiences</h5>
+        <p>Get to sample all the best food, drinks and places!</p>
+       </div>
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
@@ -66,11 +74,11 @@ class SignupForm extends React.Component {
                 placeholder="Email"
               />
             <br/>
-              <input type="text"
+              {/* <input type="text"
                 value={this.state.handle}
                 onChange={this.update('handle')}
                 placeholder="Handle"
-              />
+              /> */}
             <br/>
               <input type="password"
                 value={this.state.password}
@@ -88,6 +96,7 @@ class SignupForm extends React.Component {
             {this.renderErrors()}
           </div>
         </form>
+        </div>
       </div>
     );
   }

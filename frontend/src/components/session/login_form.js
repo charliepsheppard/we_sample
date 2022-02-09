@@ -62,8 +62,11 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className='login-page'>
+        <div className='half-left'>
         <img src={samplePic} className='pic-half-page'/>
-       
+        <h5>Share Great Experiences</h5>
+        <p>Get to sample all the best food, drinks and places!</p>
+       </div>
         <div className='session-form login' >
           <form onSubmit={this.handleSubmit}>
             <h3 className='session-form-title'>
@@ -71,7 +74,6 @@ class LoginForm extends React.Component {
             <br />
             login
             </h3>
-            <br />
             <div >
                 <input type="text"
                   value={this.state.email}
@@ -85,7 +87,7 @@ class LoginForm extends React.Component {
                   placeholder="Password"
                 />
               <br/>
-              <input type="submit" value="login" />
+              <input type="submit" value="login" className='login-bnt'/>
               {this.renderErrors()}
             </div>
           </form>
