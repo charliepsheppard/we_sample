@@ -28,7 +28,7 @@ router.get(
 router.get(
   "/restaurant/:restaurantId",
   (req, res) => {
-    Style.find({restaurantId: req.params.restaurantId})
+    Sample.find({restaurantId: req.params.restaurantId})
       .then(samples => res.json(samples))
       .catch(err => res.status(404).json({ nosamplesfound: "No samples found by that Id"}))
   }
@@ -57,11 +57,10 @@ router.post(
 )
 
 router.patch(
-  "/:id",
+  "/:sampleId",
   // passport.authenticate('jwt', { session: false }),
   (req, res) => {
-
-    Sample.findByIdAndUpdate((req.params.id === req.body.id), req.body, { new: true })
+    Sample.findByIdAndUpdate(req.params.sampleId, req.body, { new: true })
       .then(sample => res.json(sample))
       .catch(err => res.status(404).json({ nosamplefound: "No sample found by that Id" }))
   }

@@ -65,7 +65,7 @@ router.post(
 router.patch(
   "/:reviewId",
   (req, res) => {
-    Review.findByIdAndUpdate(req.params.reviewId, req.body, { new: true })
+    Review.findByIdAndUpdate((req.params.reviewId), req.body, { new: true })
       .then(review => res.json(review))
       .catch(err => res.status(404).json({ noreviewfound: "No review found by that Id" }))
   }
