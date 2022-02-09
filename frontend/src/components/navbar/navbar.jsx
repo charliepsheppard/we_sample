@@ -30,7 +30,7 @@ class NavBar extends React.Component {
         return (
             <div>
                 <Link to={'/signup'} className="nav-link" >Signup</Link>
-                <Link to={'/login'} className="nav-link active">Login</Link>
+                <Link to={'/login'} className="nav-link ">Login</Link>
             </div>
         );
       }
@@ -41,10 +41,7 @@ class NavBar extends React.Component {
 
     return (
          <div >
-           <div>
-            {/* <h1>Links</h1> */}
-            {/* { this.getLinks() } */}
-         </div>
+      
       <nav className="navbar navbar-expand-lg navbar-light bs-ligh border-bottom">
          <div className="container-fluid">
            <a className="navbar-brand" href="/">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import samplePic from './sample_login.png'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class LoginForm extends React.Component {
 
   // Render the session errors if there are any
   renderErrors() {
+
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
@@ -59,25 +61,35 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <input type="submit" value="Submit" />
-            {this.renderErrors()}
-          </div>
-        </form>
+      <div className='login-page'>
+        <img src={samplePic} className='pic-half-page'/>
+       
+        <div className='session-form login' >
+          <form onSubmit={this.handleSubmit}>
+            <h3 className='session-form-title'>
+            <br />
+            <br />
+            login
+            </h3>
+            <br />
+            <div >
+                <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+              <br/>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+              <br/>
+              <input type="submit" value="login" />
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
