@@ -10,7 +10,8 @@ class SignupForm extends React.Component {
       handle: '',
       password: '',
       password2: '',
-      errors: {}
+      errors: {},
+      business: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,6 +30,15 @@ class SignupForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+   toggleClient() {
+    if(this.state.stylist) {
+      this.setState({'business': false})
+    }
+    else {
+      this.setState({'business': true})
+    }
   }
 
   handleSubmit(e) {
@@ -58,14 +68,31 @@ class SignupForm extends React.Component {
   render() {
     return (
 
-      <div className='login-page'>
+      <div className='signin-page'>
         <div className='half-left'>
         <img src={samplePic} className='pic-half-page'/>
         <h5>Share Great Experiences</h5>
         <p>Get to sample all the best food, drinks and places!</p>
        </div>
-      <div className="signup-form-container">
+      <div className="session-form signup" id='signup-form'>
         <form onSubmit={this.handleSubmit}>
+          <h3 className='session-form-title'>
+            <br />
+            <br />
+            Sign up
+            </h3>
+            <div className = "client-business-slider">
+          
+              {this.state.business ? <div className = "toggle-not-selected">Client</div> : <div>Client</div>}
+              <label className="switch">
+              <input type="checkbox" 
+              checked = {this.state.business} 
+              onChange = {this.toggleClient}
+              />
+              <div className="slider round"></div>
+              </label>
+              {!this.state.business ? <div className = "toggle-not-selected">Business</div> : <div>Business</div>}
+            </div>
           <div className="signup-form">
             <br/>
               <input type="text"
@@ -73,13 +100,7 @@ class SignupForm extends React.Component {
                 onChange={this.update('email')}
                 placeholder="Email"
               />
-            <br/>
-              {/* <input type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Handle"
-              /> */}
-            <br/>
+          <br/>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -92,7 +113,9 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <div className='submit-btn'>
+            <input type="submit" value="Submit" id='btn' />
+            </div>
             {this.renderErrors()}
           </div>
         </form>

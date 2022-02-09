@@ -28,8 +28,9 @@ class NavBar extends React.Component {
         );
       } else {
         return (
-            <div>
+            <div className='header-row'>
                 <Link to={'/signup'} className="nav-link" >Signup</Link>
+                
                 <Link to={'/login'} className="nav-link ">Login</Link>
             </div>
         );

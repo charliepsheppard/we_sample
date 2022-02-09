@@ -16,3 +16,11 @@
 /* .navbar navbar-expand-lg navbar-light bs-ligh {
     margin-top: 0ch;
 } */
+.header-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link {
+    margin-right: 25px;
+}
