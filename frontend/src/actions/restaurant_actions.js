@@ -48,7 +48,7 @@ export const removeErrors = () => {
 }
 
 export const fetchRestaurants = () => dispatch => {
-  return RestaurantApiUtil.fetchRestaurant()
+  return RestaurantApiUtil.fetchRestaurants()
     .then(
       restaurants => dispatch(receiveRestaurants(restaurants)),
       err => dispatch(receiveRestaurantErrors(err.response.data))
@@ -71,13 +71,13 @@ export const updateRestaurant = restaurant => dispatch => {
     );
 }
 
-export const deleteRestaurant = restaurantId => dispatch => {
-  return RestaurantApiUtil.deleteRestaurant(restaurantId)
-    .then(
-      () => dispatch(removeRestaurant(restaurantId)),
-      err => dispatch(receiveRestaurantErrors(err.response.data))
-    )
-}
+// export const deleteRestaurant = restaurantId => dispatch => {
+//   return RestaurantApiUtil.deleteRestaurant(restaurantId)
+//     .then(
+//       () => dispatch(removeRestaurant(restaurantId)),
+//       err => dispatch(receiveRestaurantErrors(err.response.data))
+//     )
+// }
 
 export const restaurantSearch = query => dispatch => {
   RestaurantApiUtil.restaurantSearch(query).then(restaurant => dispatch(receiveRestaurant(restaurant)));

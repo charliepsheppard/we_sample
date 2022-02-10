@@ -7,6 +7,7 @@ import NavBar from './navbar/navbar'
 
 import Login from './session/login_form';
 import Signup from './session/signup_form';
+import RestaurantsIndexContainer from './restaurants_index/restaurants_index_container';
 
 const App = () => {
  
@@ -28,6 +29,7 @@ const App = () => {
             //   <Login {...props}/>
             // )}
           />
+          <Route path="/restaurants" component={RestaurantsIndexContainer} />
         </Switch>
 
     </div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const fetchRestaurant = () => {
-  return axios.get("/api/restaurants")
+export const fetchRestaurants = () => {
+  return axios.get("/api/restaurants/")
 }
 
 export const fetchRestaurant = restaurantId => {
