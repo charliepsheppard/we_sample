@@ -55,14 +55,14 @@ class OrderItem extends React.Component {
     return(
       <div className='order-item-container'>
         <h3 className='order-with'>order with: {this.renderLink()}</h3>
-        <div className='appointment-details-container'>
-            //not sure the equivalent to styleType...
-          <p>{this.state.order.sample.name}</p>
+        <div className='order-details-container'>
+            
+          <p>{this.state.order.sample.sampleItem}</p>
           <p>{this.renderDate()}</p>
           <p>{this.state.order.timeFrame}</p>
         </div>
-        //check to see how this imageUrl gets passed to order. does it come from samples? what if multiple?
-          {this.state.order.imageUrl ? <div className = "order-item-ref-pic"><p>reference pic</p><div className = "featured-restaurant-profile-pic" restaurant = {{backgroundImage : `url(${this.state.order.imageUrl})`}} /></div> : null}
+        
+          {/* {this.state.order.imageUrl ? <div className = "order-item-ref-pic"><p>reference pic</p><div className = "featured-restaurant-profile-pic" restaurant = {{backgroundImage : `url(${this.state.order.imageUrl})`}} /></div> : null} */}
           {this.state.order.message ? <p>message: <br/>{this.state.order.message}</p> : null}
           {this.state.passed ? <p>We hoped you enjoyed your order with {this.state.order.restaurantName}!<br/>Let us know how it was by leaving a review on their profile!</p> : <button className='cancel-order' onClick={ () => this.props.deleteOrder(this.state.order._id).then(this.setState({order: null}))}>cancel order</button>}
       </div>
