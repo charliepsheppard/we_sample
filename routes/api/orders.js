@@ -48,6 +48,26 @@ router.post("/",
         .then(order => res.json(order));
 })
 
+router.patch(
+  "/:orderId",
+  (req, res) => {
+
+    Order.findByIdAndUpdate(req.params.orderId, req.body, { new: true })
+      .then(order => res.json(order))
+      .catch(err => res.status(404).json({ noorderfound: "No order found by that Id" }))
+  }
+)
+
+router.delete(
+  "/:orderId",
+  // passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Order.deleteOne({_id: req.params.orderId})
+      .then(() => res.status(200).json({ msg: "delete successful" }))
+      .catch(err => res.status(404).json({ noorderfound: "No order found by that Id" }))
+  }
+)
+
 
 
 
