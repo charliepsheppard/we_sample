@@ -16,25 +16,25 @@ class NavBar extends React.Component {
       this.props.logout();
   }
 
-    getLinks() {
-      if (this.props.loggedIn) {
-        return (
-            <div>
-                <Link to={'/'}>Home</Link>
-                <Link to={'/profile'}>Profile</Link>
-                <Link to={'/offers'}>All Offers</Link>
-                <button onClick={this.logoutUser}>Logout</button>
-            </div>
-        );
-      } else {
-        return (
-            <div className='header-row'>
-                <Link to={'/signup'} className="nav-link" >Signup</Link>
-                
-                <Link to={'/login'} className="nav-link ">Login</Link>
-            </div>
-        );
-      }
+  getLinks() {
+    if (this.props.loggedIn) {
+      console.log(this.props);
+      return (
+          <div className="header-row">
+              <Link to={'/profile'} className="nav-link">Profile</Link>
+              <Link to={'/samples'} className="nav-link">My Samples</Link>
+              <button onClick={this.logoutUser} className="logout-btn">Logout</button>
+          </div>
+      );
+    } else {
+      return (
+          <div className='header-row'>
+              <Link to={'/signup'} className="nav-link" >Signup</Link>
+              
+              <Link to={'/login'} className="nav-link ">Login</Link>
+          </div>
+      );
+    }
   }
 
   render() {

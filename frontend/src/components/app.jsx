@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {Switch, Route, Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import NavBar from './navbar/navbar'
+import NavBar from './navbar/navbar_container'
 
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
