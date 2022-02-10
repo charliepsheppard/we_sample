@@ -32,12 +32,17 @@ class SampleIndex extends React.Component {
       return null;
     } else {
       return (
-        <div>
-          <ul className="sample-items">
-              {
-                this.props.samples.map(sample => <SampleIndexItem key={sample.id} sample={sample} />)
-              }
-          </ul>
+
+        <div className='body'>
+
+            <div className='sample-items-container'>
+            <ul className="sample-items">
+                {
+                    this.props.samples.map(sample => <SampleIndexItem key={sample._id} sample={sample} />)
+                }
+            </ul>
+            </div>
+
         </div>
       )
     }

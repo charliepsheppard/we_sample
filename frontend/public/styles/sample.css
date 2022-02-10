@@ -1,0 +1,24 @@
+/* .sample-items {
+
+} */
+
+.card {
+    width: 18rem;
+}
+
+/* .sample-item {
+    border: 1px solid black;
+} */
+
+.btn-primary {
+    background-color: #CE4633 !important;
+    border-color: #CE4633 !important;
+}
+
+.sample-item-container {
+    margin-top: 20px;
+}
+
+/* btn:focus :hover {
+  box-shadow: 0 0 1px #CE4633 !important;
+} */
