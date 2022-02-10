@@ -7,7 +7,6 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      handle: '',
       password: '',
       password2: '',
       errors: {},
@@ -45,12 +44,12 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      handle: this.state.handle,
       password: this.state.password,
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    // this.props.signup(user, this.props.history); 
+    this.props.signup(user); 
   }
 
   renderErrors() {
@@ -66,6 +65,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    // console.log('signup form', this.props);
     return (
 
       <div className='signin-page'>
@@ -125,4 +125,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default withRouter(SignupForm);
+export default SignupForm;
