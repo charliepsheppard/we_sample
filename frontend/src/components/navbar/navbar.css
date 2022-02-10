@@ -19,6 +19,9 @@
 .header-row{
     display: flex;
     justify-content: space-between;
+     /* position: relative; */
+    margin-right: 60px;
+    /* position: fixed; */
 }
 
 .nav-link {

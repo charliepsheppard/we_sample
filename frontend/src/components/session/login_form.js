@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
   }
 
    toggleClient() {
-    if(this.state.stylist) {
+    if(this.state.business) {
       this.setState({'business': false})
     }
     else {
