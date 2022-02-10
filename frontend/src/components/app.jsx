@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import NavBar from './navbar/navbar'
 
-import Login from './session/login_form';
-import Signup from './session/signup_form';
+import LoginFormContainer from './session/login_form_container';
+import SignupFormContainer from './session/signup_form_container';
 import RestaurantsIndexContainer from './restaurants_index/restaurants_index_container';
 
 const App = () => {
@@ -19,12 +19,12 @@ const App = () => {
         <Switch>
 
 
-          <AuthRoute exact path="/Signup" component={Signup}
+          <AuthRoute exact path="/Signup" component={SignupFormContainer}
             // render={(props) => (
             //   <Signup {...props} />
             // )}
           />
-          <AuthRoute exact  path="/login" component={Login}
+          <AuthRoute exact  path="/login" component={LoginFormContainer}
             // render={(props) => (
             //   <Login {...props}/>
             // )}
