@@ -8,6 +8,7 @@ import NavBar from './navbar/navbar'
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import RestaurantsIndexContainer from './restaurants_index/restaurants_index_container';
+import SamplesIndexContainer from './sample_index/sample_index_container'
 
 const App = () => {
  
@@ -30,6 +31,7 @@ const App = () => {
             // )}
           />
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
+          <Route path="/samples" component={SamplesIndexContainer} />
         </Switch>
 
     </div>

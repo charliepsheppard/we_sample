@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import SignupForm from './signup_form';
 
-console.log('this is the sign up container');
+// console.log('this is the sign up container');
 
 const mapStateToProps = (state) => {
   return {
