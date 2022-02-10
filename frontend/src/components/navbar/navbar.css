@@ -27,3 +27,21 @@
 .nav-link {
     margin-right: 25px;
 }
+
+.logout-btn {
+  text-decoration: none;
+  height: 40px;
+  width: 100px;
+  font-family: sans-serif;
+  font-weight: 700;
+  background-color: #CE4633;
+  border: none;
+  padding: 8px;
+  color: white;
+  font-size: 16px;
+  border-radius: 50px;
+}
+
+.logout-btn:hover {
+  background-color: rgb(212, 89, 72);
+}
