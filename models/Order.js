@@ -13,7 +13,40 @@ const OrderSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: "users",
+    },
+    userName: {
+      type: String,
+      required: true
+    },
+    restaurantId: {
+        type: Schema.Types.ObjectId,
+        ref: "restaurants",
+    },
+    restaurantName: {
+      type: String,
+      required: true
+    },
+    timeFrame: {
+        type: String,
+        required: true
+    },
+    //need to make these plural or an array?
+    sampleId: {
+        type: Schema.Types.ObjectId,
+        ref: "samples",
+    },
+    imageUrl: {
+        type: String,
+    },
+    message: {
+        type: String,
     }
+}, {
+    timestamps: true
 });
 
 const Order = mongoose.model('order', OrderSchema);
