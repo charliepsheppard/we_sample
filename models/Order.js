@@ -28,11 +28,11 @@ const OrderSchema = new mongoose.Schema({
     },
     restaurantName: {
       type: String,
-      required: true
+      required: false
     },
     timeFrame: {
         type: String,
-        required: true
+        required: false
     },
     //need to make these plural or an array?
     sampleId: {
