@@ -14,13 +14,13 @@ export const fetchOrder = (orderId) => {
 }
 
 export const createOrder= (order) => {
-  return axios.post(`/api/Orders/${order.restaurantId}`, order)
+  return axios.post(`/api/orders/`, order)
 }
 
 export const updateOrder = (order) => {
-  return axios.patch(`/api/Orders/${order.id}`, order)
+  return axios.patch(`/api/orders/${order.id}`, order)
 }
 
 export const deleteOrder = (orderId) => {
-  return axios.delete(`/api/Orders/${orderId}`)
+  return axios.delete(`/api/orders/${orderId}`)
 }
