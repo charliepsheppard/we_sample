@@ -20,7 +20,7 @@ const OrderSchema = new mongoose.Schema({
     },
     userName: {
       type: String,
-      required: true
+      required: false
     },
     restaurantId: {
         type: Schema.Types.ObjectId,
