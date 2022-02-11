@@ -11,9 +11,10 @@ class SampleIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
+    console.log('this might have fired')
     const order = { 
-      user: this.props.user,
-      sample: this.props.sample,
+      // user: this.props.user,
+      sample: this.props.sample.sampleItem,
       userId: this.props.user.id,
       restaurantId: this.props.sample.restaurantId
     }
@@ -21,6 +22,7 @@ class SampleIndexItem extends React.Component {
   }
 
   render() {
+    console.log('from sample index item', this.props.sample);
     return (
         <div className='sample-item'>
 
@@ -37,7 +39,8 @@ class SampleIndexItem extends React.Component {
                   <h5 className="card-title">{this.props.sample.sampleItem}</h5>
                   <p className="card-text">{this.props.sample.description}</p>
                   <p className='card-text'><b> Price :${this.props.sample.price}</b></p>
-                  <button onClick={this.handleClick}><Link to={`/users/${this.props.user.id}`} className="btn btn-primary">Add to My Samples</Link></button>
+                  <button onClick={this.handleClick}>Add to My Samples</button>
+                  <Link to={`/users/${this.props.user.id}`} className="btn btn-primary">View my samples</Link>
                 </div>
             </div> 
             

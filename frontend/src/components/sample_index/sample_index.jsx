@@ -1,5 +1,5 @@
 import React from 'react'
-import SampleIndexItem from './sample_index_item'
+import SampleIndexItemContainer from './sample_index_item_container';
 import { createOrder } from '../../actions/order_actions';
 
 class SampleIndex extends React.Component {
@@ -39,7 +39,7 @@ class SampleIndex extends React.Component {
             <div className='sample-items-container'>
             <ul className="sample-items">
                 {
-                    this.props.samples.map(sample => <SampleIndexItem key={sample._id} sample={sample} user={this.props.user} createOrder={createOrder} />)
+                    this.props.samples.map(sample => <SampleIndexItemContainer key={sample._id} sample={sample} user={this.props.user} createOrder={createOrder} />)
                 }
             </ul>
             </div>

@@ -70,6 +70,7 @@ export const fetchOrder = orderId => dispatch => {
     //creating an order, for users interface
 
 export const createOrder = order => dispatch => {
+  console.log('Hi, i worked from the order actions')
   return OrderApiUtil.createOrder(order)
     .then(
       order => dispatch(receiveOrder(order)),

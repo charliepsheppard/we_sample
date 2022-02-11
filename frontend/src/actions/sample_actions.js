@@ -44,7 +44,7 @@ export const fetchSample = (sampleId) => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const fetchSamplesFromRestaurant = (restaurantId) => (
+export const fetchSamplesFromRestaurant = (restaurantId) => dispatch => (
   SampleApiUtl.fetchSamplesFromRestaurant(restaurantId)
     .then(
       samples => dispatch(receiveSamples(samples)),
