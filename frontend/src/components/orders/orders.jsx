@@ -1,15 +1,14 @@
 import React from 'react';
-import OrderItemContainer from './order_item_container';
+import OrderItemContainer from './order_container';
 
-class OrdersPlaced extends React.Component{
+class Orders extends React.Component{
   constructor(props){
     super(props)
     this.state = {
       orders: this.props.orders,
     }
-    this.pastArr = []
-    this.upcomingArr = []
-    this.timeDeterminer = this.timeDeterminer.bind(this)
+    this.currentOrders = []
+    // this.timeDeterminer = this.timeDeterminer.bind(this)
   }
   //check to see if there is a better use, possibly res/user boolean instead of checking for address
   componentDidMount() {
@@ -78,4 +77,4 @@ class OrdersPlaced extends React.Component{
   }
 }
 
-export default OrdersPlaced
+export default Orders
