@@ -89,4 +89,10 @@ router.post('/login', (req, res) => {
     })
 })
 
+router.patch('/:id', (req, res) => {
+  User.findByIdAndUpdate((req.params.id), req.body, { new: true })
+    .then(user => res.json(user))
+    .catch(err => res.status(404).json({ nouserfound: "No user found by that Id" }))
+});
+
 module.exports = router;
