@@ -9,7 +9,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import RestaurantsIndexContainer from './restaurants_index/restaurants_index_container';
 import SamplesIndexContainer from './sample_index/sample_index_container'
-
+import UserProfile from './user_profile/user_profile';
 const App = () => {
  
 
@@ -30,6 +30,7 @@ const App = () => {
             //   <Login {...props}/>
             // )}
           />
+          <Route path="/users/:userId" component={UserProfile} />
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/samples" component={SamplesIndexContainer} />
         </Switch>

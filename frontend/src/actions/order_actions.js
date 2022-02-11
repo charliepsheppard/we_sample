@@ -46,7 +46,7 @@ export const fetchOrdersFromRestaurant = restaurantId => dispatch => {
   return OrderApiUtil.fetchOrdersFromRestaurant(restaurantId)
     .then(
       orders => dispatch(receiveOrders(orders)),
-      err => dispatch(receiveAppointmentErrors(err.response.data))
+      err => dispatch(receiveOrderErrors(err.response.data))
     )
 }
     //all orders for a use
