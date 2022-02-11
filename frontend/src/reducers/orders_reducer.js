@@ -3,7 +3,7 @@ import {
   RECEIVE_ORDER,
   REMOVE_ORDER,
   CLEAR_ORDERS
-} from "../../actions/order_actions"
+} from "../actions/order_actions"
 
 const ordersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
