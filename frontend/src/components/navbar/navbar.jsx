@@ -22,7 +22,7 @@ class NavBar extends React.Component {
       return (
           <div className="header-row">
               <Link to={'/profile'} className="nav-link">Profile</Link>
-              <Link to={'/samples'} className="nav-link">My Samples</Link>
+              <Link to={'/samples'} className="nav-link">View Samples</Link>
               <button onClick={this.logoutUser} className="logout-btn">Logout</button>
           </div>
       );
