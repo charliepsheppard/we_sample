@@ -4,21 +4,22 @@ class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
 
-
+        
         this.state = {
-            reviewerId: this.props.user.id,
-            restaurantId: this.props.match.params.restaurantId,
-            // sampleId: this.props.samples.id,
+            reviewerId: this.props.userId,
+            // restaurantId: this.props.match.params.restaurantId,
+            orderId: this.props.order._id,
             title: '',
             body: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
     componentDidMount(){
     }
 
-    handleChange(e) {
+    handleChange(field) {
         return e => {this.setState({[field] : e.currentTarget.value})}
     }
 
@@ -28,11 +29,12 @@ class ReviewForm extends React.Component {
         this.props.createReview(review).then(() => {
             this.setState({
                 reviewerId: this.props.user,
-                restaurantId: this.props.match.params.restaurantId,
+                // restaurantId: this.props.match.params.restaurantId,
+                orderId: this.props.order._id,
                 title: '',
                 body: ''
             })
-        }).then(() => this.props.history.push(`/restaurants/${this.state.restaurantId}`))
+        }).then(() => this.props.history.push(`/users/${this.props.user}`))
     }
 
 

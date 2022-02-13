@@ -16,7 +16,7 @@ class Orders extends React.Component{
     //   this.props.fetchOrdersFromRestaurant(this.props.user.id)
     //     .then(state => this.setState({orders: this.props.orders}))
     // } else {
-      console.log('props in user orders',this.props)
+      // console.log('props in user orders',this.props)
       this.props.fetchOrdersFromUser(this.props.user.id)
         .then(state => this.setState({currentOrders: this.props.orders}))
     // }
@@ -48,7 +48,7 @@ class Orders extends React.Component{
   render(){
     if (this.props.orders === null) return null
     // this.timeDeterminer()
-    console.log('props in user orders render',this.props)
+    // console.log('props in user orders render',this.props)
 
     
     return (
