@@ -21,7 +21,7 @@ class NavBar extends React.Component {
       console.log(this.props);
       return (
           <div className="header-row">
-              <Link to={'/profile'} className="nav-link">Profile</Link>
+              <Link to={'/users/:userId'} className="nav-link">Profile</Link>
               <Link to={'/samples'} className="nav-link">View Samples</Link>
               <button onClick={this.logoutUser} className="logout-btn">Logout</button>
           </div>

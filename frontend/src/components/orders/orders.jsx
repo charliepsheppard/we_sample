@@ -49,30 +49,23 @@ class Orders extends React.Component{
     if (this.props.orders === null) return null
     // this.timeDeterminer()
     console.log('props in user orders render',this.props)
+
+    
     return (
       <div className='orders-list-container'> 
         <div className='order-list'>
-          <h3>Current Orders</h3>
+          <h3>Current Orders </h3>
+          <p>for {this.props.user.firstName}</p>
           {this.state.currentOrders.map((order, idx) => 
           <OrderItemContainer key={idx}
           deleteOrder={this.props.deleteOrder}
           order={order}
           userId={this.props.user.id}
+          fetchRestaurant={this.props.fetchRestaurant}
           // passed = {true}
           />
           )}
         </div>
-        {/* <div className='order-list'>
-          <h3>upcoming orders</h3>
-          {this.upcomingArr.map((order, idx) => 
-          <OrderItemContainer key={idx}
-          deleteOrder={this.props.deleteOrder}
-          order={order}
-          userId={this.props.user.id}
-          passed = {false}
-          />
-          )}
-        </div> */}
       </div>
     )
   }
