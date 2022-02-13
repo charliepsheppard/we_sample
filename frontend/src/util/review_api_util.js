@@ -9,7 +9,7 @@ export const fetchReviewsFromSample = (sampleId) => {
 }
 
 export const fetchReviewsFromUser = (userId) => {
-  return axios.get(`/api/reviews/user/${userId}`)
+  return axios.get(`/api/reviews/reviewer/${userId}`)
 }
 
 export const fetchReview = (reviewId) => {

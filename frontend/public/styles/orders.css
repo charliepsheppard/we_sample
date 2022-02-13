@@ -13,8 +13,8 @@
     border-radius: 5px;
 }
 
-#display-review {
-    /* display: none; */
+#displayReview {
+    display: none;
     padding: 20px;
 }
 

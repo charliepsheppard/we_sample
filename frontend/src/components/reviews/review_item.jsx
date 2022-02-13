@@ -10,3 +10,5 @@ const ReviewItem = (props) => {
         </div>
     )
 }
+
+export default ReviewItem;
