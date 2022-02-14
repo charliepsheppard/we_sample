@@ -18,10 +18,15 @@ class ReviewIndex extends React.Component {
 
     render() {
         console.log('state in review index', this.state)
+        
+
+        if(this.props.reviews === null) return null
+
         return(
 
         <div className='reviews-container'>
             <div className='reviews'>
+                <h2>Your Reviews</h2>
                 {this.state.usersReviews.map((review, i) => (
                     <ReviewItem key={i} review={review}/>
                 ))}

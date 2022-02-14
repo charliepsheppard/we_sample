@@ -1,5 +1,4 @@
 import { fetchSample } from '../../actions/sample_actions'
-//check this actions file exists in parallel
 import { fetchUser } from '../../actions/user_actions';
 import { fetchRestaurant } from '../../actions/restaurant_actions';
 import { fetchOrdersFromRestaurant, fetchOrdersFromUser, deleteOrder } from '../../actions/order_actions'
@@ -10,7 +9,7 @@ const mapStateToProps = (state) => {
   // console.log('state in orders container', state.session)
   return {user: state.session.user,
   orders: Object.values(state.entities.orders),
-}
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({

@@ -6,7 +6,7 @@ class ReviewForm extends React.Component {
 
         
         this.state = {
-            reviewerId: this.props.userId,
+            reviewerId: this.props.user.id,
             // restaurantId: this.props.match.params.restaurantId,
             orderId: this.props.order._id,
             title: '',
@@ -26,15 +26,17 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         const review = Object.assign({}, this.state)
+        console.log('props in review form',this.props)
         this.props.createReview(review).then(() => {
             this.setState({
-                reviewerId: this.props.user,
+                reviewerId: this.props.user.id,
                 // restaurantId: this.props.match.params.restaurantId,
                 orderId: this.props.order._id,
                 title: '',
                 body: ''
             })
-        }).then(() => this.props.history.push(`/users/${this.props.user}`))
+        })
+        // .then(() => this.props.history.push(`/users/${this.props.user.id}`))
     }
 
 
