@@ -11,7 +11,7 @@ class SampleIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    console.log('this might have fired')
+    // console.log('this might have fired')
     const order = { 
       // user: this.props.user,
       sample: this.props.sample.sampleItem,
@@ -22,7 +22,7 @@ class SampleIndexItem extends React.Component {
   }
 
   render() {
-    console.log('from sample index item', this.props.sample);
+    // console.log('from sample index item', this.props.sample);
     return (
         <div className='sample-item'>
 

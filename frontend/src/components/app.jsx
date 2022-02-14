@@ -12,7 +12,6 @@ import SamplesIndexContainer from './sample_index/sample_index_container'
 import UserProfile from './user_profile/user_profile';
 const App = () => {
  
-
   return (
     <div >
       <NavBar/>
@@ -30,7 +29,7 @@ const App = () => {
             //   <Login {...props}/>
             // )}
           />
-          <Route path="/users/:userId" component={UserProfile} />
+          <Route path={`/users/:userId`} component={UserProfile} />
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/samples" component={SamplesIndexContainer} />
         </Switch>

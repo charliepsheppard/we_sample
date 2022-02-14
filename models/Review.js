@@ -7,9 +7,19 @@ const ReviewSchema = new Schema({
         ref: "users",
         // required: false 
     },
-    restaurantId: {
+    // restaurantId: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "restaurants",
+    //     // required: false 
+    // },
+    sampleId: {
         type: Schema.Types.ObjectId,
-        ref: "restaurants",
+        ref: "samples",
+        // required: false 
+    },
+    orderId: {
+        type: Schema.Types.ObjectId,
+        ref: "orders",
         // required: false 
     },
     title: {

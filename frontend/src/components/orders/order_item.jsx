@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ReviewFormContainer  from '../reviews/review_form_container'
 
 class OrderItem extends React.Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class OrderItem extends React.Component {
       return <Link className="order-restaurant-name" to={`/restaurant/${this.state.order.restaurantId}`}>{this.state.order.restaurantName}</Link>
     // }
   }
+
+  
+
+  fetchRestaurant = this.props.fetchRestaurant;
 
   // renderDate() {
   //   const { date } = this.state.order;
@@ -50,9 +55,17 @@ class OrderItem extends React.Component {
   //   return month + " " + day + ", " + weekDay + ", " + year
   // }
 
+  //  toggleReview() {
+  //   let reviewDisplay = document.getElementById("displayReview");
+  //   reviewDisplay.style.display = reviewDisplay.style.display === 'none' ? '' : 'none';
+  // };
+
   render() {
     if (this.state.order === null ) return null
-    console.log(this.state.order)
+    // console.log('order item props',this.props);
+
+
+
     return(
       <div className='order-item-container'>
         <h3 className='order-with'>Order with: {this.renderLink()}</h3>
@@ -65,7 +78,12 @@ class OrderItem extends React.Component {
         
           {/* {this.state.order.imageUrl ? <div className = "order-item-ref-pic"><p>reference pic</p><div className = "featured-restaurant-profile-pic" restaurant = {{backgroundImage : `url(${this.state.order.imageUrl})`}} /></div> : null} */}
           {/* {this.state.order.message ? <p>message: <br/>{this.state.order.message}</p> : null} */}
-          {this.state.passed ? <p>We hoped you enjoyed your order with {this.state.order.restaurantName}!<br/>Let us know how it was by leaving a review on their profile!</p> : <button className='cancel-order' onClick={ () => this.props.deleteOrder(this.state.order._id).then(this.setState({order: null}))}>cancel order</button>}
+          <p>We hoped you enjoyed your order with {this.state.order.restaurantName}!<br/>Let us know how it was by leaving a review!</p>
+          <button className='cancel-order' onClick={ () => this.props.deleteOrder(this.state.order._id).then(this.setState({order: null}))}>cancel order</button>  
+          {/* <button onClick={this.toggleReview()}>Leave Review</button> */}
+        <div className='review-form-container' id='displayReview'>
+          <ReviewFormContainer order={this.props.order}/>
+        </div>
       </div>
     )
   }

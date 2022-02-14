@@ -17,7 +17,7 @@ class SampleIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchSamples();
-    console.log("state from sample index", this.props)
+    // console.log("state from sample index", this.props)
   }
 
 
