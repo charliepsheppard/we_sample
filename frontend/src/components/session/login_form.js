@@ -43,6 +43,16 @@ class LoginForm extends React.Component {
     }
   }
 
+  signInDemo() {
+        const demoObj = {
+            email: 'demo@starting.com',
+            password: 'demo-user',
+        }
+        const user = Object.assign({}, this.state, demoObj)
+        this.props.login(user)
+        // this.state.demo = true;
+    }
+
   // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
@@ -111,6 +121,9 @@ class LoginForm extends React.Component {
               <br/>
               <div className='submit-btn'>
               <input type="submit" value="login" id='btn' />
+               
+                <button id='btn' type='submit' onClick={() => this.signInDemo()}>Demo User</button>
+            
               </div>
               {this.renderErrors()}
             </div>

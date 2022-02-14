@@ -10,7 +10,7 @@ class UserProfile extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='outer-profile'>
         <div>
         <OrderContainer />
         </div>
