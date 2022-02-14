@@ -28,7 +28,7 @@ class ReviewIndex extends React.Component {
             <div className='reviews'>
                 <h2>Your Reviews</h2>
                 {this.state.usersReviews.map((review, i) => (
-                    <ReviewItem key={i} review={review}/>
+                    <ReviewItem key={i} review={review} deleteReview={this.props.deleteReview}/>
                 ))}
             </div>
         </div>
