@@ -16,6 +16,7 @@ const ordersReducer = (oldState = {}, action) => {
         updatedState[order._id] = order;
       });
       return updatedState
+      // return action.orders.data
 
     case RECEIVE_ORDER:
       // newState[action.order._id] = action.order.data

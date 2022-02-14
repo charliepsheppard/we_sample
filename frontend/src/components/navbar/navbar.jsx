@@ -9,13 +9,24 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      orders: 0
+    }
+
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchOrdersFromUser(this.props.user.id);
-  // }
+  componentDidMount() {
+    const userId = this.props.user.id;
+    this.props.fetchOrdersFromUser(userId)
+      .then(order => this.setState({ orders: order.orders.data }))
+  }
+
+  componentDidUpdate(prevState) {
+    
+  }
 
   logoutUser(e) {
       e.preventDefault();
@@ -24,14 +35,16 @@ class NavBar extends React.Component {
 
   getLinks() {
     if (this.props.loggedIn) {
-      console.log('props from navbar: ', this.props);
-      // let orders = this.props.fetchOrdersFromUser(this.props.user.id)
+      console.log('from navbar: ', this.state);
+      // const orders = Object.values(this.props.orders).length
+      // const ordersTest = this.props.fetchOrdersFromUser(userId)
+      // console.log("from nav bar", ordersTest)
       const utensilIcon = <FontAwesomeIcon icon={faUtensils} />
       return (
           <div className="header-row">
               <Link to={'/profile'} className="nav-link">Profile</Link>
               {/* <Link to={'/samples'} className="nav-link">View Samples</Link> */}
-              <Link to={'/samples'} className="nav-link">{utensilIcon}</Link>
+              <Link to={'/samples'} className="nav-link">{utensilIcon} {Object.values(this.state.orders).length}</Link>
               <button onClick={this.logoutUser} className="logout-btn">Logout</button>
           </div>
       );
@@ -48,7 +61,7 @@ class NavBar extends React.Component {
 
   render() {
     const user = null
-
+    console.log('state from navbar: ', this.state)
     return (
          <div >
       

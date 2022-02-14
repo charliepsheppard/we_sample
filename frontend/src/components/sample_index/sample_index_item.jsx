@@ -19,6 +19,8 @@ class SampleIndexItem extends React.Component {
       restaurantId: this.props.sample.restaurantId
     }
     this.props.createOrder(order);
+    this.props.fetchOrdersFromUser(this.props.user.id)
+      .then(order => console.log('this is from sample index item: ', order));
   }
 
   render() {

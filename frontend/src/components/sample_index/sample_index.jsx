@@ -17,6 +17,9 @@ class SampleIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchSamples();
+
+    const userId = this.props.user.id
+    this.props.fetchOrdersFromUser(userId)
     console.log("state from sample index", this.props)
   }
 
