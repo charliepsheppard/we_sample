@@ -24,37 +24,6 @@ class OrderItem extends React.Component {
 
   fetchRestaurant = this.props.fetchRestaurant;
 
-  // renderDate() {
-  //   const { date } = this.state.order;
-  //   const date2 = new Date(date)
-  //   const day = date.slice(8,10)
-  //   const weekdayArray = [];
-  //   weekdayArray[0] = "Monday";
-  //   weekdayArray[1] = "Tuesday";
-  //   weekdayArray[2] = "Wednesday";
-  //   weekdayArray[3] = "Thursday";
-  //   weekdayArray[4] = "Friday";
-  //   weekdayArray[5] = "Saturday";
-  //   weekdayArray[6] = "Sunday";
-  //   const weekDay = weekdayArray[date2.getDay()]
-  //   const monthArray = [];
-  //   monthArray[0] = "Jan";
-  //   monthArray[1] = "Feb";
-  //   monthArray[2] = "Mar";
-  //   monthArray[3] = "Apr";
-  //   monthArray[4] = "May";
-  //   monthArray[5] = "June";
-  //   monthArray[6] = "July";
-  //   monthArray[7] = "Aug";
-  //   monthArray[8] = "Sept";
-  //   monthArray[9] = "Oct";
-  //   monthArray[10] = "Nov";
-  //   monthArray[11] = "Dec";
-  //   let month = monthArray[date2.getMonth()];
-  //   let year = date2.getFullYear()
-  //   return month + " " + day + ", " + weekDay + ", " + year
-  // }
-
   //  toggleReview() {
   //   let reviewDisplay = document.getElementById("displayReview");
   //   reviewDisplay.style.display = reviewDisplay.style.display === 'none' ? '' : 'none';
