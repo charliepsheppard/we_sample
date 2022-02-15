@@ -31,14 +31,6 @@ class SignupForm extends React.Component {
     });
   }
 
-   toggleClient() {
-    if(this.state.stylist) {
-      this.setState({'business': false})
-    }
-    else {
-      this.setState({'business': true})
-    }
-  }
 
   handleSubmit(e) {
     e.preventDefault();
