@@ -31,14 +31,6 @@ class SignupForm extends React.Component {
     });
   }
 
-   toggleClient() {
-    if(this.state.stylist) {
-      this.setState({'business': false})
-    }
-    else {
-      this.setState({'business': true})
-    }
-  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -81,18 +73,6 @@ class SignupForm extends React.Component {
             <br />
             Sign up
             </h3>
-            <div className = "client-business-slider">
-          
-              {this.state.business ? <div className = "toggle-not-selected">Client</div> : <div>Client</div>}
-              <label className="switch">
-              <input type="checkbox" 
-              checked = {this.state.business} 
-              onChange = {this.toggleClient}
-              />
-              <div className="slider round"></div>
-              </label>
-              {!this.state.business ? <div className = "toggle-not-selected">Business</div> : <div>Business</div>}
-            </div>
           <div className="signup-form">
             <br/>
               <input type="text"
