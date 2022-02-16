@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchReviewsFromUser } from '../../actions/review_actions';
 import ReviewItem from './review_item';
 
 class ReviewIndex extends React.Component {

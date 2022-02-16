@@ -7,7 +7,7 @@ class RestaurantsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRestaurants();
+    this.props.fetchUsersRestaurants(this.props.user.id);
   }
 
   render() {
@@ -15,12 +15,11 @@ class RestaurantsIndex extends React.Component {
       return null;
     } else {
       return (
-        <div>
-          <ul className="restaurant-items">
+        <div className="restaurants-container">
+            <h2>Your Restaurants</h2>
               {
                 this.props.restaurants.map(restaurant => <RestaurantIndexItem key={restaurant._id} restaurant={restaurant} />)
               }
-          </ul>
         </div>
       )
     }
