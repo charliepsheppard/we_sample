@@ -24,9 +24,7 @@ class NavBar extends React.Component {
 
   getLinks() {
     const orderCount = Object.values(this.props.orders).length
-    console.log('navbar order count', orderCount);
     if (this.props.loggedIn) {
-      // console.log(this.props);
       return (
           <div className="header-row">
               <Link to={'/users/:userId'} className="nav-link">Profile</Link>
