@@ -13,18 +13,24 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchOrdersFromUser(this.props.user.id);
+  }
+
   logoutUser(e) {
       e.preventDefault();
       this.props.logout();
   }
 
   getLinks() {
+    const orderCount = Object.values(this.props.orders).length
+    console.log('navbar order count', orderCount);
     if (this.props.loggedIn) {
       // console.log(this.props);
       return (
           <div className="header-row">
               <Link to={'/users/:userId'} className="nav-link">Profile</Link>
-              <Link to={'/samples'} className="nav-link"><FontAwesomeIcon icon={faUtensils} /></Link>
+              <Link to={'/samples'} className="nav-link"><FontAwesomeIcon icon={faUtensils} /> {orderCount}</Link>
               <button onClick={this.logoutUser} className="logout-btn">Logout</button>
           </div>
       );
