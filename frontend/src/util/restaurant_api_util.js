@@ -8,6 +8,10 @@ export const fetchRestaurant = restaurantId => {
   return axios.get(`/api/restaurants/${restaurantId}`)
 }
 
+export const createRestaurant =restaurant => {
+  return axios.post(`/api/restaurants`, restaurant)
+}
+
 export const updateRestaurant = restaurant => {
   return axios.patch(`api/restaurants/${restaurant.id}`, restaurant)
 }
