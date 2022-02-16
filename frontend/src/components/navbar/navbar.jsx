@@ -3,6 +3,8 @@ import {Switch, Route, Link } from "react-router-dom"
 import Logo from '../logo.png'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class NavBar extends React.Component {
       return (
           <div className="header-row">
               <Link to={'/users/:userId'} className="nav-link">Profile</Link>
-              <Link to={'/samples'} className="nav-link">View Samples</Link>
+              <Link to={'/samples'} className="nav-link"><FontAwesomeIcon icon={faUtensils} /></Link>
               <button onClick={this.logoutUser} className="logout-btn">Logout</button>
           </div>
       );
