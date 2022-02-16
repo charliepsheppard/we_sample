@@ -20,3 +20,5 @@ class RestaurantForm extends React.Component {
     }
 
 }
+
+export default RestaurantForm;
