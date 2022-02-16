@@ -9,7 +9,7 @@ export const fetchRestaurant = restaurantId => {
 }
 
 export const createRestaurant =restaurant => {
-  return axios.post(`/api/restaurants`, restaurant)
+  return axios.post(`/api/restaurants/${restaurant.restaurantOwnerId}`, restaurant)
 }
 
 export const updateRestaurant = restaurant => {

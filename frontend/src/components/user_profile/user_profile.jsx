@@ -1,6 +1,7 @@
 import React from 'react';
 import OrderContainer from '../orders/order_container';
 import ReviewIndexContainer from '../reviews/review_index_container'
+import {Link} from "react-router-dom";
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -13,14 +14,13 @@ class UserProfile extends React.Component {
 
   
   render() {
-    console.log('props in user profile', this.props)
 
- 
+
     return (
       <div className='outer-profile'>
         <div className='users-buttons-container'>
-          <button>Create Restaurant</button>
-          <button>View Restaurants</button>
+          <button>View Restaurants </button>
+          <Link to={'/new_restaurant'}>Create your Restaurant's profile</Link>
           <div>
             <p>Your Profile</p>
           </div>
