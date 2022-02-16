@@ -5,6 +5,29 @@
     width: 25%;
 }
 
-/* .outer-profile {
+.users-reviews-container {
+    border: 3px solid #CE4633;;
+    margin: 20px;
+    padding: 15px;
+    width: 25%;
+    margin-bottom: 50px;
+}
+
+.users-orders-container {
+    border: 3px solid #CE4633;
+    margin: 20px;
+    padding: 15px;
+    width: 30%;
+    margin-bottom: 50px;
+}
+
+.users-buttons-container {
+    width: 30%;
+    border: 3px solid #CE4633;
+    margin: 20px;
+    padding: 15px;
+}
+
+.outer-profile {
     display: flex;
-} */
+}

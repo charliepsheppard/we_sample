@@ -34,14 +34,6 @@ class LoginForm extends React.Component {
     });
   }
 
-   toggleClient() {
-    if(this.state.business) {
-      this.setState({'business': false})
-    }
-    else {
-      this.setState({'business': true})
-    }
-  }
 
   signInDemo() {
         const demoObj = {
@@ -94,18 +86,6 @@ class LoginForm extends React.Component {
             <br />
             Login
             </h3>
-             <div className = "client-business-slider">
-          
-              {this.state.business ? <div className = "toggle-not-selected">Client</div> : <div>Client</div>}
-              <label className="switch">
-              <input type="checkbox" 
-              checked = {this.state.business} 
-              onChange = {this.toggleClient}
-              />
-              <div className="slider round"></div>
-              </label>
-              {!this.state.business ? <div className = "toggle-not-selected">Business</div> : <div>Business</div>}
-            </div>
             <div >
                 <input type="text"
                   value={this.state.email}
