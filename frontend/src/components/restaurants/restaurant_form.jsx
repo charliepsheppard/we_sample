@@ -47,7 +47,7 @@ class RestaurantForm extends React.Component {
                     </label>
 
                 </label>
-                    <button onClick={this.handleSubmit}>Submit your review</button>
+                    <button onClick={this.handleSubmit}>Create your restaurant</button>
                 </form>
             </div>
         )
