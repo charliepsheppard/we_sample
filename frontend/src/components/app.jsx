@@ -35,7 +35,9 @@ const App = () => {
           <Route exact path={`/users/:userId`} component={UserProfile} />
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/samples" component={SamplesIndexContainer} />
+
           <Route path="/new_restaurant" component={RestaurantFormContainer}/>
+
         </Switch>
 
     </div>
