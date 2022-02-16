@@ -17,7 +17,7 @@ class RestaurantForm extends React.Component {
         return e => {this.setState({[field] : e.currentTarget.value})}
     }
 
-     handleSubmit(e) {
+    handleSubmit(e) {
         e.preventDefault()
         const restaurant = Object.assign({}, this.state)
         this.props.createRestaurant(restaurant).then(() => {
@@ -39,14 +39,15 @@ class RestaurantForm extends React.Component {
 
                     <label className='textContainer'>
                     <label>Name
-                        <input type="text" placeholder='What is the name of your restaurant?' value={this.state.restaurantName} onChange={this.handleChange('name')}/>
+                        <input type="text" placeholder='The restaurant name' value={this.state.restaurantName} onChange={this.handleChange('restaurantName')}/>
                     </label>
-
+                        <br />
                     <label>Address
-                        <input type="text" placeholder='Where is your restaurant located?' value={this.state.address} onChange={this.handleChange('address')}/>
+                        <input type="text" placeholder='Where is it located?' value={this.state.address} onChange={this.handleChange('address')}/>
                     </label>
-
+                        <br />
                 </label>
+                        <br />
                     <button onClick={this.handleSubmit}>Create your restaurant</button>
                 </form>
             </div>

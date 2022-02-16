@@ -10,7 +10,6 @@ const reviewsReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_REVIEWS:
-      // console.log(action.reviews)
       let updatedState = {};
       action.reviews.data.forEach((review) => {
         updatedState[review._id] = review;
