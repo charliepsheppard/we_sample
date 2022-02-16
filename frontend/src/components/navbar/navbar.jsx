@@ -3,6 +3,8 @@ import {Switch, Route, Link } from "react-router-dom"
 import Logo from '../logo.png'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -11,18 +13,22 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchOrdersFromUser(this.props.user.id);
+  }
+
   logoutUser(e) {
       e.preventDefault();
       this.props.logout();
   }
 
   getLinks() {
+    const orderCount = Object.values(this.props.orders).length
     if (this.props.loggedIn) {
-      // console.log(this.props);
       return (
           <div className="header-row">
               <Link to={'/users/:userId'} className="nav-link">Profile</Link>
-              <Link to={'/samples'} className="nav-link">View Samples</Link>
+              <Link to={'/samples'} className="nav-link"><FontAwesomeIcon icon={faUtensils} /> {orderCount}</Link>
               <button onClick={this.logoutUser} className="logout-btn">Logout</button>
           </div>
       );

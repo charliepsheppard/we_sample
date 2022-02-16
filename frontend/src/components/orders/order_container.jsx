@@ -7,8 +7,9 @@ import Orders from './orders';
 
 const mapStateToProps = (state) => {
   // console.log('state in orders container', state.session)
-  return {user: state.session.user,
-  orders: Object.values(state.entities.orders),
+  return {
+    user: state.session.user,
+    orders: Object.values(state.entities.orders),
   }
 }
 
