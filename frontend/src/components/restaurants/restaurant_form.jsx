@@ -32,6 +32,7 @@ class RestaurantForm extends React.Component {
 
 
     render() {
+        console.log('props in res form', this.props)
         return(
             <div>
                 <form className='restaurant-form'>

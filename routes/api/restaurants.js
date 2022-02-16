@@ -43,24 +43,28 @@ router.get(
 
 router.post("/:restaurantOwnerId", (req, res) => {
 
-  const { errors, isValid } = validateRegisterInput(req.body);
+  const { errors, isValid } = validateRestaurant(req.body);
 
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
-  Restaurant.findOne({ email: req.body.address }).then(restaurant => {
-    if (restaurant) {
-      errors.address = "Address has already been registered";
-      return res.status(400).json(errors);
-    } else {
-      Restaurant.findOne({ restaurantName: req.body.restaurantName }).then(restaurant => {
-        if (restaurant) {
-          errors.handle = "Restaurant name has already been taken";
-          return res.status(400).json(errors);
-        }
-      })
-      const newRestaurant = new Restaurant({
+  Restaurant.findOne({ address: req.body.address }).then(restaurant => {
+      if (restaurant) {
+        errors.address = "Address has already been registered";
+        return res.status(400).json(errors);
+      } else {
+          Restaurant.findOne({ restaurantName: req.body.restaurantName }).then(restaurant => {
+            if (restaurant) {
+              errors.handle = "Restaurant name has already been taken";
+              return res.status(400).json(errors);
+            }
+          })
+      
+      }
+  });
+
+  const newRestaurant = new Restaurant({
         restaurantOwnerId: req.body.restaurantOwnerId,
         restaurantName: req.body.restaurantName,
         address: req.body.address,
@@ -69,28 +73,6 @@ router.post("/:restaurantOwnerId", (req, res) => {
 
       newRestaurant.save()
         .then(restaurant => res.json(restaurant))
-
-      // bcrypt.genSalt(10, (err, salt) => {
-      //   bcrypt.hash(newRestaurant.password, salt, (err, hash) => {
-      //     if (err) throw err;
-      //     newRestaurant.password = hash;
-      //     newRestaurant
-      //       .save()
-      //       .then(restaurant => {
-      //         const payload = { id: restaurant.id, restaurantName: restaurant.restaurantName };
-
-      //         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
-      //           res.json({
-      //             success: true,
-      //             token: "Bearer " + token
-      //           });
-      //         });
-      //       })
-      //       .catch(err => console.log(err));
-      //   });
-      // });
-    }
-  });
 });
 
 
