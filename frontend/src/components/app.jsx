@@ -29,9 +29,10 @@ const App = () => {
             //   <Login {...props}/>
             // )}
           />
-          <Route path={`/users/:userId`} component={UserProfile} />
+          <Route exact path={`/users/:userId`} component={UserProfile} />
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/samples" component={SamplesIndexContainer} />
+          <Route path="/reviews"/>
         </Switch>
 
     </div>

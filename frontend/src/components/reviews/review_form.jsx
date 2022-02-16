@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
     constructor(props) {
@@ -16,8 +17,6 @@ class ReviewForm extends React.Component {
     }
 
 
-    componentDidMount(){
-    }
 
     handleChange(field) {
         return e => {this.setState({[field] : e.currentTarget.value})}
@@ -26,7 +25,6 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         const review = Object.assign({}, this.state)
-        console.log('props in review form',this.props)
         this.props.createReview(review).then(() => {
             this.setState({
                 reviewerId: this.props.user.id,
@@ -36,7 +34,7 @@ class ReviewForm extends React.Component {
                 body: ''
             })
         })
-        // .then(() => this.props.history.push(`/users/${this.props.user.id}`))
+        
     }
 
 
@@ -62,4 +60,4 @@ class ReviewForm extends React.Component {
     }
 }
 
-export default ReviewForm
+export default withRouter(ReviewForm)

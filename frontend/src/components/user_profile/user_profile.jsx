@@ -6,17 +6,34 @@ class UserProfile extends React.Component {
   constructor(props) {
     super(props)
   }
+
+  // componentDidUpdate() {
+  //   this.props.history.push(`/users/${this.props.user.id}`)
+  // }
+
   
   render() {
+    console.log('props in user profile', this.props)
 
+ 
     return (
       <div className='outer-profile'>
-        <div>
+        <div className='users-buttons-container'>
+          <button>Create Restaurant</button>
+          <button>View Restaurants</button>
+          <div>
+            <p>Your Profile</p>
+          </div>
+          <button>Your Restaurant</button>
+        </div>
+
+
+        <div className='users-orders-container'>
         <OrderContainer />
         </div>
 
-        <div>
-          <ReviewIndexContainer />
+        <div className='users-reviews-container'>
+          <ReviewIndexContainer propsObj={this.props}/>
         </div>
 
       </div>
