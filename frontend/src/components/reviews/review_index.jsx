@@ -6,14 +6,10 @@ class ReviewIndex extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            usersReviews: []
-        }
     }
 
     componentDidMount() {
         this.props.fetchReviewsFromUser(this.props.user.id)
-            .then(state => this.setState({usersReviews: this.props.reviews}))
     }
 
     render() {
@@ -27,7 +23,7 @@ class ReviewIndex extends React.Component {
         <div className='reviews-container'>
             <div className='reviews'>
                 <h2>Your Reviews</h2>
-                {this.state.usersReviews.map((review, i) => (
+                {this.props.reviews.map((review, i) => (
                     <ReviewItem key={i} review={review} deleteReview={this.props.deleteReview}/>
                 ))}
             </div>

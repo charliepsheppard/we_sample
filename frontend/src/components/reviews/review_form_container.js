@@ -3,11 +3,11 @@ import { createReview } from "../../actions/review_actions";
 import ReviewForm from './review_form';
 
 const mSTP = (state, ownProps) => {
-    // console.log('own props in review form container', ownProps)
+    console.log('state in review form container', state)
 
     return{user: state.session.user,
     resaurant: state.entities.resaurant,
-    propsObj: ownProps.propsObj,
+    order: ownProps.order,
     // samples: Object.values({}, state.entities.restaurant.samples)
     }
 };

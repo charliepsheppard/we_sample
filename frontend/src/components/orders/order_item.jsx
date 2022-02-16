@@ -51,7 +51,7 @@ class OrderItem extends React.Component {
           <button className='cancel-order' onClick={ () => this.props.deleteOrder(this.state.order._id).then(this.setState({order: null}))}>cancel order</button>  
 
         <div className='review-form-container' id='displayReview'>
-          <Link to={``}>Leave a review</Link>
+          <Link to={`/reviews`}>Leave a review</Link>
           <ReviewFormContainer order={this.props.order}/>
         </div>
       </div>

@@ -17,7 +17,7 @@ export const fetchReview = (reviewId) => {
 }
 
 export const createReview = (review) => {
-  return axios.post(`/api/reviews/${review.stylistId}`, review)
+  return axios.post(`/api/reviews/${review.restaurantId}`, review)
 }
 
 export const updateReview = (review) => {
