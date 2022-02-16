@@ -6,9 +6,9 @@ const RestaurantSchema = new Schema({
     type: String,
     required: true
   },
-  restaurantOwner: {
-    type: String,
-    required: true
+  restaurantOwnerId: {
+    type: Schema.Types.ObjectId,
+    ref: "users"
   },
   email: {
     type: String,
@@ -17,10 +17,6 @@ const RestaurantSchema = new Schema({
   password: {
     type: String,
     required: true
-  },
-  profileType: {
-    type: Boolean,
-    // required: true
   },
   phoneNumber: {
     type: String, 

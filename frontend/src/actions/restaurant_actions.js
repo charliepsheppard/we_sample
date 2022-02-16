@@ -71,6 +71,14 @@ export const updateRestaurant = restaurant => dispatch => {
     );
 }
 
+export const createRestaurant = restaurant => dispatch => {
+  return RestaurantApiUtil.createRestaurant(restaurant)
+    .then(
+      restaurant => dispatch(receiveRestaurant(restaurant)),
+      err => dispatch(receiveRestaurantErrors(err.response.data))
+    )
+}
+
 // export const deleteRestaurant = restaurantId => dispatch => {
 //   return RestaurantApiUtil.deleteRestaurant(restaurantId)
 //     .then(
