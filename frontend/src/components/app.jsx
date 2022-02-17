@@ -36,8 +36,13 @@ const App = () => {
           <Route exact path={`/users/:userId`} component={UserProfileContainer} />
           {/* <Route path="/restaurants" component={RestaurantsIndexContainer} /> */}
           <Route path="/samples" component={SamplesIndexContainer} />
+
           <Route path="/new_restaurant" component={RestaurantFormContainer}/>
+
           <Route path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
+
+
+
         </Switch>
 
     </div>
