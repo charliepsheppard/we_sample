@@ -55,6 +55,14 @@ export const fetchRestaurants = () => dispatch => {
     );
 }
 
+export const fetchUsersRestaurants = restaurantOwnerId => dispatch => {
+  return RestaurantApiUtil.fetchUsersRestaurants(restaurantOwnerId)
+    .then(
+      restaurants => dispatch(receiveRestaurants(restaurants)),
+      err => dispatch(receiveRestaurantErrors(err.response.data))
+    );
+}
+
 export const fetchRestaurant = restaurantId => dispatch => {
   return RestaurantApiUtil.fetchRestaurant(restaurantId)
     .then(

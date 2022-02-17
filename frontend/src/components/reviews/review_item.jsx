@@ -11,7 +11,7 @@ constructor(props) {
     
 
     render() {
-        console.log('props in review item', this.props.review)
+        // console.log('props in review item', this.props.review)
         return (
             <div className='review-item-container'>
                 <h2>

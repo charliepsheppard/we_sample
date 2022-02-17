@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchReviewsFromUser } from '../../actions/review_actions';
 import ReviewItem from './review_item';
 
 class ReviewIndex extends React.Component {
@@ -13,7 +12,7 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
-        console.log('state in review index', this.state)
+        // console.log('state in review index', this.state)
         
 
         if(this.props.reviews === null) return null

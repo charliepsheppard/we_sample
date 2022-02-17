@@ -3,7 +3,10 @@ import React from 'react';
 class RestaurantIndexItem extends React.Component {
   render() {
     return (
-      <li>{this.props.restaurant.restaurantName}</li>
+      <div>
+        <h2>{this.props.restaurant.restaurantName}</h2>
+          <p>{this.props.restaurant.address}</p>
+      </div>
     )
   };
 }

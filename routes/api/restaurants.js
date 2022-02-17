@@ -4,9 +4,8 @@ const bcrypt = require('bcryptjs');
 const Restaurant = require('../../models/Restaurant');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
-const passport = require('passport');
-const validateRegisterInput = require('../../validation/registerRestaurant');
 const validateLoginInput = require('../../validation/login');
+const validateRestaurant = require('../../validation/restaurant')
 
 router.get("/test", (req, res) => res.json({ msg: "This is the restaurants route" }));
 
@@ -31,95 +30,49 @@ router.get(
   }
 )
 
-router.post("/register", (req, res) => {
+router.get(
+  "/restaurant/:ownerId",
+  (req, res) => {
+    Restaurant.find({ownerId: req.params.ownerId})
+      .then(restaurants => res.json(restaurants))
+      .catch(err => res.status(404).json({ norestaurantsfound: "No restaurants found for that user"}));
+  }
+)
 
-  const { errors, isValid } = validateRegisterInput(req.body);
+router.post("/:restaurantOwnerId", (req, res) => {
+
+  const { errors, isValid } = validateRestaurant(req.body);
 
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
-  Restaurant.findOne({ email: req.body.email }).then(restaurant => {
-    if (restaurant) {
-      errors.email = "Email has already been registered";
-      return res.status(400).json(errors);
-    } else {
-      Restaurant.findOne({ restaurantName: req.body.restaurantName }).then(restaurant => {
-        if (restaurant) {
-          errors.handle = "Restaurant name has already been taken";
-          return res.status(400).json(errors);
-        }
-      })
-      const newRestaurant = new Restaurant({
-        restaurantOwner: req.body.restaurantOwner,
+  Restaurant.findOne({ address: req.body.address }).then(restaurant => {
+      if (restaurant) {
+        errors.address = "Address has already been registered";
+        return res.status(400).json(errors);
+      } else {
+          Restaurant.findOne({ restaurantName: req.body.restaurantName }).then(restaurant => {
+            if (restaurant) {
+              errors.restaurantName = "Restaurant name has already been taken";
+              return res.status(400).json(errors);
+            }
+          })
+      
+      }
+  });
+
+  const newRestaurant = new Restaurant({
+        restaurantOwnerId: req.body.restaurantOwnerId,
         restaurantName: req.body.restaurantName,
-        email: req.body.email,
-        password: req.body.password,
-        profileType: req.body.profileType,
-        phoneNumber: req.body.phoneNumber,
         address: req.body.address,
-        averageRating: req.body.averageRating,
         imageUrl: ""
       });
 
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newRestaurant.password, salt, (err, hash) => {
-          if (err) throw err;
-          newRestaurant.password = hash;
-          newRestaurant
-            .save()
-            .then(restaurant => {
-              const payload = { id: restaurant.id, restaurantName: restaurant.restaurantName };
-
-              jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
-                res.json({
-                  success: true,
-                  token: "Bearer " + token
-                });
-              });
-            })
-            .catch(err => console.log(err));
-        });
-      });
-    }
-  });
+      newRestaurant.save()
+        .then(restaurant => res.json(restaurant))
 });
 
-
-router.post("/login", (req, res) => {
-
-  const { errors, isValid } = validateLoginInput(req.body);
-
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
-
-  const email = req.body.email;
-  const password = req.body.password;
-
-  Restaurant.findOne({ email }).then(restaurant => {
-    if (!restaurant) {
-      errors.email = "This restaurant does not exist";
-      return res.status(400).json(errors);
-    }
-
-    bcrypt.compare(password, restaurant.password).then(isMatch => {
-      if (isMatch) {
-        const payload = { id: restaurant.id, email: restaurant.email, restaurantName: restaurant.restaurantName, restaurantOwner: restaurant.restaurantOwner, address: restaurant.address, phoneNumber: restaurant.phoneNumber, imageUrl: restaurant.imageUrl };
-
-        jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
-          res.json({
-            success: true,
-            token: "Bearer " + token
-          });
-        });
-      } else {
-        errors.password = "Incorrect password";
-        return res.status(400).json(errors);
-      }
-    });
-  });
-});
 
 router.patch(
   "/:id",

@@ -15,6 +15,8 @@ import ReviewFormContainer from './reviews/review_form_container'
 import Footer from './footer/footer';
 import Team from './team/team';
 import About from './about/about';
+import UserProfileContainer from './user_profile/user_profile_container';
+import RestaurantFormContainer from './restaurants/restaurant_form_container';
 
 const App = () => {
  
@@ -35,12 +37,16 @@ const App = () => {
             //   <Login {...props}/>
             // )}
           />
-          <Route exact path={`/users/:userId`} component={UserProfile} />
-          <Route path="/restaurants" component={RestaurantsIndexContainer} />
+          <Route exact path={`/users/:userId`} component={UserProfileContainer} />
+          {/* <Route path="/restaurants" component={RestaurantsIndexContainer} /> */}
           <Route path="/samples" component={SamplesIndexContainer} />
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
           <Route path="/" component={SplashPage} />
+
+          <Route path="/new_restaurant" component={RestaurantFormContainer}/>
+
+          <Route path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
         </Switch>
         <Footer fixed="bottom" />
 

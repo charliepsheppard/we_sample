@@ -12,15 +12,15 @@ const RestaurantSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: false
   },
   password: {
     type: String,
-    required: true
+    required: false
   },
   phoneNumber: {
     type: String, 
-    required: true
+    required: false
   },
   address: {
     type: String, 
