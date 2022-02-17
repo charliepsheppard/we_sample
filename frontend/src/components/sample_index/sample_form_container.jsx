@@ -5,6 +5,11 @@ import SampleForm from './sample_form';
 const mSTP = (state, ownProps) => {
     return {
         user: state.session.user,
-        restaurantId:
     }
-}
+};
+
+const mDTP = dispatch => ({
+    createSample: sample => dispatch(createSample(sample))
+});
+
+export default connect(mSTP, mDTP)(SampleForm);

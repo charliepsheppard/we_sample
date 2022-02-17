@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from "react-router-dom";
+
 
 class RestaurantForm extends React.Component {
     constructor(props) {
@@ -39,7 +39,7 @@ class RestaurantForm extends React.Component {
         return(
             <div>
                 <form className='restaurant-form'>
-                    <h3>Enter the info for you restaurant Below</h3>
+                    <h3>Enter the info for you restaurant below</h3>
 
                     <label className='textContainer'>
                     <label>Name
