@@ -18,8 +18,9 @@ import About from './about/about';
 import UserProfileContainer from './user_profile/user_profile_container';
 import RestaurantFormContainer from './restaurants/restaurant_form_container';
 
+
 const App = () => {
- 
+
   return (
     <div >
       <NavBar/>
