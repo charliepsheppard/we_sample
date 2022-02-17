@@ -23,14 +23,14 @@ router.get(
   }
 )
 
-router.get(
-  "/restuarant/:restaurantId",
-  (req, res) => {
-    Review.find({restaurantId: req.params.restaurantId})
-      .then(reviews => res.json(reviews))
-      .catch(err => res.status(404).json({ noreviewsfound: "No reviews found" }));
-  }
-)
+// router.get(
+//   "/restuarant/:restaurantId",
+//   (req, res) => {
+//     Review.find({restaurantId: req.params.restaurantId})
+//       .then(reviews => res.json(reviews))
+//       .catch(err => res.status(404).json({ noreviewsfound: "No reviews found" }));
+//   }
+// )
 
 router.get(
   "/reviewer/:reviewerId",

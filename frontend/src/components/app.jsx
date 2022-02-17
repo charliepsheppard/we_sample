@@ -38,15 +38,15 @@ const App = () => {
             // )}
           />
           <Route exact path={`/users/:userId`} component={UserProfileContainer} />
-          {/* <Route path="/restaurants" component={RestaurantsIndexContainer} /> */}
           <Route path="/samples" component={SamplesIndexContainer} />
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
-          <Route path="/" component={SplashPage} />
 
           <Route path="/new_restaurant" component={RestaurantFormContainer}/>
 
-          <Route path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
+          <Route exact path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
+          <Route path="/restaurants" component={RestaurantsIndexContainer} />
+          <Route path="/" component={SplashPage} />
         </Switch>
         <Footer fixed="bottom" />
 

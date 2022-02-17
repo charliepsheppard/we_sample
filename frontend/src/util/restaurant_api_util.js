@@ -1,4 +1,4 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 export const fetchRestaurants = () => {
   return axios.get("/api/restaurants/")
@@ -9,7 +9,8 @@ export const fetchRestaurant = restaurantId => {
 }
 
 export const fetchUsersRestaurants = restaurantOwnerId => {
-  return axios.get(`/api/restaurants/${restaurantOwnerId}`)
+  // debugger;
+  return axios.get(`/api/restaurants/user/${restaurantOwnerId}`)
 }
 
 export const createRestaurant =restaurant => {

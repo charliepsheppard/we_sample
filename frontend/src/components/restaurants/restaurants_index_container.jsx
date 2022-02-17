@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import RestaurantsIndex from './restaurants_index';
 
 const mapStateToProps = state => {
+  console.log(state.entities.restaurants);
   return {
     restaurants: Object.values(state.entities.restaurants),
     user: state.session.user,
@@ -11,6 +12,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
+  // debugger;
   return {
     fetchUsersRestaurants: (restaurantOwnerId) => dispatch(fetchUsersRestaurants(restaurantOwnerId))
   };

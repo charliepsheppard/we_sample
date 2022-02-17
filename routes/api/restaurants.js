@@ -31,9 +31,10 @@ router.get(
 )
 
 router.get(
-  "/restaurant/:ownerId",
+  "/user/:restaurantOwnerId",
   (req, res) => {
-    Restaurant.find({ownerId: req.params.ownerId})
+    // debugger;
+    Restaurant.find({restaurantOwnerId: req.params.restaurantOwnerId})
       .then(restaurants => res.json(restaurants))
       .catch(err => res.status(404).json({ norestaurantsfound: "No restaurants found for that user"}));
   }

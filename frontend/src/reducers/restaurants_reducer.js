@@ -12,9 +12,9 @@ const restaurantReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_RESTAURANTS:
       let updatedState = {};
-      console.log(action)
-      action.restaurants.data.forEach(restaurant=> {
-          updatedState[restaurant.data._id] = restaurant;
+      console.log('From the restaurant reducer', action)
+      action.restaurants.data.forEach(restaurant => {
+          updatedState[restaurant._id] = restaurant;
       });
       return updatedState
 
