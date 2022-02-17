@@ -1,0 +1,22 @@
+.footer-logo-img {
+  height: 60px;
+  margin-top: 0px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-link {
+  margin: 0 10px;
+}
+
+.github-icon {
+  height: 40px;
+}

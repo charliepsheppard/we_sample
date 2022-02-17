@@ -7,8 +7,8 @@ const SplashPage = () => {
       <div className="splash-page-banner-container">
         <img src={banner} alt="" className="splash-page-banner-img" />
       </div>
-      <div className="splash-page-heading">
-        <h1>Sample from the best around town.</h1>
+      <div className="splash-page-heading-container">
+        <h1 className="splash-page-heading">Sample from the best around town</h1>
         {/* searchbar goes here */}
       </div>
     </div>

@@ -12,6 +12,10 @@ import SamplesIndexContainer from './sample_index/sample_index_container'
 import UserProfile from './user_profile/user_profile';
 import SplashPage from './splash_page/splash_page';
 import ReviewFormContainer from './reviews/review_form_container'
+import Footer from './footer/footer';
+import Team from './team/team';
+import About from './about/about';
+
 const App = () => {
  
   return (
@@ -34,9 +38,11 @@ const App = () => {
           <Route exact path={`/users/:userId`} component={UserProfile} />
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/samples" component={SamplesIndexContainer} />
-          {/* <Route path="/new_restaurant" component={}/> */}
+          <Route path="/about" component={About} />
+          <Route path="/team" component={Team} />
           <Route path="/" component={SplashPage} />
         </Switch>
+        <Footer fixed="bottom" />
 
     </div>
   );
