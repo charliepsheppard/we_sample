@@ -8,7 +8,7 @@ export const RECEIVE_RESTAURANT_ERRORS = 'RECEIVE_RESTAURANT_ERRORS';
 export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
 export const receiveRestaurants = restaurants => {
-  console.log('restaurant actions', restaurants)
+  // console.log('restaurant actions', restaurants)
   return {
     type: RECEIVE_RESTAURANTS,
     restaurants
