@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from "react-router-dom";
 
 class RestaurantForm extends React.Component {
     constructor(props) {
@@ -20,19 +21,21 @@ class RestaurantForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         const restaurant = Object.assign({}, this.state)
-        this.props.createRestaurant(restaurant).then(() => {
-            this.setState({
-                restaurantOwnerId: this.props.user.id,
-                restaurantName: '',
-                address: ''
-            })
-        })
+        this.props.createRestaurant(restaurant)
+        // .then(() => {
+        //     this.setState({
+        //         restaurantOwnerId: this.props.user.id,
+        //         restaurantName: '',
+        //         address: ''
+        //     })
+        // })
+        this.props.history.push(`/${this.props.user.id}/restaurants`)
+        // <Redirect to={`/${this.props.user.id}/restaurants`}/>
         
     }
 
 
     render() {
-        console.log('props in res form', this.props)
         return(
             <div>
                 <form className='restaurant-form'>
