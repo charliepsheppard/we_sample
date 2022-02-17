@@ -17,12 +17,14 @@ import Team from './team/team';
 import About from './about/about';
 import UserProfileContainer from './user_profile/user_profile_container';
 import RestaurantFormContainer from './restaurants/restaurant_form_container';
+import Modal from '../components/modal/modal';
 
 
 const App = () => {
 
   return (
     <div >
+      <Modal />
       <NavBar/>
 
         <Switch>
