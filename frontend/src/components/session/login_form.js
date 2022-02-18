@@ -100,7 +100,7 @@ class LoginForm extends React.Component {
                 />
               <br/>
               <div className='submit-btn'>
-              <input type="submit" value="login" id='btn' />
+              <input type="submit" value="login"  />
                
                 <button id='btn' type='submit' onClick={() => this.signInDemo()}>Demo User</button>
             
