@@ -1,13 +1,14 @@
 import React from 'react';
+import SampleIndexItemContainer from '../sample_index/sample_index_item_container';
 
 
 class RestaurantIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      restaurantSamples: []
-    }
+    // this.state = {
+    //   restaurantSamples: []
+    // }
   }
 
   componentDidMount() {
@@ -23,7 +24,10 @@ class RestaurantIndexItem extends React.Component {
           <button onClick={() => this.props.openModal('createSample')}>Create Sample</button>
           <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button>
           <div className="sample-list">
-            {}
+            {/* {console.log('state in res index render', this.state)} */}
+            {/* {this.state.entities.samples.map((sample) => (
+              <p>{sample.sampleItem}</p>
+            ))} */}
           </div>
       </div>
     )

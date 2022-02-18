@@ -26,11 +26,13 @@ router.get(
 )
 
 router.get(
-  "/restaurant/samples/:restaurantId",
+  "/provider/:restaurantId",
   (req, res) => {
+    console.log('req in sample route', req)
+    console.log('res in sample route', res)
     Sample.find({restaurantId: req.params.restaurantId})
       .then(samples => res.json(samples))
-      .catch(err => res.status(404).json({ nosamplesfound: "No samples found by that Id"}))
+      .catch(err => res.status(404).json({ nosamplesfound: "No samples found by that restaurant Id"}))
   }
 )
 

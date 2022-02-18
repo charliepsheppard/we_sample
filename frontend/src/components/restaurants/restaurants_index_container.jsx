@@ -7,7 +7,7 @@ import { createSample } from '../../actions/sample_actions';
 import { fetchSamplesFromRestaurant } from '../../actions/sample_actions';
 
 const mapStateToProps = state => {
-  console.log(state.entities.restaurants);
+  console.log(state.entities);
   return {
     restaurants: Object.values(state.entities.restaurants),
     user: state.session.user,
