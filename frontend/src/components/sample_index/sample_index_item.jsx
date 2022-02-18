@@ -38,9 +38,9 @@ class SampleIndexItem extends React.Component {
                 <div className="card-body">
                   <h5 className="card-title">{this.props.sample.sampleItem}</h5>
                   <p className="card-text">{this.props.sample.description}</p>
-                  <p className='card-text'><b> Price :${this.props.sample.price}</b></p>
+                  <p className='card-price'><b> Price :${this.props.sample.price}</b></p>
                   <button onClick={this.handleClick}>Add to My Samples</button>
-                  <Link to={`/users/${this.props.user.id}`} className="btn btn-primary">View my samples</Link>
+                  <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my samples</Link>
                 </div>
             </div> 
             

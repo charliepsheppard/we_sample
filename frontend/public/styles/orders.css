@@ -5,11 +5,36 @@
 }
 
 .order-item-container {
-    margin-top: 30px;
+    /* margin-top: 30px;
     border: 3px solid #CE4633;
     padding: 15px;
     border-radius: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 50px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+button.cancel-order {
+border: none;
+  outline: 0;
+  padding: 10px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+ 
+}
+
+button.cancel-order:hover {
+    opacity: 0.7;
 }
 
 #displayReview {
@@ -17,3 +42,36 @@
     padding: 20px;
 }
 
+.card-body {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 360px;
+  margin: auto;
+  text-align: center;
+  font-family: arial; 
+}
+.card-price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card-body button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card-body button:hover {
+  opacity: 0.7;
+}
+a.btn-primary2 {
+    margin-top: 15px !important;
+    padding-top: 15px !important;
+    height: 200px
+}
