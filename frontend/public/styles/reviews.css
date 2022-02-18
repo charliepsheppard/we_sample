@@ -1,11 +1,11 @@
 .review-item-container {
-    border: 3px solid #CE4633;;
+    border: 1px solid #a6a6a6;
     margin: 20px;
     padding: 15px;
 }
 
 .users-reviews-container {
-    border: 3px solid #CE4633;;
+    /* border: 3px solid #CE4633;; */
     margin: 20px;
     padding: 15px;
     width: 25%;
@@ -18,6 +18,7 @@
     padding: 15px;
     width: 30%;
     margin-bottom: 50px; */
+  padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -28,9 +29,11 @@
 
 .users-buttons-container {
     width: 30%;
-    border: 3px solid #CE4633;
+    /* border: 3px solid #CE4633; */
     margin: 20px;
     padding: 15px;
+    max-height: 200px;
+    
 }
 
 .outer-profile {
@@ -62,3 +65,11 @@
 .appointment-form-title {
   margin-bottom: 40px;
 }
+
+.link {
+  /* border-style: solid; */
+  /* background-color: rgba(79, 209, 241, 0.43); */
+  border-width: 1px;
+  position: relative;
+}
+

@@ -21,12 +21,17 @@ class UserProfile extends React.Component {
         <div className='users-buttons-container'>
           <button>View Restaurants </button>
           <br />
-          <Link to={'/new_restaurant'}>Create your Restaurant's profile</Link>
-          <br / >
-          <Link to={`/${this.props.user.id}/restaurants`}>Your Restaurants</Link>
           <br />
-          <div>
-            <p>Your Profile</p>
+          <div className="link">
+            <Link to={'/new_restaurant'}>Create your Restaurant's profile</Link>
+          </div>
+          <br />
+           <div className="link">
+          <Link to={`/${this.props.user.id}/restaurants`}>Your Restaurants</Link>
+          <br /></div>
+          <div >
+            <br />
+            {/* <p>Your Profile</p> */}
           </div>
           
         </div>
