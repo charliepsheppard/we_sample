@@ -10,7 +10,7 @@ export const fetchSample = (sampleId) => {
 
 export const fetchSamplesFromRestaurant = (restaurantId) => {
     console.log('sample api util', restaurantId)
-    return axios.get(`/api/samples/provider/${restaurantId}`)
+    return axios.get(`/api/samples/menu/${restaurantId}`)
 }
 
 export const createSample = sample => {
