@@ -34,9 +34,9 @@ class RestaurantIndexItem extends React.Component {
             <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button>
             <div className="sample-list">
             {console.log("res samples in index item",this.props.restaurantSamples)}
-              {this.props.restaurantSamples.map((sample, i) => (
+              {/* {this.props.restaurantSamples.map((sample, i) => (
                 <SampleIndexItemContainer sample={sample} key={i} user={this.props.user}/>
-              ))}
+              ))} */}
             </div>
         </div>
       )
