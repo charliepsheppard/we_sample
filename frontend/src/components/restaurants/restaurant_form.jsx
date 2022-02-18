@@ -39,20 +39,36 @@ class RestaurantForm extends React.Component {
         return(
             <div>
                 <form className='restaurant-form'>
+                    <br />
+                    <br />
                     <h3>Enter the info for you restaurant below</h3>
 
-                    <label className='textContainer'>
-                    <label>Name
-                        <input type="text" placeholder='The restaurant name' value={this.state.restaurantName} onChange={this.handleChange('restaurantName')}/>
-                    </label>
+                    <label className='textContainer-restaurant'>
+                        <label>Name
+                            <input type="text" placeholder='The restaurant name' value={this.state.restaurantName} onChange={this.handleChange('restaurantName')}/>
+                        </label>
+                            <br />
+                        <label>Address
+                            <input type="text" placeholder='Where is it located?' value={this.state.address} onChange={this.handleChange('address')}/>
+                        </label>
                         <br />
-                    <label>Address
-                        <input type="text" placeholder='Where is it located?' value={this.state.address} onChange={this.handleChange('address')}/>
-                    </label>
-                        <br />
-                </label>
+                     </label>
                         <br />
                     <button onClick={this.handleSubmit}>Create your restaurant</button>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </form>
             </div>
         )

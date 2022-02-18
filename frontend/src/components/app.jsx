@@ -51,7 +51,7 @@ const App = () => {
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/" component={SplashPage} />
         </Switch>
-        <Footer fixed="bottom" />
+        <Footer  />
 
     </div>
   );
