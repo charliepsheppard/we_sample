@@ -15,7 +15,7 @@ class RestaurantIndexItem extends React.Component {
   }
 
   render() {
-    console.log('restaurant index item', this.props)
+    console.log('restaurant index item props', this.props)
     return (
       <div>
         <h2>{this.props.restaurant.restaurantName}</h2>
