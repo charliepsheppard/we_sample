@@ -86,6 +86,15 @@ router.patch(
   }
 )
 
+router.delete(
+  "/:restaurantId",
+  (req, res) => {
+    Restaurant.deleteOne({_id: req.params.restaurantId})
+      .then(() => res.status(200).json({ msg: "delete successful" }))
+      .catch(err => res.status(404).json({ norestaurantfound: "No restaurant found by that id" }))
+  }
+)
+
 
 
 

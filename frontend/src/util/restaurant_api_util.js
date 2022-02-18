@@ -24,3 +24,7 @@ export const updateRestaurant = restaurant => {
 export const restaurantSearch = query => {
   return axios.get('/api/restaurants/search', query)
 }
+
+export const deleteRestaurant = restaurantId => {
+  return axios.delete(`/api/restaurants/${restaurantId}`);
+}
