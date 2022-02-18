@@ -1,6 +1,7 @@
 import  * as SampleApiUtl from '../util/sample_api_util';
 
 export const RECEIVE_SAMPLES = "RECEIVE_SAMPLES";
+export const RECEIVE_RESTAURANT_SAMPLES = "RECEIVE_RESTAURANT_SAMPLES"
 // export const RECEIVE_USER_SAMPLES = "RECEIVE_USER_SAMPLES";
 export const RECEIVE_SAMPLE = "RECEIVE_SAMPLE";
 export const REMOVE_SAMPLE = "REMOVE_SAMPLE";
@@ -12,6 +13,13 @@ export const receiveSamples = samples => ({
   type: RECEIVE_SAMPLES,
   samples
 });
+
+export const receiveRestaurantSamples = samples => {
+  console.log('samples in action', samples)
+  return {type: RECEIVE_RESTAURANT_SAMPLES,
+  samples
+  }
+}
 
 export const receiveSample = sample => ({
   type: RECEIVE_SAMPLE,
@@ -55,7 +63,7 @@ export const createSample = sample => dispatch => {
 export const fetchSamplesFromRestaurant = (restaurantId) => dispatch => (
   SampleApiUtl.fetchSamplesFromRestaurant(restaurantId)
     .then(
-      samples => dispatch(receiveSamples(samples)),
+      samples => dispatch(receiveRestaurantSamples(samples)),
       err => dispatch(recieveSampleErrors(err.response.data))
       )
 )

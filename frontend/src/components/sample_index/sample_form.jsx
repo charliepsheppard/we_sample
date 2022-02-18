@@ -8,7 +8,7 @@ class SampleForm extends React.Component {
             sampleItem: '',
             description: '',
             price: '',
-            restaurantId: '',
+            restaurantId: this.props.restaurantId,
 
     
         };
@@ -27,7 +27,6 @@ class SampleForm extends React.Component {
     }
 
     render() {
-        console.log('props in sample form', this.props)
         return(
             <div>
                 <form>

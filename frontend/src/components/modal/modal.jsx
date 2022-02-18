@@ -9,9 +9,10 @@ function Modal({ modal, closeModal }) {
   }
 
   let component;
-  switch (modal) {
+  switch (modal.method) {
     case 'createSample':
-      component = <SampleFormContainer />;
+      // console.log('state in modal', state)
+      component = <SampleFormContainer restaurantId={modal.restaurantId} />;
       break;
     default: 
       return null;

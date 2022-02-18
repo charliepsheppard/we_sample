@@ -4,7 +4,7 @@ import SampleIndex from './sample_index';
 
 const mapStateToProps = (state) => {
   return {
-    samples: Object.values(state.entities.samples),
+    samples: Object.values(state.entities.samples.all),
     user: state.session.user
   };
 };
