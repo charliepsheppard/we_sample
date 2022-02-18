@@ -7,7 +7,7 @@ import { createSample } from '../../actions/sample_actions';
 import { fetchSamplesFromRestaurant } from '../../actions/sample_actions';
 
 const mapStateToProps = state => {
-  console.log(state.entities);
+  console.log("restaurant index container", state.entities);
   return {
     restaurants: Object.values(state.entities.restaurants),
     user: state.session.user,
@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
   // debugger;
   return {
     fetchUsersRestaurants: (restaurantOwnerId) => dispatch(fetchUsersRestaurants(restaurantOwnerId)),
-    fetchSamplesFromRestaurant: (restaurantId) => dispatch(fetchSamplesFromRestaurant(restaurantId)),
+    // fetchSamplesFromRestaurant: (restaurantId) => dispatch(fetchSamplesFromRestaurant(restaurantId)),
     deleteRestaurant: (restaurantId) => dispatch(deleteRestaurant(restaurantId)),
     createSample: (sample) => dispatch(createSample(sample)),
     // otherForm: (

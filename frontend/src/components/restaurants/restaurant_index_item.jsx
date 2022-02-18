@@ -12,10 +12,13 @@ class RestaurantIndexItem extends React.Component {
   }
 
   componentDidMount() {
+    console.log('restaurant index item CDM', this.props)
     this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
   }
 
   render() {
+
+    if (!this.props.restaurantSamples) return null;
     // console.log('restaurant index item props', this.props)
     return (
       <div className="your-restaurants">
@@ -27,9 +30,9 @@ class RestaurantIndexItem extends React.Component {
           <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button>
           <div className="sample-list">
           
-            {this.state.entities.samples.restaurant.map((sample) => (
-              <SampleIndexItemContainer sample={sample}/>
-            ))}
+            {/* {this.props.restaurantSamples.map((sample) => (
+              <SampleIndexItemContainer sample={sample} />
+            ))} */}
           </div>
       </div>
     )

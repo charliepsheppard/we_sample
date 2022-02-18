@@ -1,5 +1,5 @@
 import React from 'react';
-import RestaurantIndexItem from './restaurant_index_item';
+import RestaurantIndexItemContainer from './restaurant_index_item_container';
 
 class RestaurantsIndex extends React.Component {
   constructor(props) {
@@ -22,14 +22,14 @@ class RestaurantsIndex extends React.Component {
           <br />
         <div className="restaurants-container">
               {
-                this.props.restaurants.map(restaurant => <RestaurantIndexItem 
+                this.props.restaurants.map(restaurant => <RestaurantIndexItemContainer 
                     key={restaurant._id} 
                     restaurant={restaurant}
                     deleteRestaurant={deleteRestaurant}
                     openModal={openModal}
                     closeModal={closeModal}
                     createSample={createSample}
-                    fetchSamplesFromRestaurant={fetchSamplesFromRestaurant}
+                    // fetchSamplesFromRestaurant={fetchSamplesFromRestaurant}
                   />)
               }
               

@@ -26,7 +26,7 @@ router.get(
 )
 
 router.get(
-  "/provider/:restaurantId",
+  "/menu/:restaurantId",
   (req, res) => {
     console.log('req in sample route', req)
     console.log('res in sample route', res)
