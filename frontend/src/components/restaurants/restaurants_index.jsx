@@ -11,6 +11,7 @@ class RestaurantsIndex extends React.Component {
   }
 
   render() {
+    const { openModal, closeModal, createSample, fetchSamplesFromRestaurant, deleteRestaurant } = this.props;
     if (!this.props.restaurants) {
       return null;
     } else {
@@ -18,7 +19,15 @@ class RestaurantsIndex extends React.Component {
         <div className="restaurants-container">
             <h2>Your Restaurants</h2>
               {
-                this.props.restaurants.map(restaurant => <RestaurantIndexItem key={restaurant._id} restaurant={restaurant} />)
+                this.props.restaurants.map(restaurant => <RestaurantIndexItem 
+                    key={restaurant._id} 
+                    restaurant={restaurant}
+                    deleteRestaurant={deleteRestaurant}
+                    openModal={openModal}
+                    closeModal={closeModal}
+                    createSample={createSample}
+                    fetchSamplesFromRestaurant={fetchSamplesFromRestaurant}
+                  />)
               }
         </div>
       )

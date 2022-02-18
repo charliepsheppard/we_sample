@@ -22,7 +22,7 @@ class SampleForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const sample = Object.assign({}, this.state)
-        this.props.createSample(sample);
+        this.props.createSample(sample).then(this.props.closeModal);
     }
 
     render() {

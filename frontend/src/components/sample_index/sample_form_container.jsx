@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { createSample } from "../../actions/sample_actions";
+import { closeModal } from '../../actions/modal_actions';
 import SampleForm from './sample_form';
 
 const mSTP = (state, ownProps) => {
@@ -9,7 +10,8 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-    createSample: sample => dispatch(createSample(sample))
+    createSample: sample => dispatch(createSample(sample)),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mSTP, mDTP)(SampleForm);

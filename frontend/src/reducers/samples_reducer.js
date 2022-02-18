@@ -6,6 +6,7 @@ const SamplesReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
       case RECEIVE_SAMPLES:
+        console.log('Samples reducer', action)
         return action.samples.data;
       case RECEIVE_SAMPLE:
         return action.sample.data;

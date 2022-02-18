@@ -26,7 +26,7 @@ router.get(
 )
 
 router.get(
-  "/restaurant/:restaurantId",
+  "/restaurant/samples/:restaurantId",
   (req, res) => {
     Sample.find({restaurantId: req.params.restaurantId})
       .then(samples => res.json(samples))
