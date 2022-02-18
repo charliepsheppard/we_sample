@@ -43,16 +43,21 @@ class ReviewForm extends React.Component {
             <div>
                 <form className='review-form'>
                     <h3 className='appointment-form-title'>Review your Experience</h3>
-                <label className='textContainer'>
-                    <label>Title
-                        <input type="text" placeholder='Give your review a descriptive title' value={this.state.title} onChange={this.handleChange('title')}/>
-                    </label>
+                    
+                <div className='textContainer'>
+                    <div className='float-label-field'>
+                        <label>Title 
+                            <input type="text" placeholder='Give your review a descriptive title' value={this.state.title} onChange={this.handleChange('title')}/>
+                        </label>
+                    </div>
 
-                    <label>Body
-                        <input type="text" placeholder='How was your experience?' value={this.state.body} onChange={this.handleChange('body')}/>
-                    </label>
+                    <div className='float-label-field'>
+                        <label>Body 
+                            <input type="text" placeholder='How was your experience?' value={this.state.body} onChange={this.handleChange('body')}/>
+                        </label>
+                    </div>
 
-                </label>
+                </div>
                     <button onClick={this.handleSubmit}>Submit your review</button>
                 </form>
             </div>

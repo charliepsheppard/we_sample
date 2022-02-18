@@ -75,3 +75,7 @@ a.btn-primary2 {
     padding-top: 15px !important;
     height: 200px
 }
+
+.order-description {
+    text-align: left;
+}

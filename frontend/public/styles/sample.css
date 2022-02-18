@@ -17,8 +17,12 @@
 
 .sample-item-container {
     margin-top: 20px;
+    display: inline;
 }
 
+.sample-items {
+    display: inline;
+}
 /* btn:focus :hover {
   box-shadow: 0 0 1px #CE4633 !important;
 } */
