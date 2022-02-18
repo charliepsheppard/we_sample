@@ -69,6 +69,8 @@ class RestaurantForm extends React.Component {
                     <br />
                     <br />
                     <br />
+                    <br />
+                    <br />
                 </form>
             </div>
         )

@@ -51,3 +51,71 @@
   margin-right: auto;
   width: 50%;
 }
+
+
+
+.restaurants-container {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+}
+.your-restaurants {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.restaurants-container label {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 80%;
+}
+.restaurants-container button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.restaurants-container input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.restaurants-container input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.restaurants-container input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.restaurants-container h2 {
+    text-align: center;
+}
+.your-restaurants-page h3 {
+    text-align: center;
+}
+.restaurants-container p {
+    text-align: center;
+}
+
+.textContainer-restaurant{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

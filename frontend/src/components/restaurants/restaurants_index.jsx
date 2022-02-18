@@ -16,8 +16,11 @@ class RestaurantsIndex extends React.Component {
       return null;
     } else {
       return (
+        <div className="your-restaurants-page">
+          <br />
+            <h3>Your Restaurants</h3>
+          <br />
         <div className="restaurants-container">
-            <h2>Your Restaurants</h2>
               {
                 this.props.restaurants.map(restaurant => <RestaurantIndexItem 
                     key={restaurant._id} 
@@ -29,6 +32,27 @@ class RestaurantsIndex extends React.Component {
                     fetchSamplesFromRestaurant={fetchSamplesFromRestaurant}
                   />)
               }
+              
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         </div>
       )
     }

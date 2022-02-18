@@ -28,6 +28,9 @@ const SplashPage = () => {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
     </div>
   )
 }
