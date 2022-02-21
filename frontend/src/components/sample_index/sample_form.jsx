@@ -28,11 +28,11 @@ class SampleForm extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="modal-box">
                 <form>
                     <h3>Enter the info for your sample below</h3>
                 
-                    <label className='textContainer'>
+                    <label className='textContainer-box'>
                         <label>Name
                             <input type="text" placeholder='The sample name' value={this.state.sampleItem} onChange={this.handleChange('sampleItem')}/>
                         </label>
