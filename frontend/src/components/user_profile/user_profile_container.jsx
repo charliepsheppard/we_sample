@@ -4,7 +4,7 @@ import UserProfile from './user_profile';
 import { updateUser } from '../../actions/user_actions';
 
 const mSTP = state => {
-    console.log(state)
+    // console.log(state)
     return {
         user: state.session.user,
     }

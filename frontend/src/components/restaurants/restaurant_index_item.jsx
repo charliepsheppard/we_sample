@@ -1,5 +1,5 @@
 import React from 'react';
-import SampleIndexItemContainer from '../sample_index/sample_index_item_container';
+import SampleIndexItem from '../sample_index/sample_index_item';
 
 
 class RestaurantIndexItem extends React.Component {
@@ -7,23 +7,25 @@ class RestaurantIndexItem extends React.Component {
     super(props);
 
     // this.state = {
-    //   restaurantSamples: []
+    //   restaurantSamples: this.props.restaurantSamples,
     // }
   }
 
   componentDidMount() {
-    console.log('restaurant index item CDM', this.props)
     this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
+    console.log('restaurant index item CDM', this.props)
   }
 
   render() {
 
-    if (!this.props.restaurantSamples) {
+    if (this.props.restaurantSamples ===  undefined) {
       console.log('hitting the null check')
-    return null
+      return null
 
-    } else {
-      console.log('missing the null check')
+    } 
+
+    // let thisResSamples = Object.values(this.props.restaurantSamples[this.props.restaurant._id]);
+
       return (
         <div className="your-restaurants">
           <br />
@@ -33,14 +35,16 @@ class RestaurantIndexItem extends React.Component {
             <button onClick={() => this.props.openModal({method: 'createSample', restaurantId: this.props.restaurant._id})}>Create Sample</button>
             <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button>
             <div className="sample-list">
-            {console.log("res samples in index item",this.props.restaurantSamples)}
-              {/* {this.props.restaurantSamples.map((sample, i) => (
-                <SampleIndexItemContainer sample={sample} key={i} user={this.props.user}/>
-              ))} */}
+            {console.log("res samples in index item",this.props)}
+            
+              {this.props.restaurantSamples.map((sample, i) => (
+                
+                <SampleIndexItem sample={sample} key={i} user={this.props.user}/>
+              ))}
             </div>
         </div>
       )
-    }
+    
     // console.log('restaurant index item props', this.props)
   };
 }

@@ -15,7 +15,7 @@ export const receiveSamples = samples => ({
 });
 
 export const receiveRestaurantSamples = samples => {
-  console.log('samples in action', samples)
+  // console.log('samples in action', samples)
   return {type: RECEIVE_RESTAURANT_SAMPLES,
   samples
   }

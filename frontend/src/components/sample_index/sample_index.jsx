@@ -28,8 +28,8 @@ class SampleIndex extends React.Component {
 //   }
 
   render() {
-      console.log("props from sample index render", this.props.samples)
-     if (!this.props.samples) {
+      // console.log("props from sample index render", this.props.samples)
+    if (!this.props.samples) {
       return null;
     } else {
       return (
