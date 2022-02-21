@@ -8,6 +8,7 @@ class OrderItem extends React.Component {
     this.state = {
       order: this.props.order,
       // passed: this.props.passed
+      open: false,
     }
   }
 
@@ -28,6 +29,13 @@ class OrderItem extends React.Component {
   //   let reviewDisplay = document.getElementById("displayReview");
   //   reviewDisplay.style.display = reviewDisplay.style.display === 'none' ? '' : 'none';
   // };
+  handleButtonClick = () => {
+    this.setState((state) => {
+      return {
+        open: !state.open,
+      }
+    })
+  }
 
   render() {
     if (this.state.order === null ) return null
@@ -52,10 +60,15 @@ class OrderItem extends React.Component {
           <button className='cancel-order' onClick={ () => this.props.deleteOrder(this.state.order._id).then(this.setState({order: null}))}>cancel order</button>  
 
         <div className='review-form-container' id='displayReview'>
-          
-          <Link to={`/reviews`}>Leave a review</Link>
-          <div className='review-form-toggle'>
+
+          <div className='review-container'>
+          {/* <Link to={`/reviews`}>Leave a review</Link> */}
+            <button type='button' className='button' onClick={this.handleButtonClick}>Leave a review</button>
+            {this.state.open && (
+            <div className='dropdown'>
             <ReviewFormContainer order={this.props.order}/>
+            </div>
+            )}
           </div>
         </div>
       </div>
