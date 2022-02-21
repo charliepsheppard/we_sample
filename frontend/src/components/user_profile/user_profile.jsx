@@ -19,15 +19,15 @@ class UserProfile extends React.Component {
     return (
       <div className='outer-profile'>
         <div className='users-buttons-container'>
-          <button>View Restaurants </button>
+          <Link to={`/restaurants`}><button>View Restaurants </button></Link>
           <br />
           <br />
           <div className="link">
-            <Link to={'/new_restaurant'}>Create your Restaurant's profile</Link>
+            <Link to={'/new_restaurant'}><button>Create your Restaurant's profile</button></Link>
           </div>
           <br />
-           <div className="link">
-          <Link to={`/${this.props.user.id}/restaurants`}>Your Restaurants</Link>
+          <div className="link">
+          <Link to={`/${this.props.user.id}/restaurants`}><button>Your Restaurants</button></Link>
           <br /></div>
           <div >
             <br />

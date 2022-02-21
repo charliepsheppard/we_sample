@@ -7,7 +7,11 @@ class RestaurantsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsersRestaurants(this.props.user.id);
+    console.log('params in res index', this.props)
+
+    this.props.match.path === '/:userId/restaurants' ?
+    this.props.fetchUsersRestaurants(this.props.user.id) :
+    this.props.fetchRestaurants();
   }
 
   render() {
@@ -18,7 +22,7 @@ class RestaurantsIndex extends React.Component {
       return (
         <div className="your-restaurants-page">
           <br />
-            <h3>Your Restaurants</h3>
+            {/* <h3>Your Restaurants</h3> */}
           <br />
         <div className="restaurants-container">
               {
