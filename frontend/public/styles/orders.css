@@ -11,7 +11,7 @@
     border-radius: 5px;
     margin-bottom: 50px; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  /* max-width: 300px; */
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
@@ -92,5 +92,5 @@ a.btn-primary2 {
 }
 
 .order-description {
-    text-align: left;
+    text-align: center;
 }
