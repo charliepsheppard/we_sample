@@ -1,7 +1,7 @@
 import {RECEIVE_SAMPLES, RECEIVE_SAMPLE, RECEIVE_RESTAURANT_SAMPLES } from '../actions/sample_actions';
 
 
-const SamplesReducer = (state = {all: {}, restaurant: {} }, action) => {
+const SamplesReducer = (state = {all: {}, restaurant: [] }, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch(action.type) {
@@ -9,7 +9,7 @@ const SamplesReducer = (state = {all: {}, restaurant: {} }, action) => {
         newState.all = action.samples.data
         return newState;
       case RECEIVE_RESTAURANT_SAMPLES:
-        console.log('Samples reducer', action)
+        // console.log('Samples reducer', action)
         newState.restaurant = action.samples.data
         return newState
       case RECEIVE_SAMPLE:

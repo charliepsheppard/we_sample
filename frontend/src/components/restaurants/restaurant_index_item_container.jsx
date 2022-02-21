@@ -4,9 +4,9 @@ import { deleteSample, fetchSamplesFromRestaurant } from '../../actions/sample_a
 import RestaurantIndexItem  from './restaurant_index_item';
 
 const mapStateToProps = state => {
-  console.log('restaurant index item container', state.entities)
+  // console.log('restaurant index item container', state.entities)
   return {
-    restaurantSamples: state.entities.samples.restaurant,
+    restaurantSamples: Object.values(state.entities.samples.restaurant),
     user: state.session.user
   };
 };

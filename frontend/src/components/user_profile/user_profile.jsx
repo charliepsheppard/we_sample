@@ -14,7 +14,7 @@ class UserProfile extends React.Component {
 
   
   render() {
-    console.log('props in user prof', this.props)
+    // console.log('props in user prof', this.props)
 
     return (
       <div className='outer-profile'>

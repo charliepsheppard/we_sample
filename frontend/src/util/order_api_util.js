@@ -5,8 +5,8 @@ export const fetchOrdersFromRestaurant = (restaurantId) => {
   return axios.get(`/api/orders/restaurant/${restaurantId}`)
 }
 
-export const fetchOrdersFromUser = (userId) => {
-  return axios.get(`/api/orders/user/${userId}`)
+export const fetchOrdersFromUser = async (userId) => {
+  return await axios.get(`/api/orders/user/${userId}`)
 }
 
 export const fetchOrder = (orderId) => {
