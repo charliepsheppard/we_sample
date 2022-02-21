@@ -58,7 +58,7 @@ class ReviewForm extends React.Component {
                     </div>
 
                 </div>
-                    <button onClick={this.handleSubmit}>Submit your review</button>
+                    <button onClick={this.handleSubmit}>Submit your Review</button>
                 </form>
             </div>
         )

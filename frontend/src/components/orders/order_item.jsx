@@ -57,13 +57,13 @@ class OrderItem extends React.Component {
           {/* {this.state.order.message ? <p>message: <br/>{this.state.order.message}</p> : null} */}
           <br />
           <p className='order-description'>We hoped you enjoyed your order with {this.state.order.restaurantName}!<br/>Let us know how it was by leaving a review!</p>
-          <button className='cancel-order' onClick={ () => this.props.deleteOrder(this.state.order._id).then(this.setState({order: null}))}>cancel order</button>  
+          <button className='cancel-order' onClick={ () => this.props.deleteOrder(this.state.order._id).then(this.setState({order: null}))}>Cancel Order</button>  
 
         <div className='review-form-container' id='displayReview'>
 
           <div className='review-container'>
           {/* <Link to={`/reviews`}>Leave a review</Link> */}
-            <button type='button' className='button' onClick={this.handleButtonClick}>Leave a review</button>
+            <button type='button' className='button' onClick={this.handleButtonClick}>Leave a Review</button>
             {this.state.open && (
             <div className='dropdown'>
             <ReviewFormContainer order={this.props.order}/>
