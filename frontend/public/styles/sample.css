@@ -1,6 +1,8 @@
-/* .sample-items {
-
-} */
+.sample-item {
+    width: 400px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
 
 .card {
     width: 18rem;
@@ -16,12 +18,14 @@
 }
 
 .sample-item-container {
-    margin-top: 20px;
-    display: inline;
+    /* margin-top: 20px;
+    display: flex; */
 }
 
 .sample-items {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 /* btn:focus :hover {
   box-shadow: 0 0 1px #CE4633 !important;
