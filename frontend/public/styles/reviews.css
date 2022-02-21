@@ -46,20 +46,28 @@
   flex-direction: column;
   
 }
+#text-area {
+  /* width: 400px; */
+  width: 95%;
+}
 
 .float-label-field {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  text-align: right;
-  width: 400px;
+  /* text-align: right; */
+  /* width: 400px; */
   line-height: 26px;
   margin-bottom: 10px;
+}
+.float-label-field label {
+  width: 100%;
+
 }
 
 .float-label-field input {
   height: 20px;
-  flex: 0 0 200px;
+  /* flex: 0 0 200px; */
   margin-left: 10px;
 }
 

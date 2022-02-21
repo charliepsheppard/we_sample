@@ -47,13 +47,13 @@ class ReviewForm extends React.Component {
                 <div className='textContainer'>
                     <div className='float-label-field'>
                         <label>Title 
-                            <input type="text" placeholder='Give your review a descriptive title' value={this.state.title} onChange={this.handleChange('title')}/>
+                            <input id='text-area' type="text" placeholder='Give your review a descriptive title' value={this.state.title} onChange={this.handleChange('title')}/>
                         </label>
                     </div>
 
                     <div className='float-label-field'>
                         <label>Body 
-                            <input type="text" placeholder='How was your experience?' value={this.state.body} onChange={this.handleChange('body')}/>
+                            <input id='text-area' type="text" placeholder='How was your experience?' value={this.state.body} onChange={this.handleChange('body')}/>
                         </label>
                     </div>
 
