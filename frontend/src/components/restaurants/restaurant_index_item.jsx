@@ -7,7 +7,7 @@ class RestaurantIndexItem extends React.Component {
     super(props);
 
     // this.state = {
-    //   restaurantSamples: []
+    //   restaurantSamples: this.props.restaurantSamples,
     // }
   }
 
@@ -18,13 +18,14 @@ class RestaurantIndexItem extends React.Component {
 
   render() {
 
-    if (this.props.restaurantSamples === null) {
+    if (this.props.restaurantSamples ===  undefined) {
       console.log('hitting the null check')
       return null
 
     } 
 
-      console.log('missing the null check')
+    // let thisResSamples = Object.values(this.props.restaurantSamples[this.props.restaurant._id]);
+
       return (
         <div className="your-restaurants">
           <br />
@@ -34,8 +35,10 @@ class RestaurantIndexItem extends React.Component {
             <button onClick={() => this.props.openModal({method: 'createSample', restaurantId: this.props.restaurant._id})}>Create Sample</button>
             <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button>
             <div className="sample-list">
-            {console.log("res samples in index item",this.props.restaurantSamples)}
+            {console.log("res samples in index item",this.props)}
+            
               {this.props.restaurantSamples.map((sample, i) => (
+                
                 <SampleIndexItem sample={sample} key={i} user={this.props.user}/>
               ))}
             </div>

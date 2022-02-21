@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { deleteSample, fetchSamplesFromRestaurant } from '../../actions/sample_actions';
 import RestaurantIndexItem  from './restaurant_index_item';
 
-const mapStateToProps = state => {
-  // console.log('restaurant index item container', state.entities)
+const mapStateToProps = (state, ownProps) => {
+  console.log('restaurant index item container', ownProps)
   return {
-    restaurantSamples: Object.values(state.entities.samples.restaurant),
+    restaurantSamples: state.entities.samples[ownProps.restaurant._id],
     user: state.session.user
   };
 };
