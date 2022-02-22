@@ -55,23 +55,12 @@ class RestaurantForm extends React.Component {
                      </label>
                         <br />
                     <button onClick={this.handleSubmit}>Create your restaurant</button>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    
                 </form>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
             </div>
         )
     }
