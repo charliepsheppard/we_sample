@@ -6,6 +6,10 @@ class SampleIndexItem extends React.Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      sample: 
+    }
+
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -22,7 +26,7 @@ class SampleIndexItem extends React.Component {
   }
 
   render() {
-    // console.log('from sample index item', this.props.sample);
+    console.log('from sample index item', this.props);
     return (
         <div className='sample-item'>
 
@@ -40,6 +44,8 @@ class SampleIndexItem extends React.Component {
                   <p className="card-text">{this.props.sample.description}</p>
                   <p className='card-price'><b> Price :${this.props.sample.price}</b></p>
                   <button onClick={this.handleClick}>Add to My Orders</button>
+                  <button onClick={() => this.props.deleteSample(this.props.sample._id)}>Delete Sample</button>
+
                   <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my samples</Link>
                 </div>
             </div> 

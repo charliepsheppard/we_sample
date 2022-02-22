@@ -14,10 +14,12 @@ export const receiveSamples = samples => ({
   samples
 });
 
-export const receiveRestaurantSamples = samples => {
+export const receiveRestaurantSamples = (samples, restaurantId) => {
   // console.log('samples in action', samples)
-  return {type: RECEIVE_RESTAURANT_SAMPLES,
-  samples
+  return {
+    type: RECEIVE_RESTAURANT_SAMPLES,
+    samples,
+    restaurantId
   }
 }
 
@@ -63,7 +65,7 @@ export const createSample = sample => dispatch => {
 export const fetchSamplesFromRestaurant = (restaurantId) => dispatch => (
   SampleApiUtl.fetchSamplesFromRestaurant(restaurantId)
     .then(
-      samples => dispatch(receiveRestaurantSamples(samples)),
+      samples => dispatch(receiveRestaurantSamples(samples, restaurantId)),
       err => dispatch(receiveSampleErrors(err.response.data))
       )
 )

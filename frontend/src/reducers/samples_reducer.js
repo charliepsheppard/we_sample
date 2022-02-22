@@ -9,7 +9,10 @@ const SamplesReducer = (state = {}, action) => {
         newState = action.samples.data
         return newState;
       case RECEIVE_RESTAURANT_SAMPLES:
-        // console.log('Samples reducer', action)
+        console.log('Samples reducer', action)
+        // if (action.samples.data.length === 0) {
+        //   return newState[action.restaurantId] = []
+        // }
         action.samples.data.forEach((sample) => {
           if (newState[sample.restaurantId] === undefined) {
             newState[sample.restaurantId] = [sample]

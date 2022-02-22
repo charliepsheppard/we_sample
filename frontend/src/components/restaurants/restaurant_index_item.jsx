@@ -1,5 +1,5 @@
 import React from 'react';
-import SampleIndexItem from '../sample_index/sample_index_item';
+import SampleIndexItemContainer from '../sample_index/sample_index_item_container';
 import Confirm from "./confirm"
 import "@reach/dialog/styles.css"
 
@@ -26,7 +26,7 @@ class RestaurantIndexItem extends React.Component {
       console.log('hitting the null check')
       return null
 
-    } 
+    }
 
     // let thisResSamples = Object.values(this.props.restaurantSamples[this.props.restaurant._id]);
 
@@ -45,11 +45,19 @@ class RestaurantIndexItem extends React.Component {
             </Confirm>
             <div className="sample-list">
             {console.log("res samples in index item",this.props)}
+            {
+              this.props.restaurantSamples.length === 0 ?
+                <p>No samples from this restaurant</p> : 
+                this.props.restaurantSamples.map((sample, i) => (
+
+                  <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
+                ))
+            }
             
-              {this.props.restaurantSamples.map((sample, i) => (
+              {/* {this.props.restaurantSamples.map((sample, i) => (
                 
                 <SampleIndexItem sample={sample} key={i} user={this.props.user}/>
-              ))}
+              ))} */}
             </div>
         </div>
       )
