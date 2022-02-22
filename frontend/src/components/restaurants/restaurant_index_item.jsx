@@ -39,9 +39,8 @@ class RestaurantIndexItem extends React.Component {
             <button onClick={() => this.props.openModal({method: 'createSample', restaurantId: this.props.restaurant._id})}>Create Sample</button>
             {/* <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button> */}
             <Confirm title="Confirm" description="Are you sure you want to delete?">
-          {confirm => (
+            {confirm => (
              <button onClick={confirm(this.handleDelete)}>Delete Restaurant</button> 
-
               )}
             </Confirm>
             <div className="sample-list">
