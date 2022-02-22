@@ -22,9 +22,9 @@ constructor(props) {
                 <p className='review-body'>{this.props.review.body}</p>
                 {/* <button onClick={ () => this.props.deleteReview(this.props.review._id).then(this.setState({review: null}))} >Delete Review</button> */}
                 <Confirm title="Confirm" description="Are you sure you want to delete?">
-                {confirm => (
-                <button onClick={confirm(this.handleDeleteReview)}>Delete Review</button> 
-                )}
+                    {confirm => (
+                    <button onClick={confirm(this.handleDeleteReview)}>Delete Review</button> 
+                    )}
                 </Confirm>
             </div>
         )

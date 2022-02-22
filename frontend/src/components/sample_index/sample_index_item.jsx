@@ -1,17 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "bootstrap/dist/css/bootstrap.min.css"
+import Confirm from "../restaurants/confirm";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@reach/dialog/styles.css"
 
 class SampleIndexItem extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      sample: 
+      sample: this.props.sample
     }
 
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this).then(this.setState({sample: null}));
   }
+
+  handleDeleteSample = () => this.props.deleteSample(this.props.sample._id).then(this.setState({sample: null}))
 
   handleClick(e) {
     e.preventDefault();
@@ -24,6 +28,8 @@ class SampleIndexItem extends React.Component {
     }
     this.props.createOrder(order);
   }
+
+  handleDeleteSample = () => this.props.deleteSample(this.props.sample._id)
 
   render() {
     console.log('from sample index item', this.props);
@@ -44,8 +50,14 @@ class SampleIndexItem extends React.Component {
                   <p className="card-text">{this.props.sample.description}</p>
                   <p className='card-price'><b> Price :${this.props.sample.price}</b></p>
                   <button onClick={this.handleClick}>Add to My Orders</button>
-                  <button onClick={() => this.props.deleteSample(this.props.sample._id)}>Delete Sample</button>
-
+                  
+                  <Confirm title="Confirm" description="Are you sure you want to delete?">
+                    {confirm => (
+                      <button onClick={confirm(this.handleDeleteSample)}>Delete Sample</button>
+                      )}
+                  </Confirm>
+                  //add console log for this.state to check if local state changes on delete
+                  
                   <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my samples</Link>
                 </div>
             </div> 
