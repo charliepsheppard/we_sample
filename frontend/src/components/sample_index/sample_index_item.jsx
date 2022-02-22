@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "bootstrap/dist/css/bootstrap.min.css"
+import Confirm from "../restaurants/confirm";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@reach/dialog/styles.css"
 
 class SampleIndexItem extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      sample: 
+      sample: this.props.sample
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -25,8 +27,14 @@ class SampleIndexItem extends React.Component {
     this.props.createOrder(order);
   }
 
+  handleDeleteSample = () => {
+  this.props.deleteSample(this.props.sample._id);
+  this.setState({sample: null})
+  }
+  
+
   render() {
-    console.log('from sample index item', this.props);
+    // console.log('from sample index item', this.props);
     return (
         <div className='sample-item'>
 
@@ -44,8 +52,14 @@ class SampleIndexItem extends React.Component {
                   <p className="card-text">{this.props.sample.description}</p>
                   <p className='card-price'><b> Price :${this.props.sample.price}</b></p>
                   <button onClick={this.handleClick}>Add to My Orders</button>
-                  <button onClick={() => this.props.deleteSample(this.props.sample._id)}>Delete Sample</button>
-
+                  
+                  <Confirm title="Confirm" description="Are you sure you want to delete?">
+                    {confirm => (
+                      <button onClick={confirm(this.handleDeleteSample)}>Delete Sample</button>
+                      )}
+                  </Confirm>
+                    {console.log('state after click',this.state)}
+                  
                   <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my samples</Link>
                 </div>
             </div> 
