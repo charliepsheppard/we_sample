@@ -12,10 +12,8 @@ class SampleIndexItem extends React.Component {
       sample: this.props.sample
     }
 
-    // this.handleClick = this.handleClick.bind(this).then(this.setState({sample: null}));
+    this.handleClick = this.handleClick.bind(this);
   }
-
-  handleDeleteSample = () => this.props.deleteSample(this.props.sample._id).then(this.setState({sample: null}))
 
   handleClick(e) {
     e.preventDefault();
@@ -29,10 +27,14 @@ class SampleIndexItem extends React.Component {
     this.props.createOrder(order);
   }
 
-  handleDeleteSample = () => this.props.deleteSample(this.props.sample._id)
+  handleDeleteSample = () => {
+  this.props.deleteSample(this.props.sample._id);
+  this.setState({sample: null})
+  }
+  
 
   render() {
-    console.log('from sample index item', this.props);
+    // console.log('from sample index item', this.props);
     return (
         <div className='sample-item'>
 
@@ -56,7 +58,7 @@ class SampleIndexItem extends React.Component {
                       <button onClick={confirm(this.handleDeleteSample)}>Delete Sample</button>
                       )}
                   </Confirm>
-                  //add console log for this.state to check if local state changes on delete
+                    {console.log('state after click',this.state)}
                   
                   <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my samples</Link>
                 </div>

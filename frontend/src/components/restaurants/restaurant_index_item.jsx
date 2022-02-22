@@ -10,20 +10,28 @@ class RestaurantIndexItem extends React.Component {
     // this.state = {
     //   restaurantSamples: this.props.restaurantSamples,
     // }
-   
+  
   }
 
   componentDidMount() {
     this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
-    console.log('restaurant index item CDM', this.props)
+    // console.log('restaurant index item CDM', this.props)
+  }
+
+  componentDidUpdate(prevProp) {
+    console.log('prevProp in didUpdate', prevProp)
+    console.log('this dot props', this.props)
+    if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
+      this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
+    }
   }
 
   handleDelete = () => this.props.deleteRestaurant(this.props.restaurant._id)
 
   render() {
-
+    console.log('resSamples in render', this.props.restaurantSamples)
     if (this.props.restaurantSamples ===  undefined) {
-      console.log('hitting the null check')
+      // console.log('hitting the null check')
       return null
 
     }
@@ -40,11 +48,14 @@ class RestaurantIndexItem extends React.Component {
             {/* <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button> */}
             <Confirm title="Confirm" description="Are you sure you want to delete?">
             {confirm => (
-             <button onClick={confirm(this.handleDelete)}>Delete Restaurant</button> 
+              <button onClick={confirm(this.handleDelete)}>Delete Restaurant</button> 
               )}
             </Confirm>
             <div className="sample-list">
-            {console.log("res samples in index item",this.props)}
+            {/* {console.log("res samples in index item",this.props)} */}
+            {
+              console.log(this.props.restaurantSamples.length === 0)
+            }
             {
               this.props.restaurantSamples.length === 0 ?
                 <p>No samples from this restaurant</p> : 

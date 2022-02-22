@@ -4,11 +4,11 @@ import { createOrder } from '../../actions/order_actions';
 import { deleteSample } from '../../actions/sample_actions';
 import SampleIndexItem from './sample_index_item';
 
-const mapStateToProps = state => {
-  return {
-    sample: state.entities.sample
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     sample: state.entities.sample
+//   }
+// }
 
 const mapDispatchToProps = dispatch => {
   return {
