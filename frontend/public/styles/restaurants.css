@@ -119,3 +119,15 @@
   margin-right: auto;
   width: 50%;
 }
+
+/* .modal-confirm {
+  width: 40%;
+} */
+
+[data-reach-dialog-content] {
+  width: 25vw !important;
+}
+[data-reach-dialog-content] button{
+  background-color: #CE4633;
+  margin-top: 20px;
+}
