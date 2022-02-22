@@ -19,8 +19,8 @@ class RestaurantIndexItem extends React.Component {
   }
 
   componentDidUpdate(prevProp) {
-    console.log('prevProp in didUpdate', prevProp)
-    console.log('this dot props', this.props)
+    // console.log('prevProp in didUpdate', prevProp)
+    // console.log('this dot props', this.props)
     if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
       this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
     }
@@ -29,7 +29,7 @@ class RestaurantIndexItem extends React.Component {
   handleDelete = () => this.props.deleteRestaurant(this.props.restaurant._id)
 
   render() {
-    console.log('resSamples in render', this.props.restaurantSamples)
+    // console.log('resSamples in render', this.props.restaurantSamples)
     if (this.props.restaurantSamples ===  undefined) {
       // console.log('hitting the null check')
       return null
@@ -52,17 +52,16 @@ class RestaurantIndexItem extends React.Component {
               )}
             </Confirm>
             <div className="sample-list">
-            {/* {console.log("res samples in index item",this.props)} */}
-            {
-              console.log(this.props.restaurantSamples.length === 0)
-            }
+            
+            {/* {
+              // console.log(this.props.restaurantSamples.length)
+            } */}
             {
               this.props.restaurantSamples.length === 0 ?
                 <p>No samples from this restaurant</p> : 
-                this.props.restaurantSamples.map((sample, i) => (
-
-                  <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
-                ))
+                this.props.restaurantSamples.map((sample, i) => {
+                  return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
+                })
             }
             
               {/* {this.props.restaurantSamples.map((sample, i) => (
