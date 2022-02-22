@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteSample: sampleId => dispatch(deleteSample(sampleId)),
+    // deleteSample: sampleId => dispatch(deleteSample(sampleId)),
     fetchSamplesFromRestaurant: (restaurantId) => dispatch(fetchSamplesFromRestaurant(restaurantId))
   };
 };

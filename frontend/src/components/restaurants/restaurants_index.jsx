@@ -22,10 +22,12 @@ class RestaurantsIndex extends React.Component {
           <br />
         <div className="restaurants-container">
               {
-                this.props.restaurants.map(restaurant => <RestaurantIndexItemContainer 
+                this.props.restaurants.map(restaurant => 
+                
+                <RestaurantIndexItemContainer 
                     key={restaurant._id} 
                     restaurant={restaurant}
-                    deleteRestaurant={deleteRestaurant}
+                    // deleteRestaurant={deleteRestaurant}
                     openModal={openModal}
                     closeModal={closeModal}
                     createSample={createSample}
