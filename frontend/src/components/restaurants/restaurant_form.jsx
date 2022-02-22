@@ -37,7 +37,7 @@ class RestaurantForm extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='form-div'>
                 <form className='restaurant-form'>
                     <br />
                     <br />
