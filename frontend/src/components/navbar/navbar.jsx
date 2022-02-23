@@ -1,20 +1,29 @@
 import React from 'react'
+import { useState } from 'react';
 import {Switch, Route, Link } from "react-router-dom"
 import Logo from '../logo.png'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+import Search from './search';
+// import Announcer from './announcer';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    // console.log(this.props.restaurants, 'from navbar')
+    // this.props.state = {
+    //   samples: 
+    // }
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchOrdersFromUser(this.props.user.id);
+    this.props.fetchRestaurants();
+    this.props.fetchSamples()
   }
 
   logoutUser(e) {
@@ -43,8 +52,27 @@ class NavBar extends React.Component {
     }
   }
 
+//   filterPosts = (searchable, query) => {
+//     if (!query) {
+//         return searchable;
+//     }
+
+//     return posts.filter((post) => {
+//         const postName = post.name.toLowerCase();
+//         return postName.includes(query);
+//     });
+// };
+
   render() {
+
+    const { search } = window.location;
+
+    console.log(this.props, 'here')
+    const query = new URLSearchParams(search).get('s');
+    // const [searchQuery, setSearchQuery] = useState(query || '');
+    // const filteredPosts = this.filterPosts(searchable, searchQuery);
     const user = null
+    console.log(this.props.restaurants, 'from navbar')
 
     return (
          <div >
@@ -58,10 +86,12 @@ class NavBar extends React.Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse position-absolute top-10 end-0" id="navbarSupportedContent">
-            <form className="d-flex">
-             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-             <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+              {/* <form className="d-flex" action="/" method="get">
+                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button className="btn btn-outline-success" type="submit">Search</button>
+              </form> */}
+                <Search />
+
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                   {/* { user ? (

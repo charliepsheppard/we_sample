@@ -12,6 +12,15 @@
     margin-left: 40px;
     font-weight: bold;
 }
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
 
 /* .navbar navbar-expand-lg navbar-light bs-ligh {
     margin-top: 0ch;
