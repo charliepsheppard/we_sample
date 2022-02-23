@@ -9,7 +9,7 @@ class RestaurantIndexItem extends React.Component {
 
     this.state = {
       restaurantName: this.props.restaurantName,
-      // address:
+      
 
     }
     
@@ -29,7 +29,7 @@ class RestaurantIndexItem extends React.Component {
     }
   }
 
-  handleDelete = () => this.props.deleteRestaurant(this.props.restaurant._id)
+  handleDelete = () => this.props.deleteRestaurant(this.props.restaurant._id).then(this.setState({restaurantName: ''}))
 
   render() {
     // console.log('resSamples in render', this.props.restaurantSamples)

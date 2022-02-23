@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteSample, fetchSamplesFromRestaurant } from '../../actions/sample_actions';
 import RestaurantIndexItem  from './restaurant_index_item';
+import { deleteRestaurant } from '../../actions/restaurant_actions'
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log('restaurant index item container', ownProps)
-  // debugger
+
   return {
     restaurantSamples: state.entities.samples[ownProps.restaurant._id],
     user: state.session.user,
@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     deleteSample: sampleId => dispatch(deleteSample(sampleId)),
-    fetchSamplesFromRestaurant: (restaurantId) => dispatch(fetchSamplesFromRestaurant(restaurantId))
+    fetchSamplesFromRestaurant: (restaurantId) => dispatch(fetchSamplesFromRestaurant(restaurantId)),
+    deleteRestaurant: (restaurantId) => dispatch(deleteRestaurant(restaurantId))
   };
 };
 
