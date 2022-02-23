@@ -7,7 +7,11 @@ class RestaurantsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsersRestaurants(this.props.user.id);
+    // console.log(this.props)
+    this.props.match.path === '/:userId/restaurants' ?   
+    this.props.fetchUsersRestaurants(this.props.user.id) :
+    this.props.fetchRestaurants();
+
   }
 
   render() {

@@ -58,7 +58,7 @@ class SampleIndexItem extends React.Component {
                       <button onClick={confirm(this.handleDeleteSample)}>Delete Sample</button>
                       )}
                   </Confirm>
-                    {console.log('state after click',this.state)}
+                    {/* {console.log('state after click',this.state)} */}
                   
                   <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my samples</Link>
                 </div>
