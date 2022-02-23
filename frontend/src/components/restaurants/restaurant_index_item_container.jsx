@@ -5,9 +5,11 @@ import RestaurantIndexItem  from './restaurant_index_item';
 
 const mapStateToProps = (state, ownProps) => {
   // console.log('restaurant index item container', ownProps)
+  // debugger
   return {
     restaurantSamples: state.entities.samples[ownProps.restaurant._id],
-    user: state.session.user
+    user: state.session.user,
+    restaurantName: ownProps.restaurant.restaurantName
   };
 };
 
