@@ -21,7 +21,7 @@ class Orders extends React.Component{
   render(){
     if (this.props.orders === null) return null
 
-    
+    // console.log('props in orders.jsx', this.props)
 
     
     return (
@@ -35,7 +35,7 @@ class Orders extends React.Component{
           order={order}
           userId={this.props.user.id}
           fetchRestaurant={this.props.fetchRestaurant}
-          // passed = {true}
+          
           />
           )}
         </div>

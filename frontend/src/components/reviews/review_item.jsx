@@ -13,7 +13,7 @@ constructor(props) {
     handleDeleteReview = () => this.props.deleteReview(this.props.review._id).then(this.setState({review: null}))
 
     render() {
-        console.log('props in review item', this.props)
+        // console.log('props in review item', this.props)
         return (
             <div className='review-item-container'>
                 <h2>

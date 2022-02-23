@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { createSample } from "../../actions/sample_actions";
 import { closeModal } from '../../actions/modal_actions';
+import { fetchSamplesFromRestaurant } from "../../actions/sample_actions";
 import SampleForm from './sample_form';
 
 const mSTP = (state, ownProps) => {
@@ -12,7 +13,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     createSample: sample => dispatch(createSample(sample)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    fetchSamplesFromRestaurant: (restaurantId) => dispatch(fetchSamplesFromRestaurant(restaurantId))
 });
 
 export default connect(mSTP, mDTP)(SampleForm);

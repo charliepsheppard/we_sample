@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Orders from './orders';
 
 const mapStateToProps = (state) => {
-  
+  console.log('state in orders container', state)
   return {
     user: state.session.user,
     orders: Object.values(state.entities.orders),

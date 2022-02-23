@@ -35,8 +35,11 @@ class SampleIndex extends React.Component {
       return (
 
         <div className='body'>
-
+          
             <div className='sample-items-container'>
+              <br/>
+              <h2>Samples</h2>
+              <br/>
             <ul className="sample-items">
                 {
                     this.props.samples.map((sample, idx) => <SampleIndexItemContainer key={idx} sample={sample} user={this.props.user} createOrder={createOrder} />)

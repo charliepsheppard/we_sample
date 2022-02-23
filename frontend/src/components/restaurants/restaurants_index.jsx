@@ -23,7 +23,7 @@ class RestaurantsIndex extends React.Component {
       return (
         <div className="your-restaurants-page">
           <br />
-            <h3>Your Restaurants</h3>
+            <h3>Restaurants</h3>
           <br />
         <div className="restaurants-container">
               {
