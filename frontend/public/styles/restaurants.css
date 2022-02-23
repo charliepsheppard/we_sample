@@ -61,6 +61,7 @@
     padding: 20px;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
 .your-restaurants {
     margin-left: 20px;
