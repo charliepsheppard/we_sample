@@ -31,7 +31,7 @@ const App = () => {
         <Switch>
 
 
-          <AuthRoute exact path="/Signup" component={SignupFormContainer}
+          <AuthRoute exact path="/signup" component={SignupFormContainer}
             // render={(props) => (
             //   <Signup {...props} />
             // )}

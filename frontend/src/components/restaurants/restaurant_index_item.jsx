@@ -7,13 +7,16 @@ class RestaurantIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   restaurantSamples: this.props.restaurantSamples,
-    // }
-  
+    this.state = {
+      restaurantName: this.props.restaurantName,
+      // address:
+
+    }
+    
   }
 
   componentDidMount() {
+    // console.log('props id before fetch', this.props.restaurant._id)
     this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
     // console.log('restaurant index item CDM', this.props)
   }
@@ -30,11 +33,11 @@ class RestaurantIndexItem extends React.Component {
 
   render() {
     // console.log('resSamples in render', this.props.restaurantSamples)
-    if (this.props.restaurantSamples ===  undefined) {
-      // console.log('hitting the null check')
-      return null
+    // if (this.props.restaurantSamples ===  undefined) {
+    //   // console.log('hitting the null check')
+    //   return null
 
-    }
+    // }
 
     // let thisResSamples = Object.values(this.props.restaurantSamples[this.props.restaurant._id]);
 
@@ -42,33 +45,34 @@ class RestaurantIndexItem extends React.Component {
         <div className="your-restaurants">
           <br />
           <br />
-          <h2>{this.props.restaurant.restaurantName}</h2>
+          <h2>{this.state.restaurantName}</h2>
             <p>{this.props.restaurant.address}</p>
             <button onClick={() => this.props.openModal({method: 'createSample', restaurantId: this.props.restaurant._id})}>Create Sample</button>
-            {/* <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button> */}
+            <button onClick={() => this.props.deleteRestaurant(this.props.restaurant._id)}>Delete Restaurant</button>
             <Confirm title="Confirm" description="Are you sure you want to delete?">
-            {confirm => (
+            { confirm => (
               <button onClick={confirm(this.handleDelete)}>Delete Restaurant</button> 
               )}
             </Confirm>
-            <div className="sample-list">
+            <div className="sample-list"> 
             
-            {/* {
-              // console.log(this.props.restaurantSamples.length)
-            } */}
             {
-              this.props.restaurantSamples.length === 0 ?
+              // console.log(this.props.restaurantSamples)
+            } 
+            {
+              !this.props.restaurantSamples ?
                 <p>No samples from this restaurant</p> : 
                 this.props.restaurantSamples.map((sample, i) => {
                   return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
                 })
-            }
+            } 
             
               {/* {this.props.restaurantSamples.map((sample, i) => (
                 
                 <SampleIndexItem sample={sample} key={i} user={this.props.user}/>
-              ))} */}
-            </div>
+              ))}  */}
+              
+            </div>  
         </div>
       )
     
