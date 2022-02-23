@@ -30,6 +30,10 @@ const ReviewSchema = new Schema({
         type: String,
         required: true
     },
+    sampleName: {
+        type: String,
+        required: false
+    },
     rating: {
         type: Number,
         required: false

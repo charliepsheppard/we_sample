@@ -12,7 +12,7 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
-        // console.log('state in review index', this.state)
+        console.log('state in review index', this.props.reviews)
         
 
         if(this.props.reviews === null) return null
