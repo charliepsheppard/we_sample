@@ -13,13 +13,14 @@ constructor(props) {
     handleDeleteReview = () => this.props.deleteReview(this.props.review._id).then(this.setState({review: null}))
 
     render() {
-        // console.log('props in review item', this.props.review)
+        console.log('props in review item', this.props)
         return (
             <div className='review-item-container'>
                 <h2>
                     <div className='review-title'>{this.props.review.title}</div>
                 </h2>
                 <p className='review-body'>{this.props.review.body}</p>
+                <p className='review-body'>{this.props.review.sampleName}</p>
                 {/* <button onClick={ () => this.props.deleteReview(this.props.review._id).then(this.setState({review: null}))} >Delete Review</button> */}
                 <Confirm title="Confirm" description="Are you sure you want to delete?">
                     {confirm => (

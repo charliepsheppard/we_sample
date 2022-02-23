@@ -39,7 +39,7 @@ class OrderItem extends React.Component {
 
   render() {
     if (this.state.order === null ) return null
-    // console.log('order item props',this.props);
+    console.log('order item props',this.props);
 
 
 
@@ -66,7 +66,7 @@ class OrderItem extends React.Component {
             <button type='button' className='button' onClick={this.handleButtonClick}>Leave a Review</button>
             {this.state.open && (
             <div className='dropdown'>
-            <ReviewFormContainer order={this.props.order}/>
+            <ReviewFormContainer order={this.props.order} sampleName={this.props.order.sample}/>
             </div>
             )}
           </div>

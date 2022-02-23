@@ -11,7 +11,8 @@ class ReviewForm extends React.Component {
             // restaurantId: this.props.match.params.restaurantId,
             orderId: this.props.order._id,
             title: '',
-            body: ''
+            body: '',
+            sampleName: this.props.sampleName
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -31,7 +32,8 @@ class ReviewForm extends React.Component {
                 // restaurantId: this.props.match.params.restaurantId,
                 orderId: this.props.order._id,
                 title: '',
-                body: ''
+                body: '',
+                sampleName: this.props.sampleName
             })
         })
         
@@ -39,6 +41,7 @@ class ReviewForm extends React.Component {
 
 
     render() {
+        console.log('review form', this.state);
         return(
             <div>
                 <form className='review-form'>
