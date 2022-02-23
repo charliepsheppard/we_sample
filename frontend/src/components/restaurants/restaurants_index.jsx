@@ -19,7 +19,7 @@ class RestaurantsIndex extends React.Component {
     if (!this.props.restaurants) {
       return null;
     } else {
-      // console.log("restaurants in index",this.props.restaurants)
+      console.log("restaurants in index",this.props.restaurants)
       return (
         <div className="your-restaurants-page">
           <br />

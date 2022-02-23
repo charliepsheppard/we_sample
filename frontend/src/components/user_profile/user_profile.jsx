@@ -26,7 +26,7 @@ class UserProfile extends React.Component {
             <Link to={'/new_restaurant'}><button>Create your Restaurant's profile</button></Link>
           </div>
           <br />
-           <div className="link">
+          <div className="link">
           <Link to={`/${this.props.user.id}/restaurants`}><button>Your Restaurants</button></Link>
           <br /></div>
           <div >
