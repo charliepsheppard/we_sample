@@ -14,7 +14,7 @@
   z-index: 9;
 }
 #signup-form {
-    margin-top: 130px !important;
+    margin-top: 100px !important;
 } 
 
 .session-form-title {
@@ -100,7 +100,7 @@ input[type='password'] {
     /* height: 20px; */
 }
 
-.submit-btn {}
+/* .submit-btn {} */
 
 #btn {
    margin-left: 30px;
