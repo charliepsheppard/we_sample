@@ -18,7 +18,7 @@ import About from './about/about';
 import UserProfileContainer from './user_profile/user_profile_container';
 import RestaurantFormContainer from './restaurants/restaurant_form_container';
 import Modal from '../components/modal/modal';
- 
+ import SearchedSamples from './searched_samples';
 
 
 const App = () => {
@@ -45,7 +45,7 @@ const App = () => {
           <Route path="/samples" component={SamplesIndexContainer} />
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
-
+          <Route path="/search/:searchQuery" component={SearchedSamples} />
           <Route path="/new_restaurant" component={RestaurantFormContainer}/>
           <Route exact path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
           <Route path="/restaurants" component={RestaurantsIndexContainer} />

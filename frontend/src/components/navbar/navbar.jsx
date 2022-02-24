@@ -1,17 +1,24 @@
 import React from 'react'
-import {Switch, Route, Link } from "react-router-dom"
+import {Switch, Route, Link, withRouter } from "react-router-dom"
 import Logo from '../logo.png'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons';
-
+import { connect } from 'react-redux';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+            searchquery: ''
+        };
+    this.update = this.update.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
+
 
   componentDidMount() {
     this.props.fetchOrdersFromUser(this.props.user.id);
@@ -43,6 +50,20 @@ class NavBar extends React.Component {
     }
   }
 
+    update(e) {
+        this.setState({ searchquery: e.currentTarget.value });
+    }
+
+    handleSearch(e) {
+        e.preventDefault();
+
+        if (this.state.searchquery.length > 0) {
+            this.props.history.push({
+                pathname: `/search/${this.state.searchquery}`
+            })
+        }
+    }
+
   render() {
     const user = null
 
@@ -58,8 +79,12 @@ class NavBar extends React.Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse position-absolute top-10 end-0" id="navbarSupportedContent">
-            <form className="d-flex">
-             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <form className="d-flex" onSubmit={this.handleSearch}>
+             <input className="form-control me-2" type="search"
+                 placeholder="Search" aria-label="Search"
+                 value={this.state.searchquery} 
+                 onChange={this.update} 
+                 />
              <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -92,4 +117,13 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+const mapStateToProps = (state, ownProps) => {
+
+    return ({
+        samples: Object.values(state.entities.samples),
+       
+    })
+}
+
+
+export default withRouter(connect(mapStateToProps, null)(NavBar));
