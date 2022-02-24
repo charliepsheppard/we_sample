@@ -10,7 +10,11 @@ constructor(props) {
         review: this.props.review
     }
 } 
-    handleDeleteReview = () => this.props.deleteReview(this.props.review._id).then(this.setState({review: null}))
+    handleDeleteReview = () => {
+        console.log('before delete state in review item', this.state)
+        this.props.deleteReview(this.props.review._id).then(this.setState({ review: null }))
+        console.log('after delete state in review item', this.state)
+    } 
 
     render() {
         // console.log('props in review item', this.props)

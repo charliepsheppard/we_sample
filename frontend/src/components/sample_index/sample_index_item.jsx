@@ -9,7 +9,8 @@ class SampleIndexItem extends React.Component {
     super(props)
 
     this.state = {
-      sample: this.props.sample
+      sample: this.props.sample,
+      // restaurantSample: this.props.restaurantSamples[this.props.sample._id]
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -28,8 +29,9 @@ class SampleIndexItem extends React.Component {
   }
 
   handleDeleteSample = () => {
-  this.props.deleteSample(this.props.sample._id);
-  this.setState({sample: null})
+    console.log('state before sample deleted', this.state)
+    this.props.deleteSample(this.props.sample._id).then(this.setState({sample: ''}));
+    console.log('state after sample is deleted', this.state);
   }
   
 

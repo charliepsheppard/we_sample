@@ -71,7 +71,7 @@ export const fetchSamplesFromRestaurant = (restaurantId) => dispatch => (
 )
 
 export const deleteSample = sampleId => dispatch => {
-  SampleApiUtl.deleteSample(sampleId)
+  return SampleApiUtl.deleteSample(sampleId)
     .then(
       () => dispatch(removeSample(sampleId)),
       err => dispatch(receiveSampleErrors(err.response.data))

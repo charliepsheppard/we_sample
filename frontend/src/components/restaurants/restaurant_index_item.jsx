@@ -9,7 +9,7 @@ class RestaurantIndexItem extends React.Component {
 
     this.state = {
       restaurantName: this.props.restaurantName,
-      
+      // samples: this.props.restaurantSamples
 
     }
     
@@ -28,6 +28,12 @@ class RestaurantIndexItem extends React.Component {
       this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
     }
   }
+
+  // handleDeleteSample = () => {
+  //   console.log('state before sample deleted', this.state)
+  //   this.props.deleteSample(this.props.sample._id).then(this.setState({ sample: '' }));
+  //   console.log('state after sample is deleted', this.state);
+  // }
 
   handleDelete = () => this.props.deleteRestaurant(this.props.restaurant._id).then(this.setState({restaurantName: ''}))
 
@@ -59,10 +65,10 @@ class RestaurantIndexItem extends React.Component {
               // console.log(this.props.restaurantSamples)
             } 
             {
-              !this.props.restaurantSamples ?
+              !this.state.restaurantSamples ?
                 <p>No samples from this restaurant</p> : 
                 this.props.restaurantSamples.map((sample, i) => {
-                  return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
+                  return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} restaurantSamples={this.state.samples} />
                 })
             } 
             
