@@ -27,6 +27,7 @@ class ReviewForm extends React.Component {
         e.preventDefault()
         const review = Object.assign({}, this.state)
         this.props.createReview(review).then(() => {
+            console.log('props in review form',this.props)
             this.setState({
                 reviewerId: this.props.user.id,
                 // restaurantId: this.props.match.params.restaurantId,
