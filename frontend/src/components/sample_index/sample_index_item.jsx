@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Confirm from "../restaurants/confirm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@reach/dialog/styles.css"
@@ -36,8 +36,9 @@ class SampleIndexItem extends React.Component {
 
   handleDeleteSample = () => {
     return this.props.deleteSample(this.props.sample._id)  
-      .then(this.setState({sample: null}))
-      .then(console.log('state after', this.state))
+      .then(() => {this.setState({sample: null})})
+      .then(() => this.props.history.go(0))
+      .then(() => {console.log('state after', this.state)})
   }
     
   
@@ -77,4 +78,4 @@ class SampleIndexItem extends React.Component {
   };
 }
 
-export default SampleIndexItem;
+export default withRouter(SampleIndexItem);
