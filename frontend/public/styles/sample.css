@@ -2,6 +2,11 @@
     width: 400px;
     margin-bottom: 15px;
     margin-top: 15px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .card {
