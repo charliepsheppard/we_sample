@@ -9,7 +9,7 @@ import SampleIndexItemContainerSearched from './sample_index/searched_items';
 class SearchedSamples extends React.Component {
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             samples: ''
         }
 
@@ -23,7 +23,8 @@ class SearchedSamples extends React.Component {
     componentDidUpdate(prevProp) {
         console.log(prevProp.match.params.searchQuery)
         if (prevProp.match.params.searchQuery !== this.props.match.params.searchQuery) {
-            this.setState(this.filterSamples());
+            this.filterSamples();
+            // this.setState(this.filterSamples());
         }
     }
 
@@ -33,17 +34,19 @@ class SearchedSamples extends React.Component {
             // debugger
             console.log('before', this.props.samples)
             filteredSamples = this.props.samples.filter(sample => {
-                return sample.sampleItem.toLowerCase().includes(this.props.match.params.searchQuery.toLowerCase()) 
-                    // sample.description.toLowerCase().includes(this.props.match.params.searchQuery.toLowerCase()) 
+                return sample.sampleItem.toLowerCase().includes(this.props.match.params.searchQuery.toLowerCase()) ||
+                    sample.description.toLowerCase().includes(this.props.match.params.searchQuery.toLowerCase()) 
             })
         }
+        // debugger
         this.setState({ samples: filteredSamples })
-         console.log('after', this.props.samples)
+         console.log('after', this.state)
     }
 
     render() {
+
     //   console.log("props from sample index render", this.props.samples)
-        if (!this.props.samples) {
+        if (!this.state.samples) {
         return null;
         } else {
         return (
@@ -51,10 +54,9 @@ class SearchedSamples extends React.Component {
             <div className='body'>
 
                 <div className='sample-items-container'>
-                    <p>test here</p>
                 <ul className="sample-items">
                     {
-                        this.props.samples.map((sample, idx) => <SampleIndexItemContainerSearched key={idx} sample={sample} />)
+                        this.state.samples.map((sample, idx) => <SampleIndexItemContainerSearched key={idx} sample={sample} />)
                         
                     }
                 </ul>
