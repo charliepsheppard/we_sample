@@ -13,6 +13,10 @@
     font-weight: bold;
 }
 
+.form-control {
+    width: 145%;
+}
+
 /* .navbar navbar-expand-lg navbar-light bs-ligh {
     margin-top: 0ch;
 } */

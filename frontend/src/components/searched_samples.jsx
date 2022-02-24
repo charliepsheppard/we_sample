@@ -45,7 +45,7 @@ class SearchedSamples extends React.Component {
 
     render() {
 
-    //   console.log("props from sample index render", this.props.samples)
+      console.log("props from sample index render", this.props.samples)
         if (!this.state.samples) {
         return null;
         } else {
