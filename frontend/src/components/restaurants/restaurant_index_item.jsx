@@ -22,8 +22,6 @@ class RestaurantIndexItem extends React.Component {
   }
 
   componentDidUpdate(prevProp) {
-    // console.log('prevProp in didUpdate', prevProp)
-    // console.log('this dot props', this.props)
     if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
       this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
     }

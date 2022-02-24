@@ -28,6 +28,8 @@ class Orders extends React.Component{
       <div className='orders-list-container'> 
         <div className='order-list'>
           <h3>Current Orders For You</h3>
+          <br />
+          <br />
           
           {this.state.currentOrders.map((order, idx) => 
           <OrderItemContainer key={idx}

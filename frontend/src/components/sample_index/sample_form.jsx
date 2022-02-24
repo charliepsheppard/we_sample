@@ -9,6 +9,7 @@ class SampleForm extends React.Component {
             description: '',
             price: '',
             restaurantId: this.props.restaurantId,
+            creatorId: this.props.user.id
 
     
         };

@@ -41,8 +41,8 @@ const App = () => {
             //   <Login {...props}/>
             // )}
           />
-          <Route exact path={`/users/:userId`} component={UserProfileContainer} />
-          <Route path="/samples" component={SamplesIndexContainer} />
+          <ProtectedRoute exact path={`/users/:userId`} component={UserProfileContainer} />
+          <ProtectedRoute path="/samples" component={SamplesIndexContainer} />
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
           <Route path="/search/:searchQuery" component={SearchedSamples} />

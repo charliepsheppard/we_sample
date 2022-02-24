@@ -17,7 +17,7 @@ class SampleIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    // console.log('this might have fired')
+
     const order = { 
       // user: this.props.user,
       sample: this.props.sample.sampleItem,
@@ -27,21 +27,26 @@ class SampleIndexItem extends React.Component {
     this.props.createOrder(order);
   }
 
+
+  // componentDidUpdate(prevProp) {
+  //   if (this.props.sample !== prevProp.sample) {
+  //     this.props.fetchSamplesFromRestaurant(prevProp.sample.restaurantId)
+  //   }
+  // }
+
   handleDeleteSample = () => {
-  this.props.deleteSample(this.props.sample._id);
-  this.setState({sample: null})
+    return this.props.deleteSample(this.props.sample._id)  
+      .then(this.setState({sample: null}))
+      .then(console.log('state after', this.state))
   }
+    
+  
   
 
   render() {
     // console.log('from sample index item', this.props);
     return (
         <div className='sample-item'>
-
-            {/* <p>{this.props.sample.sampleItem}</p> */}
-            {/* <p>{this.props.sample.description}</p> */}
-            {/* <p>{this.props.sample.price}</p> */}
-            {/* <p>{this.props.sample.restaurant}</p> */}
 
 
             <div className="card">
@@ -53,14 +58,15 @@ class SampleIndexItem extends React.Component {
                   <p className='card-price'><b> Price :${this.props.sample.price}</b></p>
                   <button onClick={this.handleClick}>Add to My Orders</button>
                   
+                {/* {console.log('props ins sample index item',this.props)} */}
                   <Confirm title="Confirm" description="Are you sure you want to delete?">
                     {confirm => (
                       <button onClick={confirm(this.handleDeleteSample)}>Delete Sample</button>
                       )}
                   </Confirm>
-                    {/* {console.log('state after click',this.state)} */}
+                    
                   
-                  <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my samples</Link>
+                  <Link to={`/users/${this.props.user.id}`} className="btn-primary2">View my orders</Link>
                 </div>
             </div> 
             
