@@ -1,4 +1,4 @@
-import {RECEIVE_SAMPLES, RECEIVE_SAMPLE, RECEIVE_RESTAURANT_SAMPLES } from '../actions/sample_actions';
+import {RECEIVE_SAMPLES, RECEIVE_SAMPLE, RECEIVE_RESTAURANT_SAMPLES, REMOVE_SAMPLE } from '../actions/sample_actions';
 
 
 const SamplesReducer = (state = {}, action) => {
@@ -13,16 +13,23 @@ const SamplesReducer = (state = {}, action) => {
         // if (action.samples.data.length === 0) {
         //   return newState[action.restaurantId] = []
         // }
+        debugger
+        console.log('samples in reducer',action.samples)
         action.samples.data.forEach((sample) => {
           if (newState[sample.restaurantId] === undefined) {
             newState[sample.restaurantId] = [sample]
+            console.log(action)
           } else {
+            // console.log
             newState[sample.restaurantId].push(sample)
           }
         })
         return newState;
       case RECEIVE_SAMPLE:
         return action.sample.data;
+      case REMOVE_SAMPLE:
+        delete newState[action.sampleId];
+        return newState;
       default:
         return state;
     }
