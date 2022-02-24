@@ -41,13 +41,13 @@ const App = () => {
             //   <Login {...props}/>
             // )}
           />
-          <Route exact path={`/users/:userId`} component={UserProfileContainer} />
-          <Route path="/samples" component={SamplesIndexContainer} />
+          <ProtectedRoute exact path={`/users/:userId`} component={UserProfileContainer} />
+          <ProtectedRoute path="/samples" component={SamplesIndexContainer} />
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
 
-          <Route path="/new_restaurant" component={RestaurantFormContainer}/>
-          <Route exact path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
+          <ProtectedRoute path="/new_restaurant" component={RestaurantFormContainer}/>
+          <ProtectedRoute exact path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/" component={SplashPage} />
         </Switch>
