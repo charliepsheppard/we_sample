@@ -28,10 +28,13 @@ export const receiveSample = sample => ({
   sample
 });
 
-export const removeSample = sampleId => ({
-  type: REMOVE_SAMPLE,
-  sampleId
-})
+export const removeSample = sampleId => {
+  return{
+
+    type: REMOVE_SAMPLE,
+    sampleId
+  }
+}
 
 export const receiveSampleErrors = errors => ({
   type: RECEIVE_SAMPLE_ERRORS,
@@ -71,7 +74,7 @@ export const fetchSamplesFromRestaurant = (restaurantId) => dispatch => (
 )
 
 export const deleteSample = sampleId => dispatch => {
-  SampleApiUtl.deleteSample(sampleId)
+  return SampleApiUtl.deleteSample(sampleId)
     .then(
       () => dispatch(removeSample(sampleId)),
       err => dispatch(receiveSampleErrors(err.response.data))
