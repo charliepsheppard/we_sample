@@ -5,9 +5,9 @@ import RestaurantIndexItem  from './restaurant_index_item';
 import { deleteRestaurant } from '../../actions/restaurant_actions'
 
 const mapStateToProps = (state, ownProps) => {
-
+  console.log('own props in res container',ownProps)
   return {
-    restaurantSamples: state.entities.samples[ownProps.restaurant._id],
+    restaurantSamples: state.entities.restaurants[ownProps.restaurant._id].samples,
     user: state.session.user,
     restaurantName: ownProps.restaurant.restaurantName
   };

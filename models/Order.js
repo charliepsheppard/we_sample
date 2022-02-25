@@ -19,16 +19,20 @@ const OrderSchema = new mongoose.Schema({
         ref: "users",
     },
     userName: {
-      type: String,
-      required: false
+        type: String,
+        required: false
+    },
+    restaurant: {
+        type: Schema.Types.ObjectId,
+        ref: "restaurant"
     },
     restaurantId: {
-        type: Schema.Types.ObjectId,
-        ref: "restaurants",
+        type: Number,
+        ref: "restaurant"
     },
     restaurantName: {
-      type: String,
-      required: false
+        type: String,
+        required: false
     },
     timeFrame: {
         type: String,

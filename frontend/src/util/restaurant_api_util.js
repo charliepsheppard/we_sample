@@ -8,9 +8,9 @@ export const fetchRestaurant = restaurantId => {
   return axios.get(`/api/restaurants/${restaurantId}`)
 }
 
-export const fetchUsersRestaurants = restaurantOwnerId => {
+export const fetchUsersRestaurants = async (restaurantOwnerId) => {
   // debugger;
-  return axios.get(`/api/restaurants/user/${restaurantOwnerId}`)
+  return await axios.get(`/api/restaurants/user/${restaurantOwnerId}`)
 }
 
 export const createRestaurant =restaurant => {
