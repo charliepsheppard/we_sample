@@ -51,6 +51,8 @@ router.post(
       restaurantId: req.body.restaurantId,
       imageUrl: req.body.imageUrl
     });
+
+    Restaurant.updateOne({_id: req.body.restaurantId}, { $push: {samples: newSample}}).then(console.log('this worked'))
     newSample.save()
       .then(sample => res.json(sample));
   }

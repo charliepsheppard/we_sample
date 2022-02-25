@@ -30,7 +30,7 @@ class RestaurantIndexItem extends React.Component {
   handleDelete = () => this.props.deleteRestaurant(this.props.restaurant._id).then(this.setState({restaurantName: ''}))
 
   render() {
-    console.log('resSamples in render', this.state.samples)
+    // console.log('resSamples in render', this.state.samples)
     // if (this.props.restaurantSamples ===  undefined) {
     //   // console.log('hitting the null check')
     //   return null
