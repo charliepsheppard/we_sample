@@ -21,7 +21,7 @@ class SearchedSamples extends React.Component {
     }
 
     componentDidUpdate(prevProp) {
-        console.log(prevProp.match.params.searchQuery)
+        // console.log(prevProp.match.params.searchQuery)
         if (prevProp.match.params.searchQuery !== this.props.match.params.searchQuery) {
             this.filterSamples();
             // this.setState(this.filterSamples());
@@ -32,7 +32,7 @@ class SearchedSamples extends React.Component {
         let filteredSamples;
         if (this.props.match.params.searchQuery.length >= 1) {
             // debugger
-            console.log('before', this.props.samples)
+            // console.log('before', this.props.samples)
             filteredSamples = this.props.samples.filter(sample => {
                 return sample.sampleItem.toLowerCase().includes(this.props.match.params.searchQuery.toLowerCase()) ||
                     sample.description.toLowerCase().includes(this.props.match.params.searchQuery.toLowerCase()) 
@@ -40,7 +40,7 @@ class SearchedSamples extends React.Component {
         }
         // debugger
         this.setState({ samples: filteredSamples })
-         console.log('after', this.state)
+        //  console.log('after', this.state)
     }
 
     render() {

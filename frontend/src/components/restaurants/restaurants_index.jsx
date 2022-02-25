@@ -9,7 +9,8 @@ class RestaurantsIndex extends React.Component {
   componentDidMount() {
     // console.log(this.props)
     this.props.match.path === '/:userId/restaurants' ?   
-    this.props.fetchUsersRestaurants(this.props.user.id) :
+    this.props.fetchUsersRestaurants(this.props.user.id)
+      .then() :
     this.props.fetchRestaurants();
 
   }
@@ -19,7 +20,7 @@ class RestaurantsIndex extends React.Component {
     if (!this.props.restaurants) {
       return null;
     } else {
-      console.log("restaurants in index",this.props.restaurants)
+      // console.log("restaurants in index",this.props.restaurants)
       return (
         <div className="your-restaurants-page">
           <br />
