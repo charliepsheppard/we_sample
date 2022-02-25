@@ -51,6 +51,13 @@ const App = () => {
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/" component={SplashPage} />
         </Switch>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Footer  />
 
     </div>
