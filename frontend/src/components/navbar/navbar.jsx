@@ -81,7 +81,7 @@ class NavBar extends React.Component {
         <div className="collapse navbar-collapse position-absolute top-10 end-0" id="navbarSupportedContent">
             <form className="d-flex" onSubmit={this.handleSearch}>
              <input className="form-control me-2" type="search"
-                 placeholder="Search Sample" aria-label="Search"
+                 placeholder="Search Samples" aria-label="Search"
                  value={this.state.searchquery} 
                  onChange={this.update} 
                  />
