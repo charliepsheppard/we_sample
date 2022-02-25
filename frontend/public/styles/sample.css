@@ -33,6 +33,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    align-content:flex-start
     /* justify-content: start; */
 }
 /* btn:focus :hover {
@@ -44,6 +45,7 @@ h2 {
     display: flex;
     /* justify-content: start; */
     flex-wrap: wrap;
+    
     /* width: 100%; */
 }
 
@@ -55,4 +57,5 @@ h2 {
     margin-top: 60px;
     flex-wrap: wrap;
     margin-bottom: 600px;
+    align-content:flex-start;
 }
