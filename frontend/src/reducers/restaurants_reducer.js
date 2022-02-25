@@ -6,7 +6,7 @@ import {
 } from '../actions/restaurant_actions';
 
 import {
-  RECEIVE_SAMPLE
+  RECEIVE_SAMPLE, RECEIVE_RESTAURANT_SAMPLES
 } from '../actions/sample_actions';
 
 const restaurantReducer = (oldState = {}, action) => {
@@ -36,6 +36,14 @@ const restaurantReducer = (oldState = {}, action) => {
         newState[action.sample.data.restaurantId].samples.push(action.sample.data)
         return newState;
 
+    case RECEIVE_RESTAURANT_SAMPLES:
+
+      
+        console.log('samples in reducer',action.samples)
+        action.samples.data.forEach((sample) => {
+            newState[sample.restaurantId].samples.push(sample)          
+        })
+        return newState;
     default:
       return oldState;
   }
