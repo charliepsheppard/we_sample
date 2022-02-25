@@ -38,8 +38,7 @@ const restaurantReducer = (oldState = {}, action) => {
 
     case RECEIVE_RESTAURANT_SAMPLES:
 
-      
-        console.log('samples in reducer',action.samples)
+        console.log('samples in reducer', action.samples)
         action.samples.data.forEach((sample) => {
             newState[sample.restaurantId].samples.push(sample)          
         })

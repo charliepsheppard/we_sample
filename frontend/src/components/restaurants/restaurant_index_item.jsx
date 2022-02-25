@@ -9,7 +9,7 @@ class RestaurantIndexItem extends React.Component {
 
     this.state = {
       restaurantName: this.props.restaurantName,
-      
+      samples: this.props.restaurantSamples
 
     }
     
@@ -21,16 +21,16 @@ class RestaurantIndexItem extends React.Component {
     // console.log('restaurant index item CDM', this.props)
   }
 
-  componentDidUpdate(prevProp) {
-    if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
-      this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
-    }
-  }
+  // componentDidUpdate(prevProp) {
+  //   if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
+  //     this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
+  //   }
+  // }
 
   handleDelete = () => this.props.deleteRestaurant(this.props.restaurant._id).then(this.setState({restaurantName: ''}))
 
   render() {
-    // console.log('resSamples in render', this.props.restaurantSamples)
+    console.log('resSamples in render', this.state.samples)
     // if (this.props.restaurantSamples ===  undefined) {
     //   // console.log('hitting the null check')
     //   return null
@@ -57,9 +57,9 @@ class RestaurantIndexItem extends React.Component {
               // console.log(this.props.restaurantSamples)
             } 
             {
-              !this.props.restaurantSamples ?
+              !this.state.samples ?
                 <p>No samples from this restaurant</p> : 
-                this.props.restaurantSamples.map((sample, i) => {
+                this.state.samples.map((sample, i) => {
                   return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
                 })
             } 
