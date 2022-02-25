@@ -54,12 +54,12 @@ class SearchedSamples extends React.Component {
             <div className='body'>
 
                 <div className='seach-sample-items-container'>
-                {/* <div className="search-sample-items"> */}
+                <div className="search-sample-items">
                     {
                         this.state.samples.map((sample, idx) => <SampleIndexItemContainerSearched key={idx} sample={sample} />)
                         
                     }
-                {/* </div> */}
+                </div>
                 </div>
 
             </div>
