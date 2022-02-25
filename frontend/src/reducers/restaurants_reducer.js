@@ -5,6 +5,10 @@ import {
   CLEAR_RESTAURANTS
 } from '../actions/restaurant_actions';
 
+import {
+  RECEIVE_SAMPLE
+} from '../actions/sample_actions';
+
 const restaurantReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
@@ -26,6 +30,12 @@ const restaurantReducer = (oldState = {}, action) => {
       return newState;
     case CLEAR_RESTAURANTS:
       return {};
+
+    case RECEIVE_SAMPLE:
+        console.log('new state in samples reducer', newState)
+        newState[action.sample.data.restaurantId].samples.push(action.sample.data)
+        return newState;
+
     default:
       return oldState;
   }

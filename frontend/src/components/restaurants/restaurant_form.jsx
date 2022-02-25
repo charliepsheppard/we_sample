@@ -9,6 +9,7 @@ class RestaurantForm extends React.Component {
             restaurantOwnerId: this.props.user.id,
             restaurantName: '',
             address: '',
+            samples: [],
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
