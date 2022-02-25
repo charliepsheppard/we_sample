@@ -31,18 +31,18 @@ const restaurantReducer = (oldState = {}, action) => {
     case CLEAR_RESTAURANTS:
       return {};
 
-    case RECEIVE_SAMPLE:
-        console.log('new state in samples reducer', newState)
-        newState[action.sample.data.restaurantId].samples.push(action.sample.data)
-        return newState;
+    // case RECEIVE_SAMPLE:
+    //     console.log('new state in samples reducer', newState)
+    //     newState[action.sample.data.restaurantId].samples.push(action.sample.data)
+    //     return newState;
 
-    case RECEIVE_RESTAURANT_SAMPLES:
+    // case RECEIVE_RESTAURANT_SAMPLES:
 
-        console.log('samples in reducer', action.samples)
-        action.samples.data.forEach((sample) => {
-            newState[sample.restaurantId].samples.push(sample)          
-        })
-        return newState;
+    //     console.log('samples in reducer', action.samples)
+    //     action.samples.data.forEach((sample) => {
+    //         newState[sample.restaurantId].samples.push(sample)          
+    //     })
+    //     return newState;
     default:
       return oldState;
   }
