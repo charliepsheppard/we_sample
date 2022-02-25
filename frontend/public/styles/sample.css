@@ -8,7 +8,10 @@
     justify-content: center;
     
 }
-
+/* .sample-items-container {
+    display: flex;
+    justify-content: center;
+} */
 .card {
     width: 18rem;
 }
@@ -30,7 +33,26 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    /* justify-content: start; */
 }
 /* btn:focus :hover {
   box-shadow: 0 0 1px #CE4633 !important;
 } */
+
+
+.seach-sample-items-container {
+    display: flex;
+    /* justify-content: start; */
+    flex-wrap: wrap;
+    /* width: 100%; */
+}
+
+.search-sample-items {
+    /* max-width: 100%; */
+    display: flex;
+    /* justify-content:inherit; */
+    /* padding: 30px; */
+    margin-top: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 600px;
+}
