@@ -24,7 +24,8 @@ class SampleIndexItem extends React.Component {
       userId: this.props.user.id,
       restaurantId: this.props.sample.restaurantId
     }
-    this.props.createOrder(order);
+    this.props.createOrder(order)
+      .then(this.props.fetchUsersRestaurants(this.props.user.id));
   }
 
 
@@ -35,7 +36,7 @@ class SampleIndexItem extends React.Component {
   // }
 
   handleDeleteSample = () => {
-    return this.props.deleteSample(this.props.sample._id)  
+    return this.props.deleteSample(this.props.sample._id, this.props.sample)  
       .then(() => {this.setState({sample: null})})
       // .then(() => this.props.history.go(0))
       .then(() => {console.log('state after', this.state)})

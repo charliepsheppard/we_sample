@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SampleFormContainer from '../sample_index/sample_form_container';
+import ReviewFormContainer from '../reviews/review_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -14,6 +15,8 @@ function Modal({ modal, closeModal }) {
       // console.log('state in modal', state)
       component = <SampleFormContainer restaurantId={modal.restaurantId} />;
       break;
+    case 'updateReview':
+      component = <ReviewFormContainer review={modal.review} method={modal.method} />
     default: 
       return null;
   }

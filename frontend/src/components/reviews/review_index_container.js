@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
-import { fetchReviewsFromSample, fetchReviewsFromUser, deleteReview } from '../../actions/review_actions';
+import { fetchReviewsFromSample, fetchReviewsFromUser, deleteReview, updateReview } from '../../actions/review_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mSTP = (state) => {
@@ -13,7 +14,10 @@ const mSTP = (state) => {
 const mDTP = dispatch => ({
     fetchReviewsFromSample: (sampleId) => dispatch(fetchReviewsFromSample(sampleId)),
     fetchReviewsFromUser: (userId) => dispatch(fetchReviewsFromUser(userId)),
-    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+    updateReview: (review) => dispatch(updateReview(review)),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mSTP, mDTP)(ReviewIndex);
