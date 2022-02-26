@@ -9,17 +9,17 @@ class RestaurantIndexItem extends React.Component {
 
     this.state = {
       restaurantName: this.props.restaurantName,
-      samples: this.props.restaurantSamples
+      // samples: this.props.restaurantSamples
 
     }
     
   }
 
-  componentDidMount() {
-    // console.log('props id before fetch', this.props.restaurant._id)
-    this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
-    // console.log('restaurant index item CDM', this.props)
-  }
+  // componentDidMount() {
+  //   // console.log('props id before fetch', this.props.restaurant._id)
+  //   // this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
+  //   // console.log('restaurant index item CDM', this.props)
+  // }
 
   // componentDidUpdate(prevProp) {
   //   if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
@@ -54,15 +54,16 @@ class RestaurantIndexItem extends React.Component {
             <div className="sample-list"> 
             
             {
-              // console.log(this.props.restaurantSamples)
+              // console.log(this.props.restaurant.samples.length === 0)
             } 
-            {
-              !this.state.samples ?
-                <p>No samples from this restaurant</p> : 
-                this.state.samples.map((sample, i) => {
-                  return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
-                })
-            } 
+              {
+                this.props.restaurant.samples.lenth === 0 ?
+                  console.log('this is in the turnary') :
+                  // <p>No samples from this restaurant</p>  
+                  this.props.restaurant.samples.map((sample, i) => {
+                    return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
+                  })
+              } 
             
               {/* {this.props.restaurantSamples.map((sample, i) => (
                 
