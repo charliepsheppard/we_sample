@@ -49,12 +49,15 @@ router.post(
     if (!isValid) {
       return res.status(400).json(errors)
     }
-
+      console.log('req body for review',req.body);
     const newReview = new Review({
       reviewerId: req.body.reviewerId,
-      restaurantId: req.params.restaurantId,
+      restaurantId: req.body.restaurantId,
+      sampleName: req.body.sampleName,
+      orderId: req.body.orderId,
       title: req.body.title,
       body: req.body.body,
+
       rating: req.body.rating
     })
     newReview.save()

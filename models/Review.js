@@ -7,11 +7,11 @@ const ReviewSchema = new Schema({
         ref: "users",
         // required: false 
     },
-    // restaurantId: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "restaurants",
-    //     // required: false 
-    // },
+    restaurantId: {
+        type: Number,
+        ref: "restaurants",
+        // required: false 
+    },
     sampleId: {
         type: Schema.Types.ObjectId,
         ref: "samples",

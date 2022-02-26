@@ -13,8 +13,8 @@ export const fetchOrder = (orderId) => {
   return axios.get(`/api/orders/${orderId}`)
 }
 
-export const createOrder= (order) => {
-  return axios.post(`/api/orders/`, order)
+export const createOrder = async (order) => {
+  return await axios.post(`/api/orders/`, order)
 }
 
 export const updateOrder = (order) => {

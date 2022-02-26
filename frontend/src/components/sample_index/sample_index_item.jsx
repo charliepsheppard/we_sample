@@ -25,7 +25,7 @@ class SampleIndexItem extends React.Component {
       restaurantId: this.props.sample.restaurantId
     }
     this.props.createOrder(order)
-      .then(this.props.history.push(`/users/${this.props.user.id}`));
+      // .then(this.props.history.push(`/users/${this.props.user.id}`));
   }
 
 
