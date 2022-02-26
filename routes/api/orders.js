@@ -41,7 +41,8 @@ router.post("/",
 
     const newOrder = new Order({
         user: req.user.id,
-        sample: req.body.sample
+        sample: req.body.sample,
+        restaurant: req.body.restaurantId
     });
 
     newOrder.save()
