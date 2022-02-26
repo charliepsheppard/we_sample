@@ -25,9 +25,10 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        
         const review = Object.assign({}, this.state)
         this.props.createReview(review).then(() => {
-            console.log('props in review form',this.props)
+            console.log('create ran')
             this.setState({
                 reviewerId: this.props.user.id,
                 restaurantId: this.props.order.restaurant,
@@ -42,7 +43,7 @@ class ReviewForm extends React.Component {
 
 
     render() {
-        console.log('props in review form', this.props);
+        // console.log('state in review form', this.state)
         return(
             <div>
                 <form className='review-form'>

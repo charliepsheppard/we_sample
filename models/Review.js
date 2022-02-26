@@ -8,7 +8,7 @@ const ReviewSchema = new Schema({
         // required: false 
     },
     restaurantId: {
-        type: Number,
+        type: Schema.Types.ObjectId,
         ref: "restaurants",
         // required: false 
     },
