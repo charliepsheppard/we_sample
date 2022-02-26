@@ -15,11 +15,11 @@ class RestaurantIndexItem extends React.Component {
     
   }
 
-  // componentDidMount() {
-  //   // console.log('props id before fetch', this.props.restaurant._id)
-  //   // this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
-  //   // console.log('restaurant index item CDM', this.props)
-  // }
+  componentDidMount() {
+    // console.log('props id before fetch', this.props.restaurant._id)
+    this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
+    // console.log('restaurant index item CDM', this.props)
+  }
 
   // componentDidUpdate(prevProp) {
   //   if (this.props.restaurantSamples !== prevProp.restaurantSamples) {

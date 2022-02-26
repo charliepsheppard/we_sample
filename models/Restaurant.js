@@ -10,10 +10,6 @@ const RestaurantSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users"
   },
-  samples: {
-    type: Array,
-    required: true
-  },
   email: {
     type: String,
     required: false
