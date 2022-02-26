@@ -54,6 +54,7 @@ class SampleIndexItem extends React.Component {
               
                 {/* <img class="card-img-top" src="..." alt="Card image cap" /> */}
                 <div className="card-body">
+                  <a href="https://placeholder.com"><img src='https://via.placeholder.com/150.png'/></a>
                   <h5 className="card-title">{this.props.sample.sampleItem}</h5>
                   <p className="card-text">{this.props.sample.description}</p>
                   <p className='card-price'><b> Price :${this.props.sample.price}</b></p>

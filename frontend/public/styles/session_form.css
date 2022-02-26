@@ -103,7 +103,7 @@ input[type='password'] {
 /* .submit-btn {} */
 
 #btn {
-   margin-left: 30px;
+   margin-left: 15px;
 } 
 .pic-half-page {
     height: min-content;
@@ -199,4 +199,17 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+.errors-container {
+  /* min-height: 400px; */
+}
+
+.errors-login {
+  font-size: 16px;
+  color: #CE4633;
+  margin-top: 15px;
+}
+#errors-li {
+  list-style-type: none !important;
+  
 }
