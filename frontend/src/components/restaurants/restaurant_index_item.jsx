@@ -61,7 +61,7 @@ class RestaurantIndexItem extends React.Component {
                   console.log('this is in the turnary') :
                   // <p>No samples from this restaurant</p>  
                   this.props.restaurant.samples.map((sample, i) => {
-                    return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
+                    return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} restaurantName={this.props.restaurantName} />
                   })
               } 
             

@@ -22,9 +22,9 @@ const restaurantReducer = (oldState = {}, action) => {
       });
       return updatedState
 
-    case RECEIVE_RESTAURANT:
-      newState[action.restaurant.data._id] = action.restaurant.data;
-      return newState
+    // case RECEIVE_RESTAURANT:
+    //   newState[action.restaurant.data._id] = action.restaurant.data;
+    //   return newState
     case REMOVE_RESTAURANT:
       delete newState[action.restaurantId]
       return newState;

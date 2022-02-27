@@ -15,6 +15,10 @@ class SampleIndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchRestaurant(this.props.sample.restaurantId)
+  }
+
   handleClick(e) {
     e.preventDefault();
 
@@ -47,7 +51,7 @@ class SampleIndexItem extends React.Component {
   
 
   render() {
-    // console.log('from sample index item', this.props);
+    console.log('from sample index item', this.props);
     return (
         <div className='sample-item'>
 
@@ -58,6 +62,7 @@ class SampleIndexItem extends React.Component {
                 <div className="card-body">
                   <a href="https://placeholder.com"><img src='https://via.placeholder.com/150.png'/></a>
                   <h5 className="card-title">{this.props.sample.sampleItem}</h5>
+                  <p>From: {this.props.restaurantName}</p>
                   <p className="card-text">{this.props.sample.description}</p>
                   <p className='card-price'><b> Price :${this.props.sample.price}</b></p>
                   <button onClick={this.handleClick}>Add to My Orders</button>

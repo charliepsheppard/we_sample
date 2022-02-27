@@ -8,7 +8,7 @@ class ReviewIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchReviewsFromUser(this.props.user.id)
+        this.props.fetchReviewsFromUser(this.props.user.id);
     }
 
     render() {
@@ -23,7 +23,14 @@ class ReviewIndex extends React.Component {
             <div className='reviews'>
                 <h2>Your Reviews</h2>
                 {this.props.reviews.map((review, i) => (
-                    <ReviewItem key={i} review={review} deleteReview={this.props.deleteReview} updateReview={this.props.updateReview} openModal={this.props.openModal}/>
+                    <ReviewItem 
+                        key={i} 
+                        review={review} 
+                        deleteReview={this.props.deleteReview} 
+                        updateReview={this.props.updateReview} 
+                        openModal={this.props.openModal}
+                        fetchRestaurant={this.props.fetchRestaurant}
+                    />
                 ))}
             </div>
         </div>

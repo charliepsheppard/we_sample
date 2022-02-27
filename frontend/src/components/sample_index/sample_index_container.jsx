@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchSamples, fetchSample } from '../../actions/sample_actions'
 import SampleIndex from './sample_index';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     samples: Object.values(state.entities.samples),
     user: state.session.user
