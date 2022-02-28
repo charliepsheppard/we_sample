@@ -25,13 +25,28 @@ const SamplesReducer = (state = {}, action) => {
 
 
       case RECEIVE_RESTAURANT_SAMPLES:
-        action.samples.data.forEach((sample) => {
-          if (newState[sample.restaurantId] === undefined) {
-            newState[sample.restaurantId] = [sample]
-          } else {
-            newState[sample.restaurantId].push(sample)
+            for(let i = 0; i < action.samples.data.length; i++) {
+                let allSamples = action.samples.data;
+              if (newState[allSamples[i].restaurantId] === undefined) {
+              newState[allSamples[i].restaurantId] = [allSamples[i]]
+            } else if (newState[allSamples[i].restaurantId].includes(allSamples[i])) {
+              continue
+            } else {
+              newState[allSamples[i].restaurantId].push(allSamples[i])
+            }
+
           }
-        })
+        // action.samples.data.forEach((sample) => {
+        //   if (newState[sample.restaurantId] === undefined) {
+        //     newState[sample.restaurantId] = [sample]
+        //   } else if (newState[sample.restaurantId].includes(sample)) 
+        //     {
+              
+        //     }
+        //   else {
+        //     newState[sample.restaurantId].push(sample)
+        //   }
+        // })
         return newState;
       default:
         return state;
