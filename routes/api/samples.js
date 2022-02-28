@@ -52,7 +52,7 @@ router.post(
       imageUrl: req.body.imageUrl
     });
 
-    Restaurant.updateOne({_id: req.body.restaurantId}, { $push: {samples: newSample}}).then(console.log('this worked'))
+    // Restaurant.updateOne({_id: req.body.restaurantId}, { $push: {samples: newSample}}).then(console.log('this worked'))
     newSample.save()
       .then(sample => res.json(sample));
   }
@@ -72,9 +72,13 @@ router.delete(
   "/:sampleId",
   // passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    // console.log(req.params);
-    // console.log(req.query);
-    Restaurant.updateOne({ _id: req.query.restaurantId }, { $pull: { samples: { _id: req.params.sampleId } } })
+    // console.log(req.params.sampleId);
+    // // console.log(req.query);
+    // Restaurant.updateOne({ _id: req.query.restaurantId }, { $pull: { samples: { $elemMatch: {_id: req.params.sampleId} } } })
+    //   .then(() => res.status(200).json({ msg: "delete from restaurant successful" }))
+    //   .catch(err => res.status(404).json({ nosamplefound: err }));
+
+
     Sample.deleteOne({_id: req.params.sampleId})
       .then(() => res.status(200).json({ msg: "delete successful" }))
       .catch(err => res.status(404).json({ nosamplefound: "No sample found by that Id" }));

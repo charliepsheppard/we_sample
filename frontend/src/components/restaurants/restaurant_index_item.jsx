@@ -15,11 +15,11 @@ class RestaurantIndexItem extends React.Component {
     
   }
 
-  // componentDidMount() {
-  //   // console.log('props id before fetch', this.props.restaurant._id)
-  //   // this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
-  //   // console.log('restaurant index item CDM', this.props)
-  // }
+  componentDidMount() {
+    console.log('props id before fetch', this.props.restaurant._id)
+    this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
+    console.log('restaurant index item CDM', this.props)
+  }
 
   // componentDidUpdate(prevProp) {
   //   if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
@@ -57,10 +57,10 @@ class RestaurantIndexItem extends React.Component {
               // console.log(this.props.restaurant.samples.length === 0)
             } 
               {
-                this.props.restaurant.samples.lenth === 0 ?
+                this.props.restaurantSamples.length === 0 ?
                   console.log('this is in the turnary') :
                   // <p>No samples from this restaurant</p>  
-                  this.props.restaurant.samples.map((sample, i) => {
+                  this.props.restaurantSamples.map((sample, i) => {
                     return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
                   })
               } 

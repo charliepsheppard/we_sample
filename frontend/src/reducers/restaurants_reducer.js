@@ -5,9 +5,9 @@ import {
   CLEAR_RESTAURANTS
 } from '../actions/restaurant_actions';
 
-import {
-  RECEIVE_SAMPLE, RECEIVE_RESTAURANT_SAMPLES
-} from '../actions/sample_actions';
+// import {
+//   RECEIVE_SAMPLE, RECEIVE_RESTAURANT_SAMPLES
+// } from '../actions/sample_actions';
 
 const restaurantReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
