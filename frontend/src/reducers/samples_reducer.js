@@ -6,14 +6,22 @@ const SamplesReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
       case RECEIVE_SAMPLES:
-        newState = action.samples.data
+        action.samples.data.forEach((sample) => {
+          if (newState[sample.restaurantId] === undefined) {
+            newState[sample.restaurantId] = [sample]
+          } else {
+            newState[sample.restaurantId].push(sample)
+          }
+        })
         return newState;
+        
       case REMOVE_SAMPLE:
-        delete newState[action.sampleId];
+        delete newState[action.sample.data.restaurantId];
         return newState;
 
       case RECEIVE_SAMPLE:
-        return action.sample.data;
+        newState[action.sample.data.restaurantId].push(action.sample.data)
+        return newState;
 
 
       case RECEIVE_RESTAURANT_SAMPLES:
