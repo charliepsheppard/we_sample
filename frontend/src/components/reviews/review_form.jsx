@@ -27,17 +27,7 @@ class ReviewForm extends React.Component {
         e.preventDefault()
         
         const review = Object.assign({}, this.state)
-        this.props.createReview(review).then(() => {
-            console.log('create ran')
-            this.setState({
-                reviewerId: this.props.user.id,
-                restaurantId: this.props.order.restaurant,
-                orderId: this.props.order._id,
-                title: '',
-                body: '',
-                sampleName: this.props.sampleName
-            })
-        })
+        this.props.createReview(review).then(this.props.handleButtonClick())
         
     }
 

@@ -57,7 +57,7 @@ class OrderItem extends React.Component {
             <button type='button' className='button' onClick={this.handleButtonClick}>Leave a Review</button>
             {this.state.open && (
             <div className='dropdown'>
-            <ReviewFormContainer order={this.props.order} sampleName={this.props.order.sample}/>
+            <ReviewFormContainer order={this.props.order} sampleName={this.props.order.sample} handleButtonClick={this.handleButtonClick}/>
             </div>
             )}
           </div>
