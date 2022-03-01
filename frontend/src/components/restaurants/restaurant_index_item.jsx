@@ -9,17 +9,19 @@ class RestaurantIndexItem extends React.Component {
 
     this.state = {
       restaurantName: this.props.restaurantName,
-      // samples: this.props.restaurantSamples
+      samples: this.props.restaurantSamples
 
     }
     
   }
 
-  // componentDidMount() {
-  //   // console.log('props id before fetch', this.props.restaurant._id)
-  //   // this.props.fetchSamplesFromRestaurant(this.props.restaurant._id);
-  //   // console.log('restaurant index item CDM', this.props)
-  // }
+  componentDidMount() {
+    console.log('samples in local state', this.state.samples)
+    this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
+      // .then(this.setState({samples: this.props.restaurantSamples}))
+    console.log('samples in local state after fetch', this.state.samples)
+    console.log('restaurant index item CDM', this.props)
+  }
 
   // componentDidUpdate(prevProp) {
   //   if (this.props.restaurantSamples !== prevProp.restaurantSamples) {
@@ -36,9 +38,10 @@ class RestaurantIndexItem extends React.Component {
     //   return null
 
     // }
-
+    
     // let thisResSamples = Object.values(this.props.restaurantSamples[this.props.restaurant._id]);
-
+    console.log(" res samples in props",this.props.restaurantSamples)
+    console.log("state in render", this.state)
       return (
         <div className="your-restaurants">
           <br />
@@ -57,10 +60,10 @@ class RestaurantIndexItem extends React.Component {
               // console.log(this.props.restaurant.samples.length === 0)
             } 
               {
-                this.props.restaurant.samples.lenth === 0 ?
-                  console.log('this is in the turnary') :
-                  // <p>No samples from this restaurant</p>  
-                  this.props.restaurant.samples.map((sample, i) => {
+                !this.props.restaurantSamples ?
+                  <p>No samples from this restaurant</p> :
+                    
+                  this.props.restaurantSamples.map((sample, i) => {
                     return <SampleIndexItemContainer sample={sample} key={i} user={this.props.user} />
                   })
               } 

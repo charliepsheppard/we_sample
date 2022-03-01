@@ -25,7 +25,7 @@ class SampleForm extends React.Component {
         e.preventDefault();
         const sample = Object.assign({}, this.state)
         this.props.createSample(sample).then(this.props.closeModal)
-        .then(this.props.fetchSamplesFromRestaurant(this.props.restaurantId));
+        // .then(this.props.fetchSamplesFromRestaurant(this.props.restaurantId));
     }
 
     render() {

@@ -21,6 +21,6 @@ export const updateSample = sample => {
     return axios.patch(`/api/samples/${sample.id}`, sample)
 }
 
-export const deleteSample = (sampleId, sample) => {
-    return axios.delete(`/api/samples/${sampleId}`, {params: {restaurantId: sample.restaurantId}})
+export const deleteSample = (sampleId) => {
+    return axios.delete(`/api/samples/${sampleId}`)
 }
