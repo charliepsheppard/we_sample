@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router-dom"
 
 class SampleForm extends React.Component {
     constructor(props) {
@@ -25,6 +26,7 @@ class SampleForm extends React.Component {
         e.preventDefault();
         const sample = Object.assign({}, this.state)
         this.props.createSample(sample).then(this.props.closeModal)
+        .then(this.props.history.go(0));
         // .then(this.props.fetchSamplesFromRestaurant(this.props.restaurantId));
     }
 
@@ -59,4 +61,4 @@ class SampleForm extends React.Component {
 
 }
 
-export default SampleForm;
+export default withRouter(SampleForm);

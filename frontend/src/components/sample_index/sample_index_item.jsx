@@ -39,9 +39,9 @@ class SampleIndexItem extends React.Component {
   handleDeleteSample = () => {
     return this.props.deleteSample(this.props.sample._id)
       .then(this.props.fetchSamplesFromRestaurant(this.props.sample.restaurantId))  
-      .then(() => {this.setState({sample: null})})
-      // .then(() => this.props.history.go(0))
-      .then(() => {console.log('state after', this.state)})
+      // .then(() => {this.setState({sample: null})})
+      .then(() => this.props.history.go(0))
+      // .then(() => {console.log('state after', this.state)})
   }
     
   
