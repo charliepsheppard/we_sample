@@ -15,12 +15,18 @@ const SamplesReducer = (state = {}, action) => {
         })
         return newState;
         
-      case REMOVE_SAMPLE:
-        delete newState[action.sample.data.restaurantId];
-        return newState;
+      // case REMOVE_SAMPLE:
+      //   console.log("sample action", action.sample)
+      //   delete newState[action.sample.restaurantId];
+      //   return newState;
 
       case RECEIVE_SAMPLE:
-        newState[action.sample.data.restaurantId].push(action.sample.data)
+        if (newState[action.sample.data.restaurantId] === undefined) {
+              newState[action.sample.data.restaurantId] = [action.sample.data]
+            } else {
+              newState[action.sample.data.restaurantId].push(action.sample.data)
+
+            }
         return newState;
 
 
