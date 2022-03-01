@@ -19,6 +19,7 @@ class ReviewEditForm extends React.Component {
 
   componentDidMount() {
     this.props.fetchReview(this.props.review._id);
+    
   }
 
 
