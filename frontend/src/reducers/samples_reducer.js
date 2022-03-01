@@ -6,19 +6,21 @@ const SamplesReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
       case RECEIVE_SAMPLES:
-        action.samples.data.forEach((sample) => {
-          if (newState[sample.restaurantId] === undefined) {
-            newState[sample.restaurantId] = [sample]
-          } else {
-            newState[sample.restaurantId].push(sample)
-          }
-        })
-        return newState;
+        // action.samples.data.forEach((sample) => {
+        //   if (newState[sample.restaurantId] === undefined) {
+        //     newState[sample.restaurantId] = [sample]
+        //   } else {
+        //     newState[sample.restaurantId].push(sample)
+        //   }
+        // })
+
+        // return newState;
+        return action.samples.data;
         
-      // case REMOVE_SAMPLE:
-      //   console.log("sample action", action.sample)
-      //   delete newState[action.sample.restaurantId];
-      //   return newState;
+      case REMOVE_SAMPLE:
+        console.log("sample action", newState[action.sample])
+        delete newState[action.sample.restaurantId];
+        return newState;
 
       case RECEIVE_SAMPLE:
         if (newState[action.sample.data.restaurantId] === undefined) {
@@ -28,20 +30,37 @@ const SamplesReducer = (state = {}, action) => {
 
             }
         return newState;
-
+        // return action.sample.data
 
       case RECEIVE_RESTAURANT_SAMPLES:
             for(let i = 0; i < action.samples.data.length; i++) {
                 let allSamples = action.samples.data;
               if (newState[allSamples[i].restaurantId] === undefined) {
               newState[allSamples[i].restaurantId] = [allSamples[i]]
-            } else if (newState[allSamples[i].restaurantId].includes(allSamples[i])) {
+            } 
+            else if (newState[allSamples[i].restaurantId]._id === allSamples[i]._id) {
               continue
-            } else {
+            } 
+            else {
               newState[allSamples[i].restaurantId].push(allSamples[i])
             }
 
           }
+
+        // for (let i = 0; i < action.samples.data.length; i++) {
+        //   let newSamples = action.samples.data;
+        //   if (newState[newSamples[i].restaurantId] === undefined) {
+        //     newState[newSamples[i].restaurantId] = [newSamples[i]]
+        //   }
+        //   let currentRestaurant = newState[newSamples[i].restaurantId];
+        //   for (let j = 0; j < currentRestaurant.length; j++) {
+        //     if (currentRestaurant[i]._id === newSamples[j]._id) {
+        //       continue;
+        //     } else {
+        //       newState[newSamples[i].restaurantId].push(newSamples[j])
+        //     }
+        //   }
+        // }
         // action.samples.data.forEach((sample) => {
         //   if (newState[sample.restaurantId] === undefined) {
         //     newState[sample.restaurantId] = [sample]
