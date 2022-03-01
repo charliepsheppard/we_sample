@@ -92,7 +92,7 @@ export const updateReview = review => dispatch => {
       review => dispatch(receiveReview(review)),
       err => dispatch(receiveReviewErrors(err.response.data))
     )
-    // .catch(err => dispatch(receiveReviewErrors(err.response.data)))
+    .catch(err => dispatch(receiveReviewErrors(err.response.data)))
 }
 
 export const deleteReview = reviewId => dispatch => {

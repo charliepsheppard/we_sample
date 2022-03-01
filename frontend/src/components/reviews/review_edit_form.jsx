@@ -12,7 +12,7 @@ class ReviewEditForm extends React.Component {
       // orderId: this.props.order._id,
       title: this.props.review.title,
       body: this.props.review.body,
-      id: this.props.review.id
+      _id: this.props.review._id,
       // sampleName: this.props.sampleName
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,7 +33,9 @@ class ReviewEditForm extends React.Component {
     e.preventDefault()
 
     const review = Object.assign({}, this.state);
+    console.log("review in submit",review)
     this.props.updateReview(review);
+    this.props.history.replace(`/users/${this.props.user.id}`)
 
     // const review = Object.assign({}, this.state)
     // this.props.updateReview(review).then(() => {
