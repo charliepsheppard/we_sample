@@ -61,7 +61,7 @@ class ReviewEditForm extends React.Component {
     }
     
     return (
-      <div className='review-form-container'>
+      <div className='form-div'>
         <form className='review-form' onSubmit={this.handleSubmit}>
           <h3 className='appointment-form-title'>Review your Experience</h3>
 
