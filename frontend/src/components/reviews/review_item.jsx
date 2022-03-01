@@ -1,6 +1,7 @@
 import React from 'react'
 import Confirm from "../restaurants/confirm"
 import "@reach/dialog/styles.css"
+import { Link } from 'react-router-dom';
 
 class ReviewItem extends React.Component {
 constructor(props) {
@@ -21,7 +22,7 @@ constructor(props) {
                 </h2>
                 <p className='review-body'>{this.props.review.body}</p>
                 <p className='review-body'>{this.props.review.sampleName}</p>
-                <button onClick={() => this.props.openModal({method: 'updateReview', review: this.props.review})}>Edit Review</button>
+                <Link to={`/reviews/${this.props.review._id}/edit`}><button>Edit Review</button></Link>
                 {/* <button onClick={ () => this.props.deleteReview(this.props.review._id).then(this.setState({review: null}))} >Delete Review</button> */}
                 <Confirm title="Confirm" description="Are you sure you want to delete?">
                     {confirm => (

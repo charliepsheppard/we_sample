@@ -18,7 +18,8 @@ import About from './about/about';
 import UserProfileContainer from './user_profile/user_profile_container';
 import RestaurantFormContainer from './restaurants/restaurant_form_container';
 import Modal from '../components/modal/modal';
- import SearchedSamples from './searched_samples';
+import SearchedSamples from './searched_samples';
+import ReviewEditFormContainer from './reviews/review_edit_form_container';
 
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
           />
           <ProtectedRoute exact path={`/users/:userId`} component={UserProfileContainer} />
           <ProtectedRoute path="/samples" component={SamplesIndexContainer} />
+          <ProtectedRoute path="/reviews/:reviewId/edit" component={ReviewEditFormContainer} />
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
           <Route path="/search/:searchQuery" component={SearchedSamples} />
