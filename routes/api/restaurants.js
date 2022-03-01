@@ -72,6 +72,7 @@ router.post("/:restaurantOwnerId", (req, res) => {
 
       newRestaurant.save()
         .then(restaurant => res.json(restaurant))
+        .catch(err => console.log(err))
 });
 
 
