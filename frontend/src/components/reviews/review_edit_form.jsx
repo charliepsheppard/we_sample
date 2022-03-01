@@ -7,20 +7,21 @@ class ReviewEditForm extends React.Component {
 
 
     this.state = {
-      // reviewerId: this.props.user.id,
+      reviewerId: this.props.user.id,
       // restaurantId: this.props.order.restaurant,
       // orderId: this.props.order._id,
-      title: '',
-      body: '',
+      title: this.props.review.title,
+      body: this.props.review.body,
+      _id: this.props.review._id,
       // sampleName: this.props.sampleName
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchReview(this.props.review._id);
+  // componentDidMount() {
+  //   this.props.fetchReview(this.props.review._id);
     
-  }
+  // }
 
 
 
@@ -30,6 +31,11 @@ class ReviewEditForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+
+    const review = Object.assign({}, this.state);
+    console.log("review in submit",review)
+    this.props.updateReview(review);
+    this.props.history.replace(`/users/${this.props.user.id}`)
 
     // const review = Object.assign({}, this.state)
     // this.props.updateReview(review).then(() => {
@@ -49,9 +55,14 @@ class ReviewEditForm extends React.Component {
   render() {
     // console.log('state in review form', this.state)
     console.log('props in review edit form', this.props);
+
+    if(!this.props.review) {
+      return null
+    }
+    
     return (
-      <div>
-        <form className='review-form'>
+      <div className='review-form-container'>
+        <form className='review-form' onSubmit={this.handleSubmit}>
           <h3 className='appointment-form-title'>Review your Experience</h3>
 
           <div className='textContainer'>
@@ -68,7 +79,7 @@ class ReviewEditForm extends React.Component {
             </div>
 
           </div>
-          <button onClick={this.handleSubmit}>Submit your Review</button>
+          <button>Submit your Review</button>
         </form>
       </div>
     )
