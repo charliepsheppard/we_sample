@@ -7,20 +7,21 @@ class ReviewEditForm extends React.Component {
 
 
     this.state = {
-      // reviewerId: this.props.user.id,
+      reviewerId: this.props.user.id,
       // restaurantId: this.props.order.restaurant,
       // orderId: this.props.order._id,
-      title: '',
-      body: '',
+      title: this.props.review.title,
+      body: this.props.review.body,
+      id: this.props.review.id
       // sampleName: this.props.sampleName
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchReview(this.props.review._id);
+  // componentDidMount() {
+  //   this.props.fetchReview(this.props.review._id);
     
-  }
+  // }
 
 
 
@@ -30,6 +31,9 @@ class ReviewEditForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+
+    const review = Object.assign({}, this.state);
+    this.props.updateReview(review);
 
     // const review = Object.assign({}, this.state)
     // this.props.updateReview(review).then(() => {
@@ -49,9 +53,14 @@ class ReviewEditForm extends React.Component {
   render() {
     // console.log('state in review form', this.state)
     console.log('props in review edit form', this.props);
+
+    if(!this.props.review) {
+      return null
+    }
+    
     return (
-      <div>
-        <form className='review-form'>
+      <div className='review-form-container'>
+        <form className='review-form' onSubmit={this.handleSubmit}>
           <h3 className='appointment-form-title'>Review your Experience</h3>
 
           <div className='textContainer'>
@@ -68,7 +77,7 @@ class ReviewEditForm extends React.Component {
             </div>
 
           </div>
-          <button onClick={this.handleSubmit}>Submit your Review</button>
+          <button>Submit your Review</button>
         </form>
       </div>
     )
