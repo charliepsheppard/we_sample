@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch, Route, Link, withRouter } from "react-router-dom"
+import {Redirect, Link, withRouter } from "react-router-dom"
 import Logo from '../logo.png'
 import "bootstrap/dist/css/bootstrap.min.css"
 import './navbar.css'
@@ -26,7 +26,11 @@ class NavBar extends React.Component {
 
   logoutUser(e) {
       e.preventDefault();
-      this.props.logout();
+      this.props.logout()
+      //   .then(this.props.history.push({
+      //     pathname: '/'
+      //   })
+      // );
   }
 
   getLinks() {

@@ -28,7 +28,7 @@ class SampleIndex extends React.Component {
 //   }
 
   render() {
-      // console.log("props from sample index render", this.props.samples)
+    const flattenedSamplesArr = this.props.samples.flat();
     if (!this.props.samples) {
       return null;
     } else {
@@ -42,7 +42,7 @@ class SampleIndex extends React.Component {
               <br/>
             <ul className="sample-items">
                 {
-                    this.props.samples.map((sample, idx) => <SampleIndexItemContainer key={idx} sample={sample} user={this.props.user} createOrder={createOrder} />)
+                    flattenedSamplesArr.map((sample, idx) => <SampleIndexItemContainer key={idx} sample={sample} user={this.props.user} createOrder={createOrder} />)
                 }
             </ul>
             </div>

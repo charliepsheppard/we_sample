@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
       password: '',
       errors: {},
       business: false,
+      demo: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,7 +43,7 @@ class LoginForm extends React.Component {
         }
         const user = Object.assign({}, this.state, demoObj)
         this.props.login(user)
-        // this.state.demo = true;
+        this.setState({ demo: true });
     }
 
   // Handle form submission
@@ -62,11 +63,11 @@ class LoginForm extends React.Component {
 
     return(
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
+        { this.state.demo === false ? Object.keys(this.state.errors).map((error, i) => (
           <li id='errors-li' key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
-        ))}
+        )) : <p></p> }
       </ul>
     );
   }
@@ -100,9 +101,9 @@ class LoginForm extends React.Component {
                 />
               <br/>
               <div className='submit-btn'>
-              <input id='btn' type="submit" value="login"  />
+              <input className='btn' type="submit" value="login"  />
                
-                <button id='btn' type='submit' onClick={() => this.signInDemo()}>Demo User</button>
+                <button className='demo-btn' type='submit' onClick={() => this.signInDemo()}>Demo User</button>
             
               <div className='errors-container'>
                  <div className='errors-login'>{this.renderErrors()}</div>
