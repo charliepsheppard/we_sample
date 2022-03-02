@@ -23,10 +23,10 @@ constructor(props) {
                 <p className='review-body'>{this.props.review.body}</p>
                 <p className='review-body'>{this.props.review.sampleName}</p>
                 <Link to={`/reviews/${this.props.review._id}/edit`}><button>Edit Review</button></Link>
-                
+
                 <Confirm title="Confirm" description="Are you sure you want to delete?">
                     {confirm => (
-                    <button onClick={confirm(this.handleDeleteReview)}>Delete Review</button> 
+                        <button onClick={confirm(this.handleDeleteReview)}>Delete Review</button>
                     )}
                 </Confirm>
             </div>

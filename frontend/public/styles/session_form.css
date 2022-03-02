@@ -75,7 +75,11 @@ input[type='password'] {
  
 }
 
-#btn {
+.session-form input[type='submit']:hover {
+  opacity: 0.7;
+}
+
+.demo-btn {
    /* width: 100%; */
    margin-top: 15px;
   height: 40px;
@@ -102,9 +106,9 @@ input[type='password'] {
 
 /* .submit-btn {} */
 
-#btn {
+/* .demo-btn {
    margin-left: 15px;
-} 
+}  */
 .pic-half-page {
     height: min-content;
     width: 80%;
