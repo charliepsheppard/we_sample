@@ -15,7 +15,7 @@ const SplashPage = () => {
           {/* <Link id='get-started-link'>
             <p>Click to get started</p>
           </Link> */}
-          <p className="instructions">Click profile to get started</p>
+          {/* <p className="instructions">Click profile to get started</p> */}
       </div>
      
     </div>
