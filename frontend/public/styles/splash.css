@@ -47,3 +47,7 @@
 #get-started-link > p:hover {
   text-decoration: underline;
 }
+
+.instructions {
+  font-size: 35px;
+}

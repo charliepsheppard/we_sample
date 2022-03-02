@@ -12,9 +12,10 @@ const SplashPage = () => {
       <div className="splash-page-heading-container">
         <h1 className="splash-page-heading">Sample from the best around town</h1>
         {/* searchbar goes here */}
-          <Link id='get-started-link'>
+          {/* <Link id='get-started-link'>
             <p>Click to get started</p>
-          </Link>
+          </Link> */}
+          <p className="instructions">Click profile to get started</p>
       </div>
      
     </div>
