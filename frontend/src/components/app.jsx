@@ -10,7 +10,7 @@ import SignupFormContainer from './session/signup_form_container';
 import RestaurantsIndexContainer from './restaurants/restaurants_index_container';
 import SamplesIndexContainer from './sample_index/sample_index_container'
 import UserProfile from './user_profile/user_profile';
-import SplashPage from './splash_page/splash_page';
+import SplashPageContainer from './splash_page/splash_page_container';
 import ReviewFormContainer from './reviews/review_form_container'
 import Footer from './footer/footer';
 import Team from './team/team';
@@ -51,7 +51,7 @@ const App = () => {
           <Route path="/new_restaurant" component={RestaurantFormContainer}/>
           <Route exact path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
           <Route path="/restaurants" component={RestaurantsIndexContainer} />
-          <Route path="/" component={SplashPage} />
+          <Route path="/" component={SplashPageContainer} />
         </Switch>
         <br />
         <br />
