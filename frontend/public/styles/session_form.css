@@ -106,9 +106,9 @@ input[type='password'] {
 
 /* .submit-btn {} */
 
-/* .demo-btn {
+.demo-btn {
    margin-left: 15px;
-}  */
+} 
 .pic-half-page {
     height: min-content;
     width: 80%;
