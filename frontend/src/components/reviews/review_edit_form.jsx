@@ -53,8 +53,6 @@ class ReviewEditForm extends React.Component {
   }
 
   render() {
-    // console.log('state in review form', this.state)
-    console.log('props in review edit form', this.props);
 
     if(!this.props.review) {
       return null

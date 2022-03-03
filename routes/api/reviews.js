@@ -49,7 +49,6 @@ router.post(
     if (!isValid) {
       return res.status(400).json(errors)
     }
-      console.log('req body for review',req.body);
     const newReview = new Review({
       reviewerId: req.body.reviewerId,
       restaurantId: req.body.restaurantId,

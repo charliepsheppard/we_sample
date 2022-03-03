@@ -1,0 +1,9 @@
+.about-container {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 2em;
+}
+
+.about-heading {
+  text-align: center;
+}

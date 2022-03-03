@@ -8,7 +8,7 @@ import thiagoGH from './thiago_github.jpeg';
 const Team = () => {
   return (
     <div>
-      <h1>The Team</h1>
+      <h1 className="team-heading">The Team</h1>
       <div className="team-container">
         <div className="teammate-container">
           <img src={charlieGH} alt="charlie-profile-photo" className="team-profile-photo" />
