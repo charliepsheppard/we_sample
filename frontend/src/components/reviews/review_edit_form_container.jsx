@@ -4,7 +4,6 @@ import { updateReview, fetchReview } from '../../actions/review_actions';
 import ReviewEditForm from './review_edit_form';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('state.entities in review edit form container', state.entities);
   return {
     review: state.entities.reviews[ownProps.match.params.reviewId],
     user: state.session.user,

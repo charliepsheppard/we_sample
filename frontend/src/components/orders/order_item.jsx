@@ -31,8 +31,6 @@ class OrderItem extends React.Component {
 
   render() {
     if (this.state.order === null ) return null
-    
-    console.log('props in order item', this.props)
 
 
     return(

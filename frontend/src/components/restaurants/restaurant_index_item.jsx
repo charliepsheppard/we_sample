@@ -16,11 +16,8 @@ class RestaurantIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    console.log('samples in local state', this.state.samples)
     this.props.fetchSamplesFromRestaurant(this.props.restaurant._id)
       // .then(this.setState({samples: this.props.restaurantSamples}))
-    console.log('samples in local state after fetch', this.state.samples)
-    console.log('restaurant index item CDM', this.props)
   }
 
   // componentDidUpdate(prevProp) {

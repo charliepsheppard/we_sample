@@ -17,7 +17,6 @@ const reviewsReducer = (oldState = {}, action) => {
       return updatedState
 
     case RECEIVE_REVIEW:
-      console.log("action in reducer", action)
       newState[action.review.data._id] = action.review.data
       return newState
 
