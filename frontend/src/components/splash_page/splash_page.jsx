@@ -11,6 +11,7 @@ const SplashPage = () => {
       </div>
       <div className="splash-page-heading-container">
         <h1 className="splash-page-heading">Sample from the best around town</h1>
+        <p>Login in and click on the Profile button above to get started</p>
         {/* searchbar goes here */}
           {/* <Link id='get-started-link'>
             <p>Click to get started</p>
