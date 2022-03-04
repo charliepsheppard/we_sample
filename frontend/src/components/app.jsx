@@ -47,10 +47,10 @@ const App = () => {
           <ProtectedRoute path="/reviews/:reviewId/edit" component={ReviewEditFormContainer} />
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
-          <Route path="/search/:searchQuery" component={SearchedSamples} />
-          <Route path="/new_restaurant" component={RestaurantFormContainer}/>
-          <Route exact path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
-          <Route path="/restaurants" component={RestaurantsIndexContainer} />
+          <ProtectedRoute path="/search/:searchQuery" component={SearchedSamples} />
+          <ProtectedRoute path="/new_restaurant" component={RestaurantFormContainer}/>
+          <ProtectedRoute exact path="/:userId/restaurants" component={RestaurantsIndexContainer}/>
+          <ProtectedRoute path="/restaurants" component={RestaurantsIndexContainer} />
           <Route path="/" component={SplashPage} />
         </Switch>
         <br />
