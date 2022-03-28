@@ -15,11 +15,12 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+      this.props.history.push('/profile');
     }
 
     this.setState({errors: nextProps.errors})
@@ -42,6 +43,7 @@ class SignupForm extends React.Component {
 
     // this.props.signup(user, this.props.history); 
     this.props.signup(user); 
+    this.componentWillReceiveProps();
   }
 
   renderErrors() {
@@ -96,7 +98,7 @@ class SignupForm extends React.Component {
             <div className='submit-btn'>
             <input type="submit" value="Submit" id='btn' />
             <div className='errors-container'>
-                 <p className='errors-login'>{this.renderErrors()}</p>
+                <div className='errors-login'>{this.renderErrors()}</div>
             </div>
             </div>
             <p>Have an account or demo user?
@@ -110,4 +112,4 @@ class SignupForm extends React.Component {
   }
 }
 
-export default SignupForm;
+export default withRouter(SignupForm);
