@@ -76,7 +76,7 @@ class NavBar extends React.Component {
       
       <nav className="navbar navbar-expand-lg navbar-light bs-ligh border-bottom">
          <div className="container-fluid">
-           <a className="navbar-brand" href="/">
+           <a className="navbar-brand" href="/profile">
            <img src={Logo} className="navbar-brand"></img>
            </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
