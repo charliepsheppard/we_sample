@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import samplePic from './sample_login.png'
 
 class LoginForm extends React.Component {
@@ -112,9 +112,11 @@ class LoginForm extends React.Component {
               </div>
              
             </div>
+            <p>New user?</p>
+            <Link to={'/signup'}>Click Here</Link>
           </form>
+          
         </div>
-      
       </div>
     );
   }

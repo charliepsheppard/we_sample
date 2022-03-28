@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import samplePic from './sample_login.png'
 
 class SignupForm extends React.Component {
@@ -99,6 +99,9 @@ class SignupForm extends React.Component {
                  <p className='errors-login'>{this.renderErrors()}</p>
             </div>
             </div>
+            <p>Have an account or demo user?
+            </p>
+            <Link to={'/login'}>Click Here</Link>
           </div>
         </form>
         </div>
