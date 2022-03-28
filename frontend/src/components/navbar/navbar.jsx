@@ -17,6 +17,7 @@ class NavBar extends React.Component {
 
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.profileOrSignIn = this.profileOrSignIn.bind(this);
   }
 
 
@@ -31,6 +32,14 @@ class NavBar extends React.Component {
       //     pathname: '/'
       //   })
       // );
+  }
+
+  profileOrSignIn() {
+    if(this.props.loggedIn) {
+      return "/profile"
+    } else {
+      return "/login"
+    }
   }
 
   getLinks() {
@@ -76,7 +85,7 @@ class NavBar extends React.Component {
       
       <nav className="navbar navbar-expand-lg navbar-light bs-ligh border-bottom">
          <div className="container-fluid">
-           <a className="navbar-brand" href="/profile">
+           <a className="navbar-brand" href={this.profileOrSignIn}>
            <img src={Logo} className="navbar-brand"></img>
            </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
